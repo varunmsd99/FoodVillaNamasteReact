@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:ProximaNovaExtraBold,arial,Helvetica Neue,sans-serif;
+    overflow-x: hidden;
+    letter-spacing: 0;
+  }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.header {
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    align-items: center;
+}
+.logo {
+    width: 100px;
+}
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+}
+.nav-items > ul > li {
+    margin: 10px;
+    align-items: center;
+}
+.nav-items > ul > li:hover{
+    color: #ca610b;
+}
+.search-container {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+}
+  .search-container .search-input {
+    width: 40%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.08);
+    padding: 14px 15px 14px 20px;
+    border: 1px solid #d0d0d0;
+    color: #000000;
+    outline: none;
+  }
+  .search-container .search-btn {
+    border-radius: 5px;
+    background-color: #ca610b;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    color: #ffffff;
+    padding: 14px 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+  }
+  .search-container .search-btn:hover {
+    background-color: #ffffff;
+    color: #ca610b;
+    border: 1px solid #d0d0d0;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  }
+.body {
+    width: 1300px;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+}
+.Restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 296.48px;
+    padding: 20px 20px 57px;
+    border: 1px solid transparent;
+    font-weight: lighter;
+}
+.card:hover {
+    border: 1px solid #d0d0d0;
+}
+.card > img {
+    width: 100%;
+}
+.card > h2 {
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+}
+.card > h5 {
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 300;
+}
+.card > span {
+    color: #686b78;
+    margin-top: 18px;
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    font-size: 13px;
+}
+.card > span > h4 {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+}
+.card > span > h5 {
+    font-weight: 300;
+}

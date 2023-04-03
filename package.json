@@ -9,9 +9,12 @@
   "author": "Varun VK",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.8.3"
+    "@babel/core": "^7.21.3",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
