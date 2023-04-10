@@ -3,18 +3,18 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 
 function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant) =>
-      restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-    return filterData;
-  }
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+  return filterData;
+}
 const Body = () => {
-    const [filteredRestaurants, setFilteredRestaurants] = useState()
-    const [restaurants, setRestaurants] = useState(RestaurantList);
-    const [searchText, setSearchText] = useState("");
-    return(
-      <>
-        <div className="search-container">
+  const [filteredRestaurants, setFilteredRestaurants] = useState();
+  const [restaurants, setRestaurants] = useState(RestaurantList);
+  const [searchText, setSearchText] = useState("");
+  return (
+    <>
+      <div className="search-container">
         <input
           type="text"
           className="search-input"
@@ -32,15 +32,14 @@ const Body = () => {
           Search
         </button>
       </div>
-        <div className="Restaurant-list">
-        {restaurants.map((restaurant) =>
-          {
-            return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
-          }
-        )
-        }
+      <div className="Restaurant-list">
+        {restaurants.map((restaurant) => {
+          return (
+            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+          );
+        })}
       </div>
-      </>
-    );
-  };
+    </>
+  );
+};
 export default Body;

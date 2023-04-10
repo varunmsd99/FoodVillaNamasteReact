@@ -4453,3 +4453,5 @@ export const RestaurantList = [
         "subtype": "basic"
     }
   ];
+
+  export default shimmer_display_count=8;
