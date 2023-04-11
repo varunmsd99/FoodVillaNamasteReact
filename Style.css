@@ -46,7 +46,6 @@ a {
   padding: 14px 15px 14px 20px;
   border: 1px solid #d0d0d0;
   color: #000000;
-  outline: none;
 }
 .search-container .search-btn {
   border-radius: 5px;
@@ -56,8 +55,6 @@ a {
   padding: 14px 20px;
   margin-left: 5px;
   cursor: pointer;
-  border: none;
-  outline: none;
   border: 1px solid transparent;
 }
 .search-container .search-btn:hover {
@@ -68,9 +65,10 @@ a {
 }
 .Restaurant-list {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-wrap:wrap;
+  flex-direction:row;
+  max-width: 1200px;
+  margin: auto;
 }
 .card {
   width: 296.48px;
