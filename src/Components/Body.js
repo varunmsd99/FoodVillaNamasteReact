@@ -32,7 +32,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="Restaurant-list">
+      <div className="Restaurant-list" id="all-restaurants">
         {restaurants.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant.data} key={restaurant.data.id} />

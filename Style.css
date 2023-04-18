@@ -66,20 +66,21 @@ a {
 .Restaurant-list {
   display: flex;
   flex-wrap:wrap;
-  flex-direction:row;
+  margin: 0 auto;
   max-width: 1200px;
-  margin: auto;
+  justify-content: space-evenly;
 }
 .card {
-  width: 296.48px;
+  width: 254px;
   padding: 20px 20px 57px;
+  margin: 2px;
   display: block;
   border: 1px solid transparent;
   font-weight: lighter;
 }
 .card:hover {
   border: 1px solid #d0d0d0;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
 }
 .card > img {
   width: 100%;
@@ -150,16 +151,17 @@ a {
   justify-content: center;
 }
 .linkedin {
+  
   font-size: 35px;
 }
 
 .linkedin :hover {
   color: #0a66c2;
 }
-.gmail {
+.github {
   font-size: 35px;
 }
-.gmail :hover {
+.github :hover {
   color: #333;
 }
 .twitter {
@@ -169,7 +171,7 @@ a {
   color: #00acee;
 }
 .discord {
-  font-size: 35px;
+  font-size: 30px;
 }
 .discord :hover {
   color: #7289da;

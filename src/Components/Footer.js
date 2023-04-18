@@ -13,7 +13,7 @@ const Footer = () => {
             <i class="fa-brands fa-linkedin"></i>
           </a>
           <a
-            className="gmail"
+            className="github"
             href="https://github.com/varunmsd99"
             target="_blank"
             title="Varun Pelluru's GitHub repo"
