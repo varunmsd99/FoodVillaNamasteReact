@@ -1,8 +1,10 @@
+import { faTwitter, faGithub, faDiscord, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-content">
-        <p className="info">❤️ Created By Varun Pelluru 💛</p>
+        <p className="info">❤️ Made with Love for Food by Varun 💛</p>
         <div className="contact-links">
           <a
             className="linkedin"
@@ -10,7 +12,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Linkedin Profile"
           >
-            <i class="fa-brands fa-linkedin"></i>
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a
             className="github"
@@ -18,7 +20,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's GitHub repo"
           >
-            <i class="fa-brands fa-github"></i>
+            <FontAwesomeIcon icon={faGithub} />
           </a>
           <a
             className="twitter"
@@ -26,7 +28,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Twitter Profile"
           >
-            <i class="fa-brands fa-square-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           <a
             className="discord"
@@ -34,7 +36,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Discord Profile"
           >
-            <i class="fa-brands fa-discord"></i>
+            <FontAwesomeIcon icon={faDiscord} />
           </a>
         </div>
         <p className="copyright-info" title="Just Kiddin' There is no Copyright for this">©️ 2023 FoodVilla</p>

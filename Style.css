@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: ProximaNovaExtraBold, arial, Helvetica Neue, sans-serif;
+  font-family: system-ui;
   overflow-x: hidden;
   letter-spacing: 0;
 }
@@ -15,6 +15,8 @@ a {
   justify-content: space-around;
   height: auto;
   align-items: center;
+  padding: 0 20px;
+  margin-bottom: 50px;
 }
 .logo {
   width: 100px;
@@ -27,9 +29,10 @@ a {
   margin: 10px;
   color: #424250;
   align-items: center;
+  padding-left: 30px;
 }
 .nav-items > ul > li:hover {
-  color: #ca610b;
+  color: #f3730a;
 }
 .search-container {
   margin: 20px auto;
@@ -66,21 +69,21 @@ a {
 .Restaurant-list {
   display: flex;
   flex-wrap:wrap;
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 85px;
   max-width: 1200px;
   justify-content: space-evenly;
 }
 .card {
   width: 254px;
   padding: 20px 20px 57px;
-  margin: 2px;
   display: block;
-  border: 1px solid transparent;
+  border: 1.11px solid transparent;
   font-weight: lighter;
 }
 .card:hover {
   border: 1px solid #d0d0d0;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .card > img {
   width: 100%;
@@ -95,7 +98,7 @@ a {
   margin-top: 4px;
   font-weight: 300;
 }
-.fa-location-dot {
+.locationIcon {
   font-size: 12px;
 }
 .card > span {
@@ -109,16 +112,16 @@ a {
   font-weight: 300;
 }
 .avgRating {
-  display: inline-flex;
+  display:iblock;
   padding: 3px;
   font-size: 11px;
   font-weight: 300;
 }
-.fa-star {
+.avgRatingIcon {
   font-size: 10px;
 }
-.fa-route {
-  font-size: 11px;
+.routeIcon {
+  font-size: 12px;
 }
 .footer {
   margin-top: 20px;
@@ -151,7 +154,6 @@ a {
   justify-content: center;
 }
 .linkedin {
-  
   font-size: 35px;
 }
 
