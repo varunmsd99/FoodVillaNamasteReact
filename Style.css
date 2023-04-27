@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui;
+  font-family: 'Manrope', sans-serif !important;
   overflow-x: hidden;
   letter-spacing: 0;
 }
@@ -12,11 +13,19 @@ a {
 }
 .header {
   display: flex;
+  overflow-y: hidden;
   justify-content: space-around;
-  height: auto;
+  width: 100%;
   align-items: center;
   padding: 0 20px;
-  margin-bottom: 50px;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.header > a {
+  background-color: #ca610b;
 }
 .logo {
   width: 100px;
@@ -34,44 +43,14 @@ a {
 .nav-items > ul > li:hover {
   color: #f3730a;
 }
-.search-container {
-  margin: 20px auto;
-  text-align: center;
-  max-width: 100%;
-  position: relative;
-}
-.search-container .search-input {
-  width: 40%;
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #ffffff;
-  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.08);
-  padding: 14px 15px 14px 20px;
-  border: 1px solid #d0d0d0;
-  color: #000000;
-}
-.search-container .search-btn {
-  border-radius: 5px;
-  background-color: #ca610b;
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
-  color: #ffffff;
-  padding: 14px 20px;
-  margin-left: 5px;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-.search-container .search-btn:hover {
-  background-color: #ffffff;
-  color: #ca610b;
-  border: 1px solid #d0d0d0;
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
-}
 .Restaurant-list {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto 20px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  gap : 27px 0;
 }
 .card {
   width: 254px;
@@ -82,11 +61,11 @@ a {
 }
 .card:hover {
   border: 1px solid #d0d0d0;
-  box-shadow: 1px 2px 5px 0 rgb(218 220 230 / 60%);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
 }
 .card > img {
   width: 100%;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.2);
 }
 .card > h2 {
   font-size: 17px;
@@ -125,13 +104,12 @@ a {
 }
 .footer {
   margin-top: 20px;
-  height: auto;
   width: 100%;
   background-color: #000000;
   color: #ffffff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 10px;
 }
 .info {
@@ -178,4 +156,50 @@ a {
 .discord :hover {
   color: #7289da;
 }
+.search-container {
+  margin: 120px 0 auto;
+  text-align: center;
+  position: relative;
+}
+.search-input {
+  width: 40%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 13px;
+  border: 1px solid #d0d0d0;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-btn {
+  border-radius: 5px;
+  background-color: #ca610b;
+  color: #ffffff;
+  padding: 13px;
+  margin-left: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+}
+.search-btn:hover {
+  background-color: #ffffff;
+  color: #ca610b;
+  border: 1px solid #d0d0d0;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+}
+.search-image {
+  background-color: none;
+  display: flex;
+  height: 200px;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.about {
+  margin-top: 100px;
+}
+.contact {
+  margin-top: 100px;
+}
+
 

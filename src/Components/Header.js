@@ -2,10 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FoodVillaLogo from "../Images/Food Villa Logo.png";
 import { faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import { faUser, faPaperPlane ,faContactCard} from "@fortawesome/free-regular-svg-icons"
+import { Link } from "react-router-dom";
 const Title = () => (
-    <a href="/">
+    <Link to="/">
       <img className="logo" src={FoodVillaLogo} alt="Food Villa Logo" />
-    </a>
+    </Link>
   );
 const Header = () => {
     return (
@@ -13,10 +14,10 @@ const Header = () => {
         <Title className="Title" />
         <div className="nav-items">
           <ul>
-            <li><a href="/"><FontAwesomeIcon icon={faMagnifyingGlass} />&nbsp; Search</a></li>
-            <li><a href="/"><FontAwesomeIcon icon={faContactCard} />&nbsp; About</a></li>
-            <li><a href="/"><FontAwesomeIcon icon={faPaperPlane} />&nbsp; Contact</a></li>
-            <li><a href="/"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</a></li>
+            <li><Link to="/search"><FontAwesomeIcon icon={faMagnifyingGlass} />&nbsp; Search</Link></li>
+            <li><Link to="/about"><FontAwesomeIcon icon={faContactCard} />&nbsp; About</Link></li>
+            <li><Link to="/contact"><FontAwesomeIcon icon={faPaperPlane} />&nbsp; Contact</Link></li>
+            <li><Link to="/"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</Link></li>
           </ul>
         </div>
       </div>

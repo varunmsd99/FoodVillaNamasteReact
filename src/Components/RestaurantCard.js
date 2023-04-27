@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../Constant";
+import { IMG_CDN_URL, swiggy_api_URL } from "../Constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faLocationDot, faRoute } from "@fortawesome/free-solid-svg-icons";
 const RestaurantCard = ({cloudinaryImageId, name, cuisines, area, avgRating, lastMileTravelString, costForTwoString}) => {
@@ -68,4 +68,15 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, area, avgRating, las
         </a>
     );
   };
+
+async function getRestaurantData() {
+    try {
+        const response = await fetch(swiggy_api_URL);
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.log(error);
+    }
+}
+getRestaurantData();
 export default RestaurantCard;

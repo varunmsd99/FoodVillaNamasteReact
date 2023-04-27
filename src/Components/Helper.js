@@ -4,4 +4,4 @@ function filterData(searchText, restaurants) {
     );
     return filterData;
 }
-
+export default filterData

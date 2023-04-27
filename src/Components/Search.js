@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
-import { RestaurantList } from "../Constant";
+import { useState } from 'react';
 
-const [filteredRestaurants, setFilteredRestaurants] = useState();
-const [restaurants, setRestaurants] = useState(RestaurantList);
-const [searchText, setSearchText] = useState("");
-
-const search = () => {
+const Search = () => {
+    const [searchText, setSearchText] = useState("");
     return(
         <div className="search-container">
         <input
@@ -18,12 +14,10 @@ const search = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const data = filterData(searchText, restaurants);
-            setRestaurants(data);
           }}
-        >
-          Search
+        >Search
         </button>
       </div>
     );
 };
+export default Search;
