@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Manrope', sans-serif !important;
+  font-family: 'Manrope', system-ui, sans-serif;
   overflow-x: hidden;
   letter-spacing: 0;
 }
@@ -45,6 +45,7 @@ a {
 }
 .Restaurant-list {
   max-width: 1200px;
+  min-height: calc(100vh - 271px);
   margin: 100px auto 20px;
   position: relative;
   display: flex;
@@ -61,7 +62,7 @@ a {
 }
 .card:hover {
   border: 1px solid #d0d0d0;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
 }
 .card > img {
   width: 100%;
@@ -89,6 +90,7 @@ a {
   text-align: center;
   font-size: 13px;
   font-weight: 300;
+  padding: auto;
 }
 .avgRating {
   display:iblock;
@@ -103,14 +105,12 @@ a {
   font-size: 12px;
 }
 .footer {
-  margin-top: 20px;
   width: 100%;
   background-color: #000000;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
 }
 .info {
   margin-top: 10px;
@@ -160,6 +160,7 @@ a {
   margin: 120px 0 auto;
   text-align: center;
   position: relative;
+  min-height: calc(100vh - 251px);
 }
 .search-input {
   width: 40%;
@@ -197,9 +198,11 @@ a {
 }
 .about {
   margin-top: 100px;
+  min-height: calc(100vh - 231px);
 }
 .contact {
   margin-top: 100px;
+  min-height: calc(100vh - 231px);
 }
 
 
