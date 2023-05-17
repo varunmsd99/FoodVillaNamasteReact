@@ -19,7 +19,7 @@ a {
   align-items: center;
   padding: 0 20px;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.85);
   z-index: 1000;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@ a {
 }
 .nav-items > ul > li {
   margin: 10px;
-  color: #424250;
+  color: #303031;
   align-items: center;
   padding-left: 30px;
 }
@@ -45,8 +45,8 @@ a {
 }
 .Restaurant-list {
   max-width: 1200px;
-  min-height: calc(100vh - 271px);
-  margin: 100px auto 20px;
+  min-height: calc(100vh - 272px);
+  margin: 100px auto 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -160,7 +160,7 @@ a {
   margin: 120px 0 auto;
   text-align: center;
   position: relative;
-  min-height: calc(100vh - 251px);
+  min-height: calc(100vh - 252px);
 }
 .search-input {
   width: 40%;
@@ -196,13 +196,51 @@ a {
   align-items: center;
   justify-content: space-evenly;
 }
+.popular-cuisine {
+  display: flex;
+  
+}
 .about {
   margin-top: 100px;
-  min-height: calc(100vh - 231px);
+  min-height: calc(100vh - 232px);
 }
 .contact {
   margin-top: 100px;
-  min-height: calc(100vh - 231px);
+  min-height: calc(100vh - 232px);
 }
-
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.error > img {
+  width: auto;
+  height: 50vh;
+  margin-top: 50px;
+}
+.error > h1 {
+  font-weight: 400;
+  padding-top: 10px;
+}
+.error > h3 {
+  font-weight: 300;
+  line-height: 1.5;
+  color: #77787e;
+  padding-bottom: 10px;
+  text-overflow: clip;
+}
+.home {
+  box-sizing: inherit;
+  padding: 8px 15px;
+  background-color: #f3730a;
+  color: #ffffff;
+  border-radius: 2px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.error > a:hover {
+  box-shadow: 2px -2px 10px 2px rgb(0 0 0 / 0.08);;
+}
 
