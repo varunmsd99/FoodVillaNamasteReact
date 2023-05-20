@@ -14,7 +14,7 @@ a {
 .header {
   display: flex;
   overflow-y: hidden;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   align-items: center;
   padding: 0 20px;
@@ -44,56 +44,52 @@ a {
   color: #f3730a;
 }
 .Restaurant-list {
-  max-width: 1200px;
+  max-width: 75%;
   min-height: calc(100vh - 272px);
   margin: 100px auto 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap : 27px 0;
+  flex-direction: initial;
+  justify-content: space-around;
+  gap: 37px 10px;
 }
-.card {
-  width: 254px;
-  padding: 20px 20px 57px;
-  margin: 3px;
+.card-link {
+  width: 234px;
+  padding: 20px 20px;
+  margin: 5px;
   border: 1.11px solid transparent;
   font-weight: lighter;
 }
-.card:hover {
-  border: 1px solid #d0d0d0;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+.card-link:hover {
+  border: 1.11px solid #d0d0d0;
+  box-shadow: 0 4px 7px 0 rgba(218,220,230,.6)
 }
 .card > img {
   width: 100%;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 0.2);
 }
 .card > h2 {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
 }
 .card > h5 {
-  color: #686b78;
-  font-size: 13px;
-  margin-top: 4px;
-  font-weight: 300;
-}
-.locationIcon {
+  color: #60606e;
   font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
 }
 .card > span {
-  color: #686b78;
+  color: #60606e;
   margin-top: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-size: 13px;
-  font-weight: 300;
-  padding: auto;
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 .avgRating {
-  display:iblock;
+  display: block;
   padding: 3px;
   font-size: 11px;
   font-weight: 300;
@@ -103,6 +99,25 @@ a {
 }
 .routeIcon {
   font-size: 12px;
+}
+.quick-view {
+  opacity:0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 5px;
+  color: #5d8ed5;
+  font-size: 13px;
+  font-weight: 800;
+  border-top: 1.11px solid #d0d0d0;
+}
+.quick-view:hover {
+  opacity:1;
+  -webkit-transition: opacity .25s ease-in-out .0s;
+  transition: opacity .25s ease-in-out .0s;
+}
+[qv-title]:after {
+  color: #0a66c2;
 }
 .footer {
   width: 100%;

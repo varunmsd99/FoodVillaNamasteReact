@@ -1,8 +1,9 @@
 import { IMG_CDN_URL, swiggy_api_URL } from "../Constant";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faLocationDot, faRoute } from "@fortawesome/free-solid-svg-icons";
 
-const RestaurantCard = ({cloudinaryImageId, name, cuisines, area, avgRating, lastMileTravelString, costForTwoString}) => {
+const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileTravelString, costForTwoString}) => {
     function isAvgRatingContent(avgRating){
         if(avgRating==='--')
         return false;
@@ -41,13 +42,14 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, area, avgRating, las
             });
         }
     }
+    const [showQuickMenu, setShowQuickMenu] = useState(false);
+    const hover = () => setShowQuickMenu(true)
     return(
-        <a href="/">
+        <a href="/" className="card-link">
             <div className="card">
                 <img alt="restaurant-image" src={IMG_CDN_URL+cloudinaryImageId}></img>
                 <h2 className="restaurantName">{name}</h2>
                 <h5 className="cuisine">{cuisines.join(", ")}</h5>
-                <h5 className="location"><FontAwesomeIcon className="locationIcon" icon={faLocationDot} />&nbsp;{area}</h5>
                 <span className="rating">
                     {isAvgRatingContent(avgRating)?
                     <h4 
@@ -62,9 +64,12 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, area, avgRating, las
                         &nbsp;{avgRating}
                     </h4>
                     }
+                    <p>•</p>
                     <h5 className="distance"><FontAwesomeIcon className="routeIcon" icon={faRoute} />&nbsp;{lastMileTravelString}</h5>
+                    <p>•</p>
                     <h5>{costForTwoString}</h5>
                 </span>
+                <a href='#' className="quick-view" qv-title="Coming Soooon!">QUICK VIEW</a>
             </div>
         </a>
     );
