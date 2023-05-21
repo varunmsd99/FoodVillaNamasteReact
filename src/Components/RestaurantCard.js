@@ -69,7 +69,7 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileT
                     <p>•</p>
                     <h5>{costForTwoString}</h5>
                 </span>
-                <a href='#' className="quick-view" qv-title="Coming Soooon!">QUICK VIEW</a>
+                <a href='#' className="quick-view" title="Coming Soooon!">QUICK VIEW</a>
             </div>
         </a>
     );

@@ -14,7 +14,7 @@ a {
 .header {
   display: flex;
   overflow-y: hidden;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   align-items: center;
   padding: 0 20px;
@@ -52,11 +52,12 @@ a {
   flex-wrap: wrap;
   flex-direction: initial;
   justify-content: space-around;
-  gap: 37px 10px;
+  gap: 10px;
 }
 .card-link {
+  height: fit-content;
   width: 234px;
-  padding: 20px 20px;
+  padding: 20px 20px 10px;
   margin: 5px;
   border: 1.11px solid transparent;
   font-weight: lighter;
@@ -115,9 +116,6 @@ a {
   opacity:1;
   -webkit-transition: opacity .25s ease-in-out .0s;
   transition: opacity .25s ease-in-out .0s;
-}
-[qv-title]:after {
-  color: #0a66c2;
 }
 .footer {
   width: 100%;
