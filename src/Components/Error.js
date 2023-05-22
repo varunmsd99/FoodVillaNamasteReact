@@ -8,7 +8,7 @@ const Error = () => {
             <img src={empty404}></img>
             <h1>Oops! Page not found.</h1>
             <h3>Uh-oh! Looks like the page you are trying to access, doesn't exist. Please start afresh.</h3>
-            <Link to="/" className="home">GO HOME</Link>
+            <Link to="/" className="error-home">GO HOME</Link>
         </div>
     );
 };

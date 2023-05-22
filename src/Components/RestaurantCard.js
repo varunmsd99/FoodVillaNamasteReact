@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faLocationDot, faRoute } from "@fortawesome/free-solid-svg-icons";
 
-const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileTravelString, costForTwoString}) => {
+const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileTravelString, slaString, costForTwoString}) => {
     function isAvgRatingContent(avgRating){
         if(avgRating==='--')
         return false;
@@ -49,7 +49,7 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileT
             <div className="card">
                 <img alt="restaurant-image" src={IMG_CDN_URL+cloudinaryImageId}></img>
                 <h2 className="restaurantName">{name}</h2>
-                <h5 className="cuisine">{cuisines.join(", ")}</h5>
+                <h5 className="cuisine" title={cuisines}>{cuisines.join(", ")}</h5>
                 <span className="rating">
                     {isAvgRatingContent(avgRating)?
                     <h4 
@@ -64,12 +64,12 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileT
                         &nbsp;{avgRating}
                     </h4>
                     }
-                    <p>•</p>
-                    <h5 className="distance"><FontAwesomeIcon className="routeIcon" icon={faRoute} />&nbsp;{lastMileTravelString}</h5>
-                    <p>•</p>
+                    <p>&nbsp;•&nbsp;</p>
+                    <h5 className="distance" title={lastMileTravelString}>&nbsp;{slaString}</h5>
+                    <p>&nbsp;•&nbsp;</p>
                     <h5>{costForTwoString}</h5>
                 </span>
-                <a href='#' className="quick-view" title="Coming Soooon!">QUICK VIEW</a>
+                <a href='#' className="quick-view" title="Quick View feature will be Coming Very Soooon!">QUICK VIEW</a>
             </div>
         </a>
     );

@@ -5,7 +5,8 @@ import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import Search from "./Components/Search";
 import Contact from "./Components/Contact";
-import About from "./Components/About";
+import Help from "./Components/Help";
+import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -34,13 +35,17 @@ const appRouter = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: "help",
+        element: <Help />,
       },
       {
         path: "contact",
         element: <Contact />,
       },
+      {
+        path: "cart",
+        element: <Cart />,
+      }
     ],
   },
 ]);
