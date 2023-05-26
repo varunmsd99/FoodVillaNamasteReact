@@ -2,564 +2,6 @@ export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lo
 export const swiggy_api_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7716781&lng=83.2452478&page_type=DESKTOP_WEB_LISTING";
 export const RestaurantList = [
     {
-      "type": "restaurant",
-      "data": {
-        "type": "F",
-        "id": "676714",
-        "name": "Hyderabad Nawabi Biryani",
-        "uuid": "73aa6723-521d-406f-a356-eab1c54b71fd",
-        "city": "20",
-        "area": "Pendurthi",
-        "totalRatingsString": "Too Few Ratings",
-        "cloudinaryImageId": "8018c14b50ba15c110a31a122492d890",
-        "cuisines": [
-          "Indian",
-          "Biryani"
-        ],
-        "tags": [
-          
-        ],
-        "costForTwo": 25000,
-        "costForTwoString": "₹250 FOR TWO",
-        "deliveryTime": 25,
-        "minDeliveryTime": 25,
-        "maxDeliveryTime": 25,
-        "slaString": "25 MINS",
-        "lastMileTravel": 2.9000000953674316,
-        "slugs": {
-          "restaurant": "hyderabad-nawabi-biryani-pendurthi-pendurthi",
-          "city": "vizag"
-        },
-        "cityState": "20",
-        "address": "DOOR NO. 16-337, PALLINARAYANAPURAM, GOPALAPATNAM-530027 ,Gopalapatnam(Mpl.Corp.),Visakhapatnam,Andhra Pradesh-530027",
-        "locality": "Gopalapatnam",
-        "parentId": 287711,
-        "unserviceable": false,
-        "veg": false,
-        "select": false,
-        "favorite": false,
-        "tradeCampaignHeaders": [
-          
-        ],
-        "chain": [
-          
-        ],
-        "feeDetails": {
-          "fees": [
-            {
-              "name": "distance",
-              "fee": 2100,
-              "message": ""
-            },
-            {
-              "name": "time",
-              "fee": 0,
-              "message": ""
-            },
-            {
-              "name": "special",
-              "fee": 0,
-              "message": ""
-            }
-          ],
-          "totalFees": 2100,
-          "message": "",
-          "title": "Delivery Charge",
-          "amount": "2100",
-          "icon": ""
-        },
-        "availability": {
-          "opened": true,
-          "nextOpenMessage": "",
-          "nextCloseMessage": ""
-        },
-        "longDistanceEnabled": 0,
-        "rainMode": "NONE",
-        "thirdPartyAddress": false,
-        "thirdPartyVendor": "",
-        "adTrackingID": "",
-        "badges": {
-          "imageBased": [
-            
-          ],
-          "textBased": [
-            
-          ],
-          "textExtendedBadges": [
-            
-          ]
-        },
-        "lastMileTravelString": "2.9 kms",
-        "hasSurge": false,
-        "sla": {
-          "restaurantId": "676714",
-          "deliveryTime": 25,
-          "minDeliveryTime": 25,
-          "maxDeliveryTime": 25,
-          "lastMileTravel": 2.9000000953674316,
-          "lastMileDistance": 0,
-          "serviceability": "SERVICEABLE",
-          "rainMode": "NONE",
-          "longDistance": "NOT_LONG_DISTANCE",
-          "preferentialService": false,
-          "iconType": "EMPTY"
-        },
-        "promoted": false,
-        "avgRating": "--",
-        "totalRatings": 0,
-        "new": true
-      },
-      "subtype": "basic"
-    },
-    {
-      "type": "restaurant",
-      "data": {
-        "type": "F",
-        "id": "501034",
-        "name": "Stikstof Ice-Cream Cafe",
-        "uuid": "237f4707-5347-4423-a630-9a7376ba0479",
-        "city": "20",
-        "area": "Gopalapatnam",
-        "totalRatingsString": "100+ ratings",
-        "cloudinaryImageId": "iu3zhx6yijxjoxixq939",
-        "cuisines": [
-          "Ice Cream",
-          "Beverages"
-        ],
-        "tags": [
-          
-        ],
-        "costForTwo": 30000,
-        "costForTwoString": "₹300 FOR TWO",
-        "deliveryTime": 25,
-        "minDeliveryTime": 25,
-        "maxDeliveryTime": 25,
-        "slaString": "25 MINS",
-        "lastMileTravel": 4.300000190734863,
-        "slugs": {
-          "restaurant": "stikstof-ice-cream-cafe-n-a-d-n-a-d",
-          "city": "vizag"
-        },
-        "cityState": "20",
-        "address": "13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
-        "locality": "Gopalatnam",
-        "parentId": 8356,
-        "unserviceable": false,
-        "veg": false,
-        "select": false,
-        "favorite": false,
-        "tradeCampaignHeaders": [
-          
-        ],
-        "aggregatedDiscountInfo": {
-          "header": "50% off",
-          "shortDescriptionList": [
-            {
-              "meta": "50% off | Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "aggregatedDiscountInfoV2": {
-          "header": "50% OFF",
-          "shortDescriptionList": [
-            {
-              "meta": "Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "chain": [
-          
-        ],
-        "feeDetails": {
-          "fees": [
-            {
-              "name": "distance",
-              "fee": 2800,
-              "message": ""
-            },
-            {
-              "name": "time",
-              "fee": 0,
-              "message": ""
-            },
-            {
-              "name": "special",
-              "fee": 0,
-              "message": ""
-            }
-          ],
-          "totalFees": 2800,
-          "message": "",
-          "title": "Delivery Charge",
-          "amount": "2800",
-          "icon": ""
-        },
-        "availability": {
-          "opened": true,
-          "nextOpenMessage": "",
-          "nextCloseMessage": ""
-        },
-        "longDistanceEnabled": 0,
-        "rainMode": "NONE",
-        "thirdPartyAddress": false,
-        "thirdPartyVendor": "",
-        "adTrackingID": "",
-        "badges": {
-          "imageBased": [
-            
-          ],
-          "textBased": [
-            
-          ],
-          "textExtendedBadges": [
-            
-          ]
-        },
-        "lastMileTravelString": "4.3 kms",
-        "hasSurge": false,
-        "sla": {
-          "restaurantId": "501034",
-          "deliveryTime": 25,
-          "minDeliveryTime": 25,
-          "maxDeliveryTime": 25,
-          "lastMileTravel": 4.300000190734863,
-          "lastMileDistance": 0,
-          "serviceability": "SERVICEABLE",
-          "rainMode": "NONE",
-          "longDistance": "NOT_LONG_DISTANCE",
-          "preferentialService": false,
-          "iconType": "EMPTY"
-        },
-        "promoted": false,
-        "avgRating": "3.5",
-        "totalRatings": 100,
-        "new": false
-      },
-      "subtype": "basic"
-    },
-    {
-      "type": "restaurant",
-      "data": {
-        "type": "F",
-        "id": "506527",
-        "name": "I Scream Vegan",
-        "uuid": "bb886985-23f3-4675-9e3c-dabf9f29a36b",
-        "city": "20",
-        "area": "Gopalapatnam",
-        "totalRatingsString": "Too Few Ratings",
-        "cloudinaryImageId": "gye1ebdvoduycprylxb5",
-        "cuisines": [
-          "Ice Cream"
-        ],
-        "tags": [
-          
-        ],
-        "costForTwo": 30000,
-        "costForTwoString": "₹300 FOR TWO",
-        "deliveryTime": 27,
-        "minDeliveryTime": 27,
-        "maxDeliveryTime": 27,
-        "slaString": "27 MINS",
-        "lastMileTravel": 4.300000190734863,
-        "slugs": {
-          "restaurant": "i-scream-vegan-n-a-d-n-a-d",
-          "city": "vizag"
-        },
-        "cityState": "20",
-        "address": "\"13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
-        "locality": "Indira Nagar",
-        "parentId": 105454,
-        "unserviceable": false,
-        "veg": true,
-        "select": false,
-        "favorite": false,
-        "tradeCampaignHeaders": [
-          
-        ],
-        "aggregatedDiscountInfo": {
-          "header": "50% off",
-          "shortDescriptionList": [
-            {
-              "meta": "50% off | Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "aggregatedDiscountInfoV2": {
-          "header": "50% OFF",
-          "shortDescriptionList": [
-            {
-              "meta": "Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "chain": [
-          
-        ],
-        "feeDetails": {
-          "fees": [
-            {
-              "name": "distance",
-              "fee": 2800,
-              "message": ""
-            },
-            {
-              "name": "time",
-              "fee": 0,
-              "message": ""
-            },
-            {
-              "name": "special",
-              "fee": 0,
-              "message": ""
-            }
-          ],
-          "totalFees": 2800,
-          "message": "",
-          "title": "Delivery Charge",
-          "amount": "2800",
-          "icon": ""
-        },
-        "availability": {
-          "opened": true,
-          "nextOpenMessage": "",
-          "nextCloseMessage": ""
-        },
-        "longDistanceEnabled": 0,
-        "rainMode": "NONE",
-        "thirdPartyAddress": false,
-        "thirdPartyVendor": "",
-        "adTrackingID": "",
-        "badges": {
-          "imageBased": [
-            
-          ],
-          "textBased": [
-            
-          ],
-          "textExtendedBadges": [
-            
-          ]
-        },
-        "lastMileTravelString": "4.3 kms",
-        "hasSurge": false,
-        "sla": {
-          "restaurantId": "506527",
-          "deliveryTime": 27,
-          "minDeliveryTime": 27,
-          "maxDeliveryTime": 27,
-          "lastMileTravel": 4.300000190734863,
-          "lastMileDistance": 0,
-          "serviceability": "SERVICEABLE",
-          "rainMode": "NONE",
-          "longDistance": "NOT_LONG_DISTANCE",
-          "preferentialService": false,
-          "iconType": "EMPTY"
-        },
-        "promoted": false,
-        "avgRating": "--",
-        "totalRatings": 0,
-        "new": false
-      },
-      "subtype": "basic"
-    },
-    {
-      "type": "restaurant",
-      "data": {
-        "type": "F",
-        "id": "499531",
-        "name": "Neat Shakes",
-        "uuid": "e2eb5c11-2093-4dc0-9f9e-fbbdd6db9cf4",
-        "city": "20",
-        "area": "Gopalapatnam",
-        "totalRatingsString": "20+ ratings",
-        "cloudinaryImageId": "w3wqwtivtpx7ek4tplze",
-        "cuisines": [
-          "Beverages"
-        ],
-        "tags": [
-          
-        ],
-        "costForTwo": 30000,
-        "costForTwoString": "₹300 FOR TWO",
-        "deliveryTime": 27,
-        "minDeliveryTime": 27,
-        "maxDeliveryTime": 27,
-        "slaString": "27 MINS",
-        "lastMileTravel": 4.300000190734863,
-        "slugs": {
-          "restaurant": "neat-shakes-n-a-d-n-a-d",
-          "city": "vizag"
-        },
-        "cityState": "20",
-        "address": "13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
-        "locality": "Indira Nagar",
-        "parentId": 269998,
-        "unserviceable": false,
-        "veg": false,
-        "select": false,
-        "favorite": false,
-        "tradeCampaignHeaders": [
-          
-        ],
-        "aggregatedDiscountInfo": {
-          "header": "50% off",
-          "shortDescriptionList": [
-            {
-              "meta": "50% off | Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "aggregatedDiscountInfoV2": {
-          "header": "50% OFF",
-          "shortDescriptionList": [
-            {
-              "meta": "Use TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "descriptionList": [
-            {
-              "meta": "50% off up to ₹100 | Use code TRYNEW",
-              "discountType": "Percentage",
-              "operationType": "RESTAURANT"
-            }
-          ],
-          "subHeader": "",
-          "headerType": 0,
-          "superFreedel": ""
-        },
-        "chain": [
-          
-        ],
-        "feeDetails": {
-          "fees": [
-            {
-              "name": "distance",
-              "fee": 2800,
-              "message": ""
-            },
-            {
-              "name": "time",
-              "fee": 0,
-              "message": ""
-            },
-            {
-              "name": "special",
-              "fee": 0,
-              "message": ""
-            }
-          ],
-          "totalFees": 2800,
-          "message": "",
-          "title": "Delivery Charge",
-          "amount": "2800",
-          "icon": ""
-        },
-        "availability": {
-          "opened": true,
-          "nextOpenMessage": "",
-          "nextCloseMessage": ""
-        },
-        "longDistanceEnabled": 0,
-        "rainMode": "NONE",
-        "thirdPartyAddress": false,
-        "thirdPartyVendor": "",
-        "adTrackingID": "",
-        "badges": {
-          "imageBased": [
-            
-          ],
-          "textBased": [
-            
-          ],
-          "textExtendedBadges": [
-            
-          ]
-        },
-        "lastMileTravelString": "4.3 kms",
-        "hasSurge": false,
-        "sla": {
-          "restaurantId": "499531",
-          "deliveryTime": 27,
-          "minDeliveryTime": 27,
-          "maxDeliveryTime": 27,
-          "lastMileTravel": 4.300000190734863,
-          "lastMileDistance": 0,
-          "serviceability": "SERVICEABLE",
-          "rainMode": "NONE",
-          "longDistance": "NOT_LONG_DISTANCE",
-          "preferentialService": false,
-          "iconType": "EMPTY"
-        },
-        "promoted": false,
-        "avgRating": "2.8",
-        "totalRatings": 20,
-        "new": false
-      },
-      "subtype": "basic"
-    },
-    {
         "type": "restaurant",
         "data": {
           "type": "F",
@@ -4452,6 +3894,564 @@ export const RestaurantList = [
           "new": false
         },
         "subtype": "basic"
+    },
+    {
+      "type": "restaurant",
+      "data": {
+        "type": "F",
+        "id": "676714",
+        "name": "Hyderabad Nawabi Biryani",
+        "uuid": "73aa6723-521d-406f-a356-eab1c54b71fd",
+        "city": "20",
+        "area": "Pendurthi",
+        "totalRatingsString": "Too Few Ratings",
+        "cloudinaryImageId": "8018c14b50ba15c110a31a122492d890",
+        "cuisines": [
+          "Indian",
+          "Biryani"
+        ],
+        "tags": [
+          
+        ],
+        "costForTwo": 25000,
+        "costForTwoString": "₹250 FOR TWO",
+        "deliveryTime": 25,
+        "minDeliveryTime": 25,
+        "maxDeliveryTime": 25,
+        "slaString": "25 MINS",
+        "lastMileTravel": 2.9000000953674316,
+        "slugs": {
+          "restaurant": "hyderabad-nawabi-biryani-pendurthi-pendurthi",
+          "city": "vizag"
+        },
+        "cityState": "20",
+        "address": "DOOR NO. 16-337, PALLINARAYANAPURAM, GOPALAPATNAM-530027 ,Gopalapatnam(Mpl.Corp.),Visakhapatnam,Andhra Pradesh-530027",
+        "locality": "Gopalapatnam",
+        "parentId": 287711,
+        "unserviceable": false,
+        "veg": false,
+        "select": false,
+        "favorite": false,
+        "tradeCampaignHeaders": [
+          
+        ],
+        "chain": [
+          
+        ],
+        "feeDetails": {
+          "fees": [
+            {
+              "name": "distance",
+              "fee": 2100,
+              "message": ""
+            },
+            {
+              "name": "time",
+              "fee": 0,
+              "message": ""
+            },
+            {
+              "name": "special",
+              "fee": 0,
+              "message": ""
+            }
+          ],
+          "totalFees": 2100,
+          "message": "",
+          "title": "Delivery Charge",
+          "amount": "2100",
+          "icon": ""
+        },
+        "availability": {
+          "opened": true,
+          "nextOpenMessage": "",
+          "nextCloseMessage": ""
+        },
+        "longDistanceEnabled": 0,
+        "rainMode": "NONE",
+        "thirdPartyAddress": false,
+        "thirdPartyVendor": "",
+        "adTrackingID": "",
+        "badges": {
+          "imageBased": [
+            
+          ],
+          "textBased": [
+            
+          ],
+          "textExtendedBadges": [
+            
+          ]
+        },
+        "lastMileTravelString": "2.9 kms",
+        "hasSurge": false,
+        "sla": {
+          "restaurantId": "676714",
+          "deliveryTime": 25,
+          "minDeliveryTime": 25,
+          "maxDeliveryTime": 25,
+          "lastMileTravel": 2.9000000953674316,
+          "lastMileDistance": 0,
+          "serviceability": "SERVICEABLE",
+          "rainMode": "NONE",
+          "longDistance": "NOT_LONG_DISTANCE",
+          "preferentialService": false,
+          "iconType": "EMPTY"
+        },
+        "promoted": false,
+        "avgRating": "--",
+        "totalRatings": 0,
+        "new": true
+      },
+      "subtype": "basic"
+    },
+    {
+      "type": "restaurant",
+      "data": {
+        "type": "F",
+        "id": "501034",
+        "name": "Stikstof Ice-Cream Cafe",
+        "uuid": "237f4707-5347-4423-a630-9a7376ba0479",
+        "city": "20",
+        "area": "Gopalapatnam",
+        "totalRatingsString": "100+ ratings",
+        "cloudinaryImageId": "iu3zhx6yijxjoxixq939",
+        "cuisines": [
+          "Ice Cream",
+          "Beverages"
+        ],
+        "tags": [
+          
+        ],
+        "costForTwo": 30000,
+        "costForTwoString": "₹300 FOR TWO",
+        "deliveryTime": 25,
+        "minDeliveryTime": 25,
+        "maxDeliveryTime": 25,
+        "slaString": "25 MINS",
+        "lastMileTravel": 4.300000190734863,
+        "slugs": {
+          "restaurant": "stikstof-ice-cream-cafe-n-a-d-n-a-d",
+          "city": "vizag"
+        },
+        "cityState": "20",
+        "address": "13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
+        "locality": "Gopalatnam",
+        "parentId": 8356,
+        "unserviceable": false,
+        "veg": false,
+        "select": false,
+        "favorite": false,
+        "tradeCampaignHeaders": [
+          
+        ],
+        "aggregatedDiscountInfo": {
+          "header": "50% off",
+          "shortDescriptionList": [
+            {
+              "meta": "50% off | Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "aggregatedDiscountInfoV2": {
+          "header": "50% OFF",
+          "shortDescriptionList": [
+            {
+              "meta": "Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "chain": [
+          
+        ],
+        "feeDetails": {
+          "fees": [
+            {
+              "name": "distance",
+              "fee": 2800,
+              "message": ""
+            },
+            {
+              "name": "time",
+              "fee": 0,
+              "message": ""
+            },
+            {
+              "name": "special",
+              "fee": 0,
+              "message": ""
+            }
+          ],
+          "totalFees": 2800,
+          "message": "",
+          "title": "Delivery Charge",
+          "amount": "2800",
+          "icon": ""
+        },
+        "availability": {
+          "opened": true,
+          "nextOpenMessage": "",
+          "nextCloseMessage": ""
+        },
+        "longDistanceEnabled": 0,
+        "rainMode": "NONE",
+        "thirdPartyAddress": false,
+        "thirdPartyVendor": "",
+        "adTrackingID": "",
+        "badges": {
+          "imageBased": [
+            
+          ],
+          "textBased": [
+            
+          ],
+          "textExtendedBadges": [
+            
+          ]
+        },
+        "lastMileTravelString": "4.3 kms",
+        "hasSurge": false,
+        "sla": {
+          "restaurantId": "501034",
+          "deliveryTime": 25,
+          "minDeliveryTime": 25,
+          "maxDeliveryTime": 25,
+          "lastMileTravel": 4.300000190734863,
+          "lastMileDistance": 0,
+          "serviceability": "SERVICEABLE",
+          "rainMode": "NONE",
+          "longDistance": "NOT_LONG_DISTANCE",
+          "preferentialService": false,
+          "iconType": "EMPTY"
+        },
+        "promoted": false,
+        "avgRating": "3.5",
+        "totalRatings": 100,
+        "new": false
+      },
+      "subtype": "basic"
+    },
+    {
+      "type": "restaurant",
+      "data": {
+        "type": "F",
+        "id": "506527",
+        "name": "I Scream Vegan",
+        "uuid": "bb886985-23f3-4675-9e3c-dabf9f29a36b",
+        "city": "20",
+        "area": "Gopalapatnam",
+        "totalRatingsString": "Too Few Ratings",
+        "cloudinaryImageId": "gye1ebdvoduycprylxb5",
+        "cuisines": [
+          "Ice Cream"
+        ],
+        "tags": [
+          
+        ],
+        "costForTwo": 30000,
+        "costForTwoString": "₹300 FOR TWO",
+        "deliveryTime": 27,
+        "minDeliveryTime": 27,
+        "maxDeliveryTime": 27,
+        "slaString": "27 MINS",
+        "lastMileTravel": 4.300000190734863,
+        "slugs": {
+          "restaurant": "i-scream-vegan-n-a-d-n-a-d",
+          "city": "vizag"
+        },
+        "cityState": "20",
+        "address": "\"13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
+        "locality": "Indira Nagar",
+        "parentId": 105454,
+        "unserviceable": false,
+        "veg": true,
+        "select": false,
+        "favorite": false,
+        "tradeCampaignHeaders": [
+          
+        ],
+        "aggregatedDiscountInfo": {
+          "header": "50% off",
+          "shortDescriptionList": [
+            {
+              "meta": "50% off | Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "aggregatedDiscountInfoV2": {
+          "header": "50% OFF",
+          "shortDescriptionList": [
+            {
+              "meta": "Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "chain": [
+          
+        ],
+        "feeDetails": {
+          "fees": [
+            {
+              "name": "distance",
+              "fee": 2800,
+              "message": ""
+            },
+            {
+              "name": "time",
+              "fee": 0,
+              "message": ""
+            },
+            {
+              "name": "special",
+              "fee": 0,
+              "message": ""
+            }
+          ],
+          "totalFees": 2800,
+          "message": "",
+          "title": "Delivery Charge",
+          "amount": "2800",
+          "icon": ""
+        },
+        "availability": {
+          "opened": true,
+          "nextOpenMessage": "",
+          "nextCloseMessage": ""
+        },
+        "longDistanceEnabled": 0,
+        "rainMode": "NONE",
+        "thirdPartyAddress": false,
+        "thirdPartyVendor": "",
+        "adTrackingID": "",
+        "badges": {
+          "imageBased": [
+            
+          ],
+          "textBased": [
+            
+          ],
+          "textExtendedBadges": [
+            
+          ]
+        },
+        "lastMileTravelString": "4.3 kms",
+        "hasSurge": false,
+        "sla": {
+          "restaurantId": "506527",
+          "deliveryTime": 27,
+          "minDeliveryTime": 27,
+          "maxDeliveryTime": 27,
+          "lastMileTravel": 4.300000190734863,
+          "lastMileDistance": 0,
+          "serviceability": "SERVICEABLE",
+          "rainMode": "NONE",
+          "longDistance": "NOT_LONG_DISTANCE",
+          "preferentialService": false,
+          "iconType": "EMPTY"
+        },
+        "promoted": false,
+        "avgRating": "--",
+        "totalRatings": 0,
+        "new": false
+      },
+      "subtype": "basic"
+    },
+    {
+      "type": "restaurant",
+      "data": {
+        "type": "F",
+        "id": "499531",
+        "name": "Neat Shakes",
+        "uuid": "e2eb5c11-2093-4dc0-9f9e-fbbdd6db9cf4",
+        "city": "20",
+        "area": "Gopalapatnam",
+        "totalRatingsString": "20+ ratings",
+        "cloudinaryImageId": "w3wqwtivtpx7ek4tplze",
+        "cuisines": [
+          "Beverages"
+        ],
+        "tags": [
+          
+        ],
+        "costForTwo": 30000,
+        "costForTwoString": "₹300 FOR TWO",
+        "deliveryTime": 27,
+        "minDeliveryTime": 27,
+        "maxDeliveryTime": 27,
+        "slaString": "27 MINS",
+        "lastMileTravel": 4.300000190734863,
+        "slugs": {
+          "restaurant": "neat-shakes-n-a-d-n-a-d",
+          "city": "vizag"
+        },
+        "cityState": "20",
+        "address": "13/6 Indira Nagar, near Hanuman temple, Gopalatnam, Visakhapatnam, Visakhapatnam (Rural), Visakhapatnam, , Andhra Pradesh, 530027",
+        "locality": "Indira Nagar",
+        "parentId": 269998,
+        "unserviceable": false,
+        "veg": false,
+        "select": false,
+        "favorite": false,
+        "tradeCampaignHeaders": [
+          
+        ],
+        "aggregatedDiscountInfo": {
+          "header": "50% off",
+          "shortDescriptionList": [
+            {
+              "meta": "50% off | Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "aggregatedDiscountInfoV2": {
+          "header": "50% OFF",
+          "shortDescriptionList": [
+            {
+              "meta": "Use TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "descriptionList": [
+            {
+              "meta": "50% off up to ₹100 | Use code TRYNEW",
+              "discountType": "Percentage",
+              "operationType": "RESTAURANT"
+            }
+          ],
+          "subHeader": "",
+          "headerType": 0,
+          "superFreedel": ""
+        },
+        "chain": [
+          
+        ],
+        "feeDetails": {
+          "fees": [
+            {
+              "name": "distance",
+              "fee": 2800,
+              "message": ""
+            },
+            {
+              "name": "time",
+              "fee": 0,
+              "message": ""
+            },
+            {
+              "name": "special",
+              "fee": 0,
+              "message": ""
+            }
+          ],
+          "totalFees": 2800,
+          "message": "",
+          "title": "Delivery Charge",
+          "amount": "2800",
+          "icon": ""
+        },
+        "availability": {
+          "opened": true,
+          "nextOpenMessage": "",
+          "nextCloseMessage": ""
+        },
+        "longDistanceEnabled": 0,
+        "rainMode": "NONE",
+        "thirdPartyAddress": false,
+        "thirdPartyVendor": "",
+        "adTrackingID": "",
+        "badges": {
+          "imageBased": [
+            
+          ],
+          "textBased": [
+            
+          ],
+          "textExtendedBadges": [
+            
+          ]
+        },
+        "lastMileTravelString": "4.3 kms",
+        "hasSurge": false,
+        "sla": {
+          "restaurantId": "499531",
+          "deliveryTime": 27,
+          "minDeliveryTime": 27,
+          "maxDeliveryTime": 27,
+          "lastMileTravel": 4.300000190734863,
+          "lastMileDistance": 0,
+          "serviceability": "SERVICEABLE",
+          "rainMode": "NONE",
+          "longDistance": "NOT_LONG_DISTANCE",
+          "preferentialService": false,
+          "iconType": "EMPTY"
+        },
+        "promoted": false,
+        "avgRating": "2.8",
+        "totalRatings": 20,
+        "new": false
+      },
+      "subtype": "basic"
     }
   ];
 

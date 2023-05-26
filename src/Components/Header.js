@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FoodVillaLogo from "../Images/Food Villa Logo.png";
 import { faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import { faUser, faPaperPlane, faNoteSticky, faFontAwesome } from "@fortawesome/free-regular-svg-icons"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Title = () => (
     <Link to="/">
       <img className="logo" src={FoodVillaLogo} alt="Food Villa Logo" />
@@ -15,11 +15,11 @@ const Header = () => {
         <Title className="Title" />
         <div className="nav-items">
           <ul>
-            <li><Link to="/search"><FontAwesomeIcon icon={faMagnifyingGlass} />&nbsp; Search</Link></li>
-            <li><Link to="/help"><FontAwesomeIcon icon={faFontAwesome} />&nbsp; Help</Link></li>
-            <li><Link to="/contact"><FontAwesomeIcon icon={faPaperPlane} />&nbsp; Contact</Link></li>
-            <li><Link to="/"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</Link></li>
-            <li><Link to="/cart"><FontAwesomeIcon icon={faNoteSticky} />&nbsp; Cart {(cartTotals===0?null:cartTotals)}</Link></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/search"><FontAwesomeIcon icon={faMagnifyingGlass} />&nbsp; Search</NavLink></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/help"><FontAwesomeIcon icon={faFontAwesome} />&nbsp; Help</NavLink></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/contact"><FontAwesomeIcon icon={faPaperPlane} />&nbsp; Contact</NavLink></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/user"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</NavLink></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/cart"><FontAwesomeIcon icon={faNoteSticky} />&nbsp; Cart {(cartTotals===0?null:cartTotals)}</NavLink></li>
           </ul>
         </div>
       </div>
