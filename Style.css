@@ -57,7 +57,6 @@ a {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: initial;
   justify-content: space-around;
   row-gap: 27px;
 }
@@ -216,9 +215,11 @@ a {
 .cuisine-container > h2 {
   text-align: left;
   padding: 15px 0 5px;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 900;
-  color: #36363b;
+  color: #3d4152;
+  letter-spacing: -1px;
+  transform: scaleY(0.85);
 }
 .cuisine-img-container {
   display: flex;
@@ -227,10 +228,6 @@ a {
 }
 .cuisine-img-container > img {
   padding: 5px;
-}
-.help {
-  margin-top: 100px;
-  min-height: 100vh;
 }
 .contact {
   margin-top: 100px;
@@ -314,4 +311,55 @@ a {
 .cart > a:hover {
   box-shadow: 2px -2px 10px 2px rgb(0 0 0 / 0.08);;
 }
-
+.help {
+  margin-top: 80px;
+  min-height: 100vh;
+  background-color: #37718e;
+}
+.help-container {
+  color: #ffffff;
+}
+.help-container-title {
+  padding-top: 53px;
+  margin: 0 auto ;
+  max-width: 1200px;
+  min-width: 1200px;
+  padding-left: 30px;
+}
+.help-container-title > h1 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.help-container-title > h4 {
+  font-weight: 200;
+  padding-bottom: 50px;
+}
+.help-quiries {
+  background-color: #ffffff;
+  color: #303031;
+  max-width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,.15);
+  padding: 20px;
+}
+.help-quiries > ul {
+  list-style-type: none;
+  padding: 40px;
+  max-width: fit-content;
+}
+.help-quiries > ul > li {
+  padding: 20px;
+  background-color: #edf1f7;
+  color: #282c3f;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+.help-quiries > ul > li:hover {
+  color: #000000;
+}
+.tab-active .help-quiries > ul > li {
+  background-color: #ffffff;
+  color: #000000;
+}
