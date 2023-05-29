@@ -18,7 +18,7 @@ const Header = () => {
             <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/search"><FontAwesomeIcon icon={faMagnifyingGlass} />&nbsp; Search</NavLink></li>
             <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/help"><FontAwesomeIcon icon={faFontAwesome} />&nbsp; Help</NavLink></li>
             <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/contact"><FontAwesomeIcon icon={faPaperPlane} />&nbsp; Contact</NavLink></li>
-            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/user"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</NavLink></li>
+            <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/profile"><FontAwesomeIcon icon={faUser} />&nbsp; Sign In</NavLink></li>
             <li><NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/cart"><FontAwesomeIcon icon={faNoteSticky} />&nbsp; Cart {(cartTotals===0?null:cartTotals)}</NavLink></li>
           </ul>
         </div>

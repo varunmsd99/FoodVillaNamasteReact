@@ -1,7 +1,7 @@
 import { IMG_CDN_URL, swiggy_api_URL } from "../Constant";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faLocationDot, faRoute } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileTravelString, slaString, costForTwoString}) => {
     function isAvgRatingContent(avgRating){

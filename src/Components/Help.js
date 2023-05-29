@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { support_data } from "../Constant.js"
 
 const Help = () => {
+  const helpTitles = [];
+  helpTitles.push(...support_data.map((data) => {return data.title}));
+  const queries = [];
+  queries.push(...support_data.map((dat) => {return dat.title, dat.data}));
+  console.log(queries);
   return (
     <div className="help">
       <div className="help-container">
@@ -10,14 +16,7 @@ const Help = () => {
         </div>
         <div className="help-quiries">
             <ul>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to='#'>Help with Orders</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>General Issues</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>Partner Onboarding</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>Legal, Terms & Conditions</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>FAQs</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>Swiggy One FAQs</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to=''>Swiggy Money FAQs</NavLink></li>
-              <li><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to='#'>Swiggy DineOut FAQs</NavLink></li>
+               {helpTitles.map((value) => {return <li key={value}><NavLink className={({ isActive }) => (isActive ? "tab-active" : "tab")} to="/">{value}</NavLink></li>})} 
             </ul>
         </div>
       </div>

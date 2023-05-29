@@ -50,10 +50,35 @@ a {
 .link-active {
   color: #f3730a;
 }
+.body-header {
+  display: flex;
+  margin: 120px auto 0;
+  width: 84%;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid #e0e3e9;
+}
+.filter-data > ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.filter-data > ul > li {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #60606e;
+}
+.filter-data > ul > li > a:hover {
+  color: #3d4152;
+}
+.resFilter-active .filter-data > ul > li {
+  border-bottom: 1px solid #000000;
+}
 .Restaurant-list {
   max-width: 84%;
   min-height: calc(100vh - 272px);
-  margin: 100px auto 50px;
+  margin: 20px auto 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -272,6 +297,10 @@ a {
 .error > a:hover {
   box-shadow: 2px -2px 10px 2px rgb(0 0 0 / 0.08);;
 }
+.profile {
+  margin-top: 100px;
+  min-height: 100vh;
+}
 .cart {
   display: flex;
   min-height: 100vh;
@@ -314,10 +343,11 @@ a {
 .help {
   margin-top: 80px;
   min-height: 100vh;
-  background-color: #37718e;
 }
 .help-container {
   color: #ffffff;
+  background-color: #37718e;
+  padding: 0px 100px 80px 80px;
 }
 .help-container-title {
   padding-top: 53px;
@@ -327,11 +357,12 @@ a {
   padding-left: 30px;
 }
 .help-container-title > h1 {
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 800;
 }
 .help-container-title > h4 {
-  font-weight: 200;
+  font-size: 15px;
+  font-weight: 300;
   padding-bottom: 50px;
 }
 .help-quiries {
@@ -341,25 +372,29 @@ a {
   min-width: 1200px;
   margin: 0 auto;
   box-shadow: 0 2px 15px 0 rgba(0,0,0,.15);
-  padding: 20px;
+  padding: 40px;
 }
 .help-quiries > ul {
+  color: #6c7083;
+  background-color: #edf1f7;
   list-style-type: none;
-  padding: 40px;
+  padding: 20px;
   max-width: fit-content;
 }
 .help-quiries > ul > li {
-  padding: 20px;
-  background-color: #edf1f7;
-  color: #282c3f;
-  font-size: 16px;
+  margin-left: 20px;
+  padding: 25px 20px;
+  font-size: 14px;
   display: flex;
-  justify-content: center;
+  align-content: baseline;
+  font-weight: 500;
 }
-.help-quiries > ul > li:hover {
+.help-quiries > ul > li > a:hover {
   color: #000000;
+  font-weight: 700;
 }
 .tab-active .help-quiries > ul > li {
   background-color: #ffffff;
   color: #000000;
+  font-weight: 700;
 }

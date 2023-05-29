@@ -5,8 +5,4 @@ export function filterData(searchText, restaurants) {
     return filterData;
 }
 
-export function getImagePaths(directory) {
-  let images = [];
-  directory.keys().map((item, index) => images.push(item.replace("./", "")));
-  return images;
-}
+

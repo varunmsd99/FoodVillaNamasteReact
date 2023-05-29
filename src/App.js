@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Search from "./Components/Search";
 import Contact from "./Components/Contact";
 import Help from "./Components/Help";
+import Profile from "./Components/Profile";
 import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -41,6 +42,10 @@ const appRouter = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
       {
         path: "cart",
