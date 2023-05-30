@@ -6540,5 +6540,16 @@ export const support_data = [
     ]
   }
 ];
-
+export const footer_data = [{
+  title: "COMPANY",
+  data: ['About Us', 'Team', 'Careers', 'FoodVilla Blog', 'Bug Bounty', 'FoodVilla One', 'FoodVilla Corporate', 'FoodVilla Instamart', 'FoodVilla Genie']
+},
+{
+  title: "CONTACT",
+  data: ['Help & Support', 'Partner with Us', 'Ride with Us']
+},
+{
+  title: "LEGAL",
+  data: ['Terms & Conditions','Refund & Cancellation','Privacy Policy', 'Cookie Policy', 'Offer Terms', 'Phishing & Fraud']
+}];
 export default shimmer_display_count=8;

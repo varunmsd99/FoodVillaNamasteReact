@@ -1,8 +1,25 @@
 import { faTwitter, faGithub, faDiscord, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { footer_data } from "../Constant";
+import appstore from "../Images/icon-AppStore.webp";
+import playstore from "../Images/icon-GooglePlay.webp";
+
 const Footer = () => {
   return (
     <div className="footer">
+      <div className="footer-title">
+        <ul>
+          {
+            footer_data.map((data) => {
+              return (<li><a href="/">{data.title}</a></li>);
+            })
+          }
+        </ul>
+        <div className="download-link">
+          <a href="/"><img src={appstore}/></a>
+          <a href="/"><img src={playstore}/></a>
+        </div>
+      </div>
       <div className="footer-content">
         <p className="info">❤️ Made with Love for Food by Varun 💛</p>
         <div className="contact-links">

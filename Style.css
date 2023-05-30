@@ -153,9 +153,38 @@ a {
   width: 100%;
   background-color: #000000;
   color: #ffffff;
+  padding: 0 20px;
+}
+.footer-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-title > ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.footer-title > ul > li {
+  width: 20vw;
+}
+.footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.download-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+.download-link > a {
+  margin-bottom: 30px;
+}
+.download-link > a :hover {
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: transform .5s ease-out
 }
 .info {
   margin-top: 10px;
