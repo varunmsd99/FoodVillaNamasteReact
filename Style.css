@@ -40,6 +40,7 @@ a {
   color: #303031;
   align-items: center;
   padding-left: 30px;
+  transition: 0.45s ease-in-out;
 }
 .nav-items > ul > li:hover {
   color: #f3730a;
@@ -163,6 +164,8 @@ a {
   justify-content: space-between;
   width: 80vw;
   border-bottom: 1px solid #60606e;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .footer-element {
   margin: 20px;
@@ -193,12 +196,12 @@ a {
   align-items: center;
   padding-top: 50px;
 }
-.download-link > a {
+.download-link > a > img {
   margin-bottom: 30px;
+  transition: transform .5s ease-in-out;
 }
 .download-link > a :hover {
   transform: scale(1.05);
-  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .footer-data {
   display: flex;
@@ -272,13 +275,16 @@ a {
   color: #ffffff;
   padding: 13px;
   margin-left: 5px;
+  font-weight: 500;
   cursor: pointer;
   border: 1px solid transparent;
   box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease-in-out;
 }
 .search-btn:hover {
   background-color: #ffffff;
   color: #fc8019;
+  font-weight: 500;
   border: 1px solid #d0d0d0;
   box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
 }
@@ -406,6 +412,7 @@ a {
   padding-left: 30px;
 }
 .help-container-title > h1 {
+  margin-top: 20px;
   font-size: 27px;
   font-weight: 800;
 }
@@ -422,15 +429,19 @@ a {
   margin: 0 auto;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
   padding: 40px;
+  display: flex;
+  height: 90vh;
+  overflow: scroll;
+  scrollbar-width: none;
 }
-.help-quiries > ul {
+.help-quiries-title > ul {
   color: #6c7083;
   background-color: #edf1f7;
   list-style-type: none;
   padding: 20px;
-  max-width: fit-content;
+  width: max-content;
 }
-.help-quiries > ul > li {
+.help-quiries-title > ul > li {
   margin-left: 20px;
   padding: 25px 20px;
   font-size: 14px;
@@ -438,12 +449,18 @@ a {
   align-content: baseline;
   font-weight: 500;
 }
-.help-quiries > ul > li > a:hover {
+.help-quiries-title > ul > li > a:hover {
   color: #000000;
   font-weight: 700;
 }
-.tab-active .help-quiries > ul > li {
+.tab-active .help-quiries-title > ul > li {
   background-color: #ffffff;
   color: #000000;
   font-weight: 700;
+}
+.help-quiries-content ::-webkit-scrollbar {
+  display: none;
+} 
+.help-quiries-content > ul {
+  list-style-type: none;
 }
