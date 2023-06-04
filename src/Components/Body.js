@@ -1,13 +1,12 @@
 import { RestaurantList } from "../Constant";
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
-import getRestaurantData from "./getRestaurantList";
+import { useEffect } from "react";
+import getRestaurantList from "./getRestaurantList";
 import { NavLink } from "react-router-dom";
 
 const Body = () => {
-  [allRes, setAllRes]=useState([]);
   useEffect(() => {
-    setAllRes = getRestaurantData();
+    getRestaurantList();
   }, []);
   return (
     <div>

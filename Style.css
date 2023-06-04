@@ -40,7 +40,7 @@ a {
   color: #303031;
   align-items: center;
   padding-left: 30px;
-  transition: 0.45s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 .nav-items > ul > li:hover {
   color: #f3730a;
@@ -78,7 +78,7 @@ a {
 }
 .Restaurant-list {
   max-width: 84%;
-  min-height: calc(100vh - 272px);
+  min-height: 100vh;
   margin: 20px auto 50px;
   position: relative;
   display: flex;
@@ -189,6 +189,7 @@ a {
 }
 .footer-element-items > ul > li :hover {
   font-weight: 600;
+  cursor: pointer;
 }
 .download-link {
   display: flex;
@@ -430,9 +431,14 @@ a {
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
   padding: 40px;
   display: flex;
-  height: 90vh;
+  height: 85vh;
   overflow: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
+}
+.help-quiries-title {
+  position: sticky;
+  top: 0;
 }
 .help-quiries-title > ul {
   color: #6c7083;
@@ -444,9 +450,8 @@ a {
 .help-quiries-title > ul > li {
   margin-left: 20px;
   padding: 25px 20px;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
-  align-content: baseline;
   font-weight: 500;
 }
 .help-quiries-title > ul > li > a:hover {
@@ -458,9 +463,17 @@ a {
   color: #000000;
   font-weight: 700;
 }
-.help-quiries-content ::-webkit-scrollbar {
+.help-quiries-content {
+  padding: 37px 0 0 50px;
+}
+.help-quiries-content > ul ::-webkit-scrollbar {
   display: none;
 } 
 .help-quiries-content > ul {
   list-style-type: none;
+  scrollbar-width: none;  
+}
+.help-quiries-content > ul > li {
+  padding: 20px 0 27px;
+  font-size: 18px;
 }

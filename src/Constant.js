@@ -1,4 +1,5 @@
 export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+export const REST_API_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=75569";
 export const swiggy_api_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7716781&lng=83.2452478&page_type=DESKTOP_WEB_LISTING";
 export const RestaurantList = [
     {
@@ -6541,14 +6542,17 @@ export const support_data = [
   }
 ];
 export const footer_data = [{
+  id: "100",
   title: "COMPANY",
   data: ['About Us', 'Team', 'Careers', 'FoodVilla Blog', 'Bug Bounty', 'FoodVilla One', 'FoodVilla Corporate', 'FoodVilla Instamart', 'FoodVilla Genie']
 },
 {
+  id: "101",
   title: "CONTACT",
   data: ['Help & Support', 'Partner with Us', 'Ride with Us']
 },
 {
+  id: "102",
   title: "LEGAL",
   data: ['Terms & Conditions','Refund & Cancellation','Privacy Policy', 'Cookie Policy', 'Offer Terms', 'Phishing & Fraud']
 }];

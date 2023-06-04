@@ -1,5 +1,6 @@
 import { swiggy_api_URL } from "../Constant";
-export default async function getRestaurantData() {
+
+export default async function getRestaurantList() {
     try {
         const response = await fetch(swiggy_api_URL);
         const json = await response.json();

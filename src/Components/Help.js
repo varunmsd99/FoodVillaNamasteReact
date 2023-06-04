@@ -1,4 +1,5 @@
 import { support_data } from "../Constant.js";
+import CurrentTabLink from "./Helper.js";
 
 const Help = () => {
     const helpTitles = [];
@@ -24,6 +25,7 @@ const Help = () => {
                 </ul>
             </div>
             <div className="help-quiries-content">
+                <h2>{helpTitles[4]}</h2>
                 <ul>
                     {...queries_question[4].map((n) => {return <li>{n}</li>})}
                 </ul>
