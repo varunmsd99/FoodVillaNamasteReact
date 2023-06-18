@@ -30,7 +30,7 @@ export  function footData(dat){
       <li key={dat.id}>{dat.title}</li>
       <div className="footer-element-items">
         <ul>
-          {[...dat.data].map((curr, ind, k) =>{return <li key={ind}><a href="#" onClick={handleClick}>{k[ind]}</a></li>})}
+          {[...dat.data].map((k, i) =>{return <li key={i}><a href="#" onClick={handleClick}>{k}</a></li>})}
         </ul>
       </div>
     </ul>

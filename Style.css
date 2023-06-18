@@ -477,3 +477,139 @@ a {
   padding: 20px 0 27px;
   font-size: 18px;
 }
+.profile {
+  margin-top: 100px;
+  height: 100vh;
+}
+.restaurant-menu-page {
+  height: 100vh;
+  max-width: 60vw;
+  margin: 120px auto 0;
+}
+.res-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.res-title > h1 {
+  font-size: 20px;
+  color: #282c3f;
+  font-weight: 900;
+  padding-bottom: 10px;
+}
+.res-title > h3 {
+  font-size: 13px;
+  color: #7e808c;
+  font-weight: 400;
+  padding-bottom: 3px;
+}
+.res-rating {
+  border: 0.5px solid #e9e9eb;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 5px #f9f9f9;
+  height: fit-content;
+}
+.res-rating > h2 {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: #3D9B6D;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #e9e9eb;
+  font-weight: 900;
+  line-height: 0.1;
+}
+.res-rating > h4 {
+  font-size: 10px;
+  color: #8b8d97;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.4);
+}
+.extra-fee {
+  display: flex;
+  padding-bottom: 10px;
+}
+.extra-fee > h4 {
+  font-size: 15px;
+  color: #7e808c;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.extra-fee > h4 > img {
+  padding-right: 8px;
+}
+.res-dist-cost {
+  display: flex;
+  margin-top: 10px;
+  padding: 15px 0 15px 10px;
+  justify-content: baseline;
+  align-items: baseline;
+  border-top: 1px dashed #c0c0c0;
+}
+.res-dist-cost > h2 {
+  font-size: 15px;
+  margin-right: 20px;
+  color: #282c3f;
+  font-weight: 900;
+  text-shadow: 0 0 0.75px rgba(0, 0, 0, 0.5);
+}
+.rupee-svg > svg {
+  font-size: 14px;
+  padding: 1.5px 5px;
+  border: 1px solid #282c3f;
+  border-radius: 50%;
+  color: #282c3f;
+}
+.offers {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: 0 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.offer-card {
+  display: flex;
+  min-width: 200px;
+  height: auto;
+  padding: 8px;
+  border: 1px solid #d7d7df;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.offer-tag {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  font-size: 9.8px;
+  font-weight: 700;
+  border-left: 1px solid #d7d7df;
+  padding-left: 5px;
+  margin-right: 5px;
+}
+.offer-header {
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  align-items: center;
+  color: #686b78;
+}
+.offer-header > img {
+  margin-right: 5px;
+}
+.offer-description {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: #93959f;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}

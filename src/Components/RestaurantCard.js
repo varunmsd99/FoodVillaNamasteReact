@@ -45,7 +45,6 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileT
     const [showQuickMenu, setShowQuickMenu] = useState(false);
     const hover = () => setShowQuickMenu(true)
     return(
-        <a href="/" className="card-link">
             <div className="card">
                 <img alt="restaurant-image" src={IMG_CDN_URL+cloudinaryImageId}></img>
                 <h2 className="restaurantName">{name}</h2>
@@ -71,7 +70,6 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating, lastMileT
                 </span>
                 <p className="quick-view" title="Quick View feature will be Coming Very Soooon!">QUICK VIEW</p>
             </div>
-        </a>
     );
   };
 

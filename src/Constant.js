@@ -1,5 +1,5 @@
 export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-export const REST_API_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=75569";
+export const REST_API_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=";
 export const swiggy_api_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7716781&lng=83.2452478&page_type=DESKTOP_WEB_LISTING";
 export const RestaurantList = [
     {
@@ -6556,4 +6556,7 @@ export const footer_data = [{
   title: "LEGAL",
   data: ['Terms & Conditions','Refund & Cancellation','Privacy Policy', 'Cookie Policy', 'Offer Terms', 'Phishing & Fraud']
 }];
+export const ICON_CDN_URL_18 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/";
+export const ICON_CDN_URL_28 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/";
+
 export default shimmer_display_count=8;

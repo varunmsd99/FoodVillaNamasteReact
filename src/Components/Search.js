@@ -3,7 +3,6 @@ import * as Img from '../Images/popularCuisines/*.webp';
 
 const Search = () => {
     const [searchText, setSearchText] = useState("");
-    console.log(Img);
     return(
         <div className="search-container">
         <input

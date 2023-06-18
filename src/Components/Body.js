@@ -2,7 +2,7 @@ import { RestaurantList } from "../Constant";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect } from "react";
 import getRestaurantList from "./getRestaurantList";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Body = () => {
   useEffect(() => {
@@ -26,7 +26,9 @@ const Body = () => {
       </div>
       <div className="Restaurant-list">
       {RestaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+        return (<Link to= {"/restaurant/"+restaurant.data.id} className="card-link">
+                  <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+                </Link>);
       })}
     </div>
     </div>
