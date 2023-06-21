@@ -6558,5 +6558,7 @@ export const footer_data = [{
 }];
 export const ICON_CDN_URL_18 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/";
 export const ICON_CDN_URL_28 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/";
+export const MENU_ITEM_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+export const LICENSE_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_120,h_60/";
 
 export default shimmer_display_count=8;

@@ -199,7 +199,7 @@ a {
 }
 .download-link > a > img {
   margin-bottom: 30px;
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .download-link > a :hover {
   transform: scale(1.05);
@@ -468,10 +468,10 @@ a {
 }
 .help-quiries-content > ul ::-webkit-scrollbar {
   display: none;
-} 
+}
 .help-quiries-content > ul {
   list-style-type: none;
-  scrollbar-width: none;  
+  scrollbar-width: none;
 }
 .help-quiries-content > ul > li {
   padding: 20px 0 27px;
@@ -482,7 +482,7 @@ a {
   height: 100vh;
 }
 .restaurant-menu-page {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 60vw;
   margin: 120px auto 0;
 }
@@ -517,7 +517,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  color: #3D9B6D;
+  color: #3d9b6d;
   padding: 0 0 10px;
   margin-bottom: 10px;
   border-bottom: 0.5px solid #e9e9eb;
@@ -571,7 +571,6 @@ a {
 .offers {
   display: flex;
   width: 100%;
-  justify-content: space-between;
   overflow: hidden;
   gap: 0 10px;
   margin-bottom: 10px;
@@ -584,7 +583,7 @@ a {
   padding: 8px;
   border: 1px solid #d7d7df;
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 .offer-tag {
   writing-mode: vertical-lr;
@@ -594,6 +593,11 @@ a {
   border-left: 1px solid #d7d7df;
   padding-left: 5px;
   margin-right: 5px;
+}
+.offer-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .offer-header {
   display: flex;
@@ -605,6 +609,8 @@ a {
 }
 .offer-header > img {
   margin-right: 5px;
+  width: 20px;
+  height: 20px;
 }
 .offer-description {
   font-size: 12px;
@@ -612,4 +618,140 @@ a {
   letter-spacing: -0.8px;
   color: #93959f;
   text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+.menu-category {
+  margin-bottom: 24px;
+  border-bottom: 16px solid #f1f1f6;
+}
+.menu-category:last-child {
+  border-bottom: unset;
+}
+.menu-category > h3 {
+  margin-bottom: 24px;
+  font-weight: 900;
+  color: #3e4152;
+}
+.veg-icon {
+  border: 1px solid #0f8a65;
+  color: #0f8a65;
+  max-height: 16px;
+  max-width: 16px;
+  padding: 2px;
+  font-size: 8px;
+}
+.nonVeg-icon {
+  transform: rotate(-90deg);
+  border: 1px solid #e43b4f;
+  color: #e43b4f;
+  max-height: 16px;
+  max-width: 16px;
+  padding: 2px;
+  font-size: 8px;
+}
+.menu-item {
+  margin-bottom: 20px;
+}
+.menu-item-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 14px;
+  margin: 20px 0;
+  border-bottom: 0.5px solid #d3d3d3;
+}
+.menu-item-card:last-child {
+  border-bottom: unset;
+}
+.menu-item-details {
+  max-width: 80%;
+}
+.menu-item-name {
+  margin-top: 4px;
+  font-weight: 700;
+  color: #3e4152;
+  font-size: 15px;
+}
+.menu-item-price {
+  margin-top: 4px;
+  font-weight: 400;
+  color: #3e4152;
+  font-size: 14px;
+}
+.menu-item-description {
+  color: rgba(38, 41, 54, 0.45);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  margin-top: 14px;
+  line-height: 1.3;
+}
+.menu-item-img {
+  display: flex;
+  width: 15%;
+  flex-direction: column;
+  align-items: center;
+}
+.add-button {
+  position: relative;
+  bottom: 8px;
+  color: #60b246;
+  background-color: #ffffff;
+  height: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 25px;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 1px 4px #d4d5d9;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.add-button:hover {
+  box-shadow: 0 2px 8px #d4d5d9;
+}
+.menu-item-img > img {
+  width: 118px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.res-license-card {
+  display: flex;
+  align-items: center;
+  color: #93959f;
+  background-color: #f1f1f6;
+  padding: 16px 0 16px 16px;
+  margin-top: 16px;
+}
+.res-license-card > img {
+  height: 30px;
+  width: 60px;
+  margin-right: 16px;
+}
+.res-license-card > h4 {
+  padding-top: 6px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.res-address-card {
+  color: #93959f;
+  background-color: #f1f1f6;
+  padding: 0 16px 120px;
+}
+.res-address-card > h3 {
+  border-top: 1px solid #a9abb2;
+  font-weight: 800;
+  font-size: 15px;
+  padding-top: 16px;
+}
+.res-address-card > h4 {
+  font-weight: 400;
+  font-size: 14px;
+}
+.res-address-card > h5 {
+  font-weight: 300;
+  font-size: 13px;
+  margin-top: 12px;
 }

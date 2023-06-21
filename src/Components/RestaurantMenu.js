@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { REST_API_MENU_URL, ICON_CDN_URL_18 } from "../Constant";
-import { faIndianRupeeSign, faCircleHalfStroke, faStar } from "@fortawesome/free-solid-svg-icons";
+import { REST_API_MENU_URL, ICON_CDN_URL_18, LICENSE_CDN_URL } from "../Constant";
+import {
+  faIndianRupeeSign,
+  faCircleHalfStroke,
+  faStar,
+  faLocationDot
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
+import MenuCategory from "./MenuCategory";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resDetails, setResDetails] = useState();
   const [resOffers, setResOffers] = useState([]);
   const [resMenu, setResMenu] = useState([]);
+  const [resLicense, setResLicense] = useState([]);
+  const [resAddress, setResAddress] = useState([]);
   useEffect(() => {
     getRestaurantMenu();
   }, []);
@@ -35,19 +43,39 @@ const RestaurantMenu = () => {
               "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget"
         )
         ?.card?.gridElements?.infoWithStyle?.offers.map((x) => x?.info) || [];
-    // const offers = [];
-    // restaurantOffers.forEach(obj => {
-    //   offers.push({...obj.info});
-    // });
-    console.log(restaurantOffers);
+    const restaurantMenu =
+      json?.data?.cards
+        ?.find((x) => x.groupedCard)
+        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
+        .filter(
+          (x) =>
+            x["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        ) || [];
+    const restaurantLicense =
+      json?.data?.cards
+        ?.find((x) => x.groupedCard)
+        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
+        .filter(
+          (x) =>
+            x["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.RestaurantLicenseInfo"
+        ) || [];
+    const restaurantAddress =
+      json?.data?.cards
+        ?.find((x) => x.groupedCard)
+        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
+        .filter(
+          (x) =>
+            x["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.RestaurantAddress"
+        ) || [];
     setResDetails(restaurantData);
     setResOffers(restaurantOffers);
+    setResMenu(restaurantMenu);
+    setResLicense(restaurantLicense);
+    setResAddress(restaurantAddress);
   }
-  console.log(
-    resOffers.map((obj) => {
-      return obj.offerTag;
-    })
-  );
   return (
     <div className="restaurant-menu-page">
       <div className="res-details">
@@ -100,10 +128,34 @@ const RestaurantMenu = () => {
       </div>
       <div className="offers">
         {resOffers.map((obj) => {
-              return (
-                <OfferCard {...obj} key={{...obj}.header}/>
-              );
-            })}
+          return <OfferCard {...obj} key={{ ...obj }.offerIds} />;
+        })}
+      </div>
+      <div className="menu">
+        {resMenu.map((obj) => {
+          return <MenuCategory {...obj} key={{ ...obj }.title} />;
+        })}
+      </div>
+      <div className="res-license">
+        {resLicense.map((x) => {
+          return(
+            <div className="res-license-card">
+              <img src={LICENSE_CDN_URL+x.imageId}/>
+              <h4>{x.text}</h4>
+            </div>
+          )
+        })}
+      </div>
+      <div className="res-address">
+        {resAddress.map((x) => {
+          return(
+            <div className="res-address-card">
+              <h3>{x.name}</h3>
+              <h4>(Outlet : {x.area})</h4>
+              <h5><FontAwesomeIcon icon={faLocationDot} />&nbsp;  {x.completeAddress}</h5>
+            </div>  
+          )
+        })}
       </div>
     </div>
   );
