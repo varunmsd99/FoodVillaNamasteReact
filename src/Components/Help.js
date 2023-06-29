@@ -1,16 +1,25 @@
+import { useEffect, useState } from "react";
 import { support_data } from "../Constant.js";
-import CurrentTabLink from "./Helper.js";
+import FAQItem from "./FAQItem.js";
 
 const Help = () => {
-    const helpTitles = [];
-    helpTitles.push(...support_data.map((data) => {return data.title}));
-    const queries_question = [];
-    queries_question.push(...support_data.map((dat) => { return dat.data.map((key) => {return key.title})}));
-    const queries_solution = [];
-    queries_solution.push(...support_data.map((dat) => { return dat.data.map((key) => {return key.description})}));
-    //console.log(queries_question);
-    //console.log(queries_solution);
-    console.log(...queries_question[0].map((n) => {return n}));
+    const init = support_data.filter((x) => {return x.title === "General issues"}).map((x) => {return x.data});
+    const titles = support_data.map((data) => {return data.title});
+    [helpTitle, setHelpTitle] = useState([]);
+    [FAQ, setFAQ] = useState([]);
+    [activeTitle, setActiveTitle] = useState(false);
+    useEffect(() => {
+      setHelpTitle(titles);
+      setActiveTitle(0);
+      setFAQ(...init);
+    }, []);
+    const handleClick = (event, index) => {
+      event.preventDefault();
+      const text = event.target.textContent;
+      const qna = support_data.filter((x) => {return x.title === text})
+      setFAQ(...qna.map((x) => {return x.data}));
+      setActiveTitle(index);
+    };
   return (
     <div className="help">
       <div className="help-container">
@@ -21,14 +30,15 @@ const Help = () => {
         <div className="help-quiries">
             <div className="help-quiries-title">
                 <ul>                        
-                    {helpTitles.map((curr, index, value) => {return <li key={index} className={index}><a href="/">{value[index]}</a></li>})} 
+                  {helpTitle.map((curr, index, value) => {return <li key={index} className={`help-title-card${activeTitle === index ? '-active' : ''}`} onClick={(event) => handleClick(event, index)}><a href="">{value[index]}</a></li>})} 
                 </ul>
             </div>
             <div className="help-quiries-content">
-                <h2>{helpTitles[4]}</h2>
-                <ul>
-                    {...queries_question[4].map((n) => {return <li>{n}</li>})}
-                </ul>
+                {...FAQ.map((curr, index, val) => {
+                  return (
+                    <FAQItem {...val[index]} key={val[index].id} />
+                  );
+                })}
             </div>
         </div>
         </div>

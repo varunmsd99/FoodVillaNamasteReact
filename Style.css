@@ -424,7 +424,7 @@ a {
 }
 .help-quiries {
   background-color: #ffffff;
-  color: #303031;
+  color: #545a79;
   max-width: 1200px;
   min-width: 1200px;
   margin: 0 auto;
@@ -436,46 +436,78 @@ a {
   overflow-x: hidden;
   scrollbar-width: none;
 }
-.help-quiries-title {
-  position: sticky;
-  top: 0;
-}
 .help-quiries-title > ul {
-  color: #6c7083;
-  background-color: #edf1f7;
+  background-color: #d9dfe7;
   list-style-type: none;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   width: max-content;
 }
 .help-quiries-title > ul > li {
+  color: #585963;
   margin-left: 20px;
   padding: 25px 20px;
   font-size: 16px;
   display: flex;
   font-weight: 500;
 }
-.help-quiries-title > ul > li > a:hover {
-  color: #000000;
-  font-weight: 700;
+.help-quiries-title > ul > li > a {
+  margin-left: 40px;
 }
-.tab-active .help-quiries-title > ul > li {
-  background-color: #ffffff;
+.help-quiries-title > ul > li:hover {
   color: #000000;
   font-weight: 700;
+  cursor: pointer;
+}
+.help-title-card-active {
+  background-color: #ffffff;
+}
+.help-title-card-active > a {
+  font-weight: 700;
+  color: #000000;
 }
 .help-quiries-content {
   padding: 37px 0 0 50px;
+  width: 100%;
 }
-.help-quiries-content > ul ::-webkit-scrollbar {
-  display: none;
+.faq-question {
+  padding: 22px 0 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
-.help-quiries-content > ul {
-  list-style-type: none;
-  scrollbar-width: none;
+.faq-card {
+  border-bottom: 1.11px solid #cfd1dd;
 }
-.help-quiries-content > ul > li {
-  padding: 20px 0 27px;
+.faq-question > h3 {
+  color: #111113;;
   font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+}
+.faq-question > h3:hover {
+  color: #fd7200;
+}
+.faq-chevron-down {
+  transition: transform 0.3s;
+}
+.faq-question.active > h3 {
+  color: #fc8019;
+}
+.faq-chevron-down.active {
+  transform: rotate(180deg);
+  color: #fc8019;
+}
+.faq-answer {
+  padding-right: 50px;
+  padding-bottom: 27px;
+  width: 100%;
+}
+.faq-answer > h3 {
+  color: #5a5c66;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  font-weight: 400;
 }
 .profile {
   margin-top: 100px;
@@ -694,6 +726,8 @@ a {
 }
 .add-button {
   position: relative;
+  width: 96px !important;
+  height: 36px !important;
   bottom: 8px;
   color: #60b246;
   background-color: #ffffff;
@@ -703,7 +737,7 @@ a {
   font-weight: 700;
   padding: 5px 25px;
   border-radius: 4px;
-  border: 1px solid #d3d3d3;
+  border: 1.11px solid #d4d5d9;
   box-shadow: 0 1px 4px #d4d5d9;
   transform: translateY(-50%);
   z-index: 1;
