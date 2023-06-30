@@ -320,7 +320,7 @@ a {
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   gap: 10px;
 }
 .error > img {
@@ -652,6 +652,12 @@ a {
 .menu-category {
   margin-bottom: 24px;
   border-bottom: 16px solid #f1f1f6;
+  cursor: pointer;
+}
+.menu-category-header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
 }
 .menu-category:last-child {
   border-bottom: unset;
@@ -660,6 +666,12 @@ a {
   margin-bottom: 24px;
   font-weight: 900;
   color: #3e4152;
+}
+.menu-chevron-down {
+  transition: transform;
+}
+.menu-chevron-down.active {
+  transform: rotate(180deg);
 }
 .veg-icon {
   border: 1px solid #0f8a65;
@@ -798,20 +810,16 @@ a {
 }
 .landing-page-container > img {
   margin-top: 30px;
-  height: 50vh;
+  height: 40vh;
   width: auto;background-color: white;
   mix-blend-mode: multiply;
   margin-bottom: 10px;
 }
 .heading {
   color: #282c3f;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 25px 0 14px;
-}
-.sub-heading {
-  font-size: 16px;
-  color: #60606e;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 25px 0 10px;
 }
 .message {
   font-size: 16px;
@@ -825,17 +833,16 @@ a {
   padding: 15px;
 }
 .button {
-  width: fit-content;
+  box-sizing: inherit;
   padding: 12px 20px;
-  background-color: #ff6f00;
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 1px;
-  transition: background-color 0.3s ease;
+  background-color: #f3730a;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px 0 #d4d5d9;
 }
 
 .button:hover {
-  background-color: #e65100;
+  box-shadow: 0 2px 8px #d4d5d9;
 }
 /* Landing Page CSS end */
