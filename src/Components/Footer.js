@@ -8,14 +8,14 @@ import { footData } from "./Helper";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="footer-content">
+      <div key="footerContent" className="footer-content">
         {footer_data.map(footData)}
-        <div className="download-link">
+        <div key="footerDownloadLink"className="download-link">
           <a href="/"><img src={appstore}/></a>
           <a href="/"><img src={playstore}/></a>
         </div>
       </div>
-      <div className="footer-data">
+      <div key="footerFoot"className="footer-data">
         <p className="info">❤️ Made with Love for Food by Varun 💛</p>
         <div className="contact-links">
           <a
@@ -24,7 +24,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Linkedin Profile"
           >
-            <FontAwesomeIcon icon={faLinkedin} />
+            <FontAwesomeIcon icon={faLinkedin}/>
           </a>
           <a
             className="github"
@@ -32,7 +32,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's GitHub repo"
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub}/>
           </a>
           <a
             className="twitter"
@@ -40,7 +40,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Twitter Profile"
           >
-            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faTwitter}/>
           </a>
           <a
             className="discord"
@@ -48,7 +48,7 @@ const Footer = () => {
             target="_blank"
             title="Varun Pelluru's Discord Profile"
           >
-            <FontAwesomeIcon icon={faDiscord} />
+            <FontAwesomeIcon icon={faDiscord}/>
           </a>
         </div>
         <p className="copyright-info" title="Just Kiddin' There is no Copyright for this">©️ 2023 FoodVilla</p>

@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { REST_API_MENU_URL, ICON_CDN_URL_18, LICENSE_CDN_URL } from "../Constant";
-import {
-  faIndianRupeeSign,
-  faCircleHalfStroke,
-  faStar,
-  faLocationDot
-} from "@fortawesome/free-solid-svg-icons";
+import { faIndianRupeeSign, faCircleHalfStroke, faStar, faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
@@ -78,6 +73,9 @@ const RestaurantMenu = () => {
   }
   return (
     <div className="restaurant-menu-page">
+      <div className="restaurant-menu-page-header">
+        <div className=""></div>
+      </div>
       <div className="res-details">
         <div className="res-title">
           <h1>{resDetails?.name}</h1>
@@ -139,7 +137,7 @@ const RestaurantMenu = () => {
       <div className="res-license">
         {resLicense.map((x) => {
           return(
-            <div className="res-license-card">
+            <div key={x} className="res-license-card">
               <img src={LICENSE_CDN_URL+x.imageId}/>
               <h4>{x.text}</h4>
             </div>

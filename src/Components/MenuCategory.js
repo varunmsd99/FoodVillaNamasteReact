@@ -10,8 +10,8 @@ const MenuCategory = ({title, itemCards}) => {
     setIsOpen(!isOpen);
   }
   return (
-    <div className={`menu-category ${isOpen ? 'active' : ''}`}  onClick={toggleCategory}>
-        <div className="menu-category-header">
+    <div className="menu-category">
+        <div className={`menu-category-header ${isOpen ? 'active' : ''}`}  onClick={toggleCategory}>
           <h3>{title} ({itemCards.length})</h3>
           <div className={`menu-chevron-down ${isOpen ? 'active' : ''}`}>{<FontAwesomeIcon icon={faChevronDown} />}</div>
         </div>

@@ -1,9 +1,3 @@
-/*export const helpTitles = [];
-helpTitles.push(...support_data.map((data) => {return data.title}));
-export const queries_question = [];
-queries_question.push(...support_data.map((dat) => { return dat.data.map((key) => {return key.title})}));
-export const queries_solution = [];
-queries_solution.push(...support_data.map((dat) => { return dat.data.map((key) => {return key.description})}));*/
 import React, { useState, useEffect } from 'react';
 
 export function CurrentTabLink() {
@@ -25,7 +19,7 @@ export function filterData(searchText, restaurants) {
 }
 export  function footData(dat){
   return (
-  <div className="footer-element">
+  <div key={`foot+${dat.id}`} className="footer-element">
     <ul>
       <li key={dat.id}>{dat.title}</li>
       <div className="footer-element-items">

@@ -11,6 +11,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Header CSS Start */
 .header {
   box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
   display: flex;
@@ -26,11 +28,15 @@ a {
   top: 0;
   left: 0;
 }
-.header > a {
-  background-color: #fc8019;
+.title {
+  display: flex;
 }
 .logo {
   height: 80px;
+  transition: transform .3s cubic-bezier(.215,.61,.355,1);
+}
+.logo:hover {
+  transform: scale(1.1);
 }
 .nav-items > ul {
   list-style-type: none;
@@ -52,12 +58,42 @@ a {
 .link-active {
   color: #f3730a;
 }
-.body-header {
+/* Header CSS end */
+
+/* Body CSS Start */
+.body {
+  margin-top: 80px;
+}
+.carousel {
+  padding: 0 20px;
+  width: 100%;
+}
+.carousel-content {
+  width: 84%;
+  height: 340px;
   display: flex;
-  margin: 120px auto 0;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel-card > img {
+  height: 260px;
+  width: 260px;
+  margin-right: 50px;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: transform .5s cubic-bezier(.215,.61,.355,1);
+}
+.carousel-card > img:hover {
+  transform: scale(1.05);
+}
+.Restaurant-list-header {
+  display: flex;
+  margin: 20px auto 0;
   width: 84%;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 40px 30px 0;
   border-bottom: 1px solid #e0e3e9;
 }
 .filter-data > ul {
@@ -78,28 +114,40 @@ a {
   border-bottom: 1px solid #000000;
 }
 .Restaurant-list {
-  max-width: 84%;
+  max-width: 80%;
   min-height: 100vh;
   margin: 20px auto 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   row-gap: 27px;
 }
 .card-link {
   height: fit-content;
-  width: 256px;
+  width: 276px;
   padding: 20px 20px 15px;
   border: 1.11px solid transparent;
   font-weight: lighter;
+  transition: transform 0.1s ease-in 0s;
 }
 .card-link:hover {
-  border: 1.11px solid #d0d0d0;
-  box-shadow: 0 4px 7px 0 rgba(218, 220, 230, 0.6);
+  transform: scale(0.95, 0.95);
+  transform-origin: center center;
+  transition: all 0.1s ease-in 0s;
 }
 .card > img {
   width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.res-card-img-shimmer {
+  height: 134px;
+  width: 214px;
+  margin-bottom: 5px;
+  background: rgba(40,44,63,.1);
+  background-blend-mode: overlay;
 }
 .card > h2 {
   font-size: 17px;
@@ -122,14 +170,14 @@ a {
   font-size: 13px;
   padding-bottom: 10px;
 }
-.avgRating {
+.avgRatingCard {
   display: flex;
   align-items: baseline;
   padding: 3px;
   font-size: 11px;
   font-weight: 300;
 }
-.avgRatingIcon {
+.avgRating {
   font-size: 10px;
 }
 .card > span > h5 {
@@ -142,15 +190,16 @@ a {
   align-content: center;
   padding-top: 10px;
   color: #5d8ed5;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   border-top: 1.11px solid #d0d0d0;
 }
-.card-link:hover .quick-view {
+.quick-view:hover {
   opacity: 1;
   -webkit-transition: opacity 0.25s ease-in-out 0s;
   transition: opacity 0.25s ease-in-out 0s;
 }
+/* Footer CSS Start */
 .footer {
   width: 100%;
   background-color: #000000;
@@ -255,6 +304,7 @@ a {
 .discord :hover {
   color: #7289da;
 }
+/* Footer CSS End */
 .search-container {
   margin: 120px 0 auto;
   text-align: center;
@@ -429,9 +479,12 @@ a {
   padding: 40px;
   display: flex;
   height: 85vh;
-  overflow: scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
+}
+.help-quiries::-webkit-scrollbar {
+  display: none;
 }
 .help-quiries-title > ul {
   position: sticky;
@@ -846,3 +899,21 @@ a {
   box-shadow: 0 2px 8px #d4d5d9;
 }
 /* Landing Page CSS end */
+
+/* Restaurant Card Shimmer CSS Start */
+.shimmer-body {
+  max-width: 84%;
+  min-height: 100vh;
+  margin: 20px auto 50px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 27px;
+}
+.res-card-shimmer-image {
+  background: #eef0f5;
+  height: 135px;
+  width: 214px;
+}
+/* Restaurant Card Shimmer CSS End */

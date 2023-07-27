@@ -36,7 +36,7 @@ const Help = () => {
             <div className="help-quiries-content">
                 {...FAQ.map((curr, index, val) => {
                   return (
-                    <FAQItem {...val[index]} key={val[index].id} />
+                    <FAQItem {...val[index]} key={val[index].id} index={index}/>
                   );
                 })}
             </div>
