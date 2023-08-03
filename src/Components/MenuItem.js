@@ -1,6 +1,6 @@
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MENU_ITEM_CDN_URL } from "../Constant";
+import { MENU_ITEM_CDN_URL } from "../Helpers/Constant";
 
 const MenuItem = ({name, description, imageId, defaultPrice, price, isVeg, variants, variantsV2}) => {
     return(

@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import { GET_LOCATION_API_URL, apiKey } from "../Constant";
+import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
 
 const Header = () => {
   const cartTotals = 0;

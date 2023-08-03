@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -27,6 +30,7 @@ a {
   z-index: 1000;
   top: 0;
   left: 0;
+  right: 0;
 }
 .title {
   display: flex;
@@ -123,24 +127,10 @@ a {
   justify-content: space-evenly;
   row-gap: 27px;
 }
-.card-link {
-  height: fit-content;
-  width: 276px;
-  padding: 20px 20px 15px;
-  border: 1.11px solid transparent;
-  font-weight: lighter;
-  transition: transform 0.1s ease-in 0s;
-}
 .card-link:hover {
   transform: scale(0.95, 0.95);
   transform-origin: center center;
   transition: all 0.1s ease-in 0s;
-}
-.card > img {
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
 }
 .res-card-img-shimmer {
   height: 134px;
@@ -917,3 +907,7 @@ a {
   width: 214px;
 }
 /* Restaurant Card Shimmer CSS End */
+
+.gradient {
+  background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
+}

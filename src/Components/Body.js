@@ -1,60 +1,27 @@
 import {
   swiggy_api_URL,
-  swiggy_api_URL_new,
   CAROUSEL_CDN_URL,
   shimmer_display_count,
-} from "../Constant";
+  WOYM_CARD_IMG_CDN_URL,
+  IMG_CDN_URL
+} from "../Helpers/Constant";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCardShimmer from "./RestaurantCardShimmer";
 
 const Body = () => {
-  [carousel, setCarousel] = useState([]);
-  [carouselNew, setCarouselNew] = useState([]);
-  [resData, setResData] = useState([]);
-  [resDataNew, setResDataNew] = useState([]);
+  const city ="Vizag";
+  [topicalBanner, setTopicalBanner] = useState([]);
+  [wOYM, setWOYM] = useState([]);
+  [topResList, setTopResList] = useState([]);
+  [resList, setResList] = useState([]);
+  [appInstallLinks, setAppInstallLinks] = useState([]);
+  [citiesFooter, setCitiesFooter] = useState([]);
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
-    const carouselData = json.data.cards
-      .map((x) => {
-        return x;
-      })
-      .filter((x) => {
-        return x["cardType"] === "carousel";
-      })
-      .map((x) => {
-        return x?.data;
-      })
-      .filter((x) => {
-        return x["subtype"] === "topCarousel";
-      })
-      .map((x) => {
-        return x?.data?.cards;
-      });
-    const resDetailsData = json.data.cards
-      .map((x) => {
-        return x;
-      })
-      .filter((x) => {
-        return x["cardType"] === "seeAllRestaurants";
-      })
-      .map((x) => {
-        return x?.data;
-      })
-      .map((x) => {
-        return x?.data?.cards;
-      });
-    setCarousel(...carouselData);
-    console.log(...carouselData);
-    setResData(...resDetailsData);
-  }
-  
-  async function getRestaurantsNew() {
-    const data = await fetch(swiggy_api_URL_new);
-    const json = await data.json();
-    const carouselDataNew = json.data.cards.map((x) => {
+    const topicalBannerData = json.data.cards.map((x) => {
       return x?.card?.card;
     })
     .filter((x) => {
@@ -62,8 +29,28 @@ const Body = () => {
     })
     .map((x) => {
       return x?.imageGridCards?.info
+    });
+    const wOYMData = json.data.cards
+    .map((x) => {
+      return x?.card?.card;
     })
-    const resDetailsDataNew = json.data.cards
+    .filter((x) => {
+      return x["id"] === "whats_on_your_mind";
+    })
+    .map((x) => {
+      return x?.imageGridCards?.info
+    });
+    const topResListData = json.data.cards
+    .map((x) => {
+      return x?.card?.card;
+    })
+    .filter((x) => {
+      return x["id"] === "top_brands_for_you";
+    })
+    .map((x) => {
+      return x?.gridElements?.infoWithStyle?.restaurants
+    });
+    const resListData = json.data.cards
     .map((x) => {
       return x?.card?.card;
     })
@@ -73,85 +60,83 @@ const Body = () => {
     .map((x) => {
       return x?.gridElements?.infoWithStyle?.restaurants
     })
-    setCarouselNew(...carouselDataNew);
-    setResDataNew(...resDetailsDataNew);
+    const appInstallLinksData = json.data.cards
+    .map((x) => {
+      return x?.card?.card;
+    })
+    .filter((x) => {
+      return x["id"] === "app_install_links";
+    });
+    const citiesFooterData = json.data.cards
+    .map((x) => {
+      return x?.card?.card;
+    })
+    .filter((x) => {
+      return x["id"] === "footer_content";
+    });
+    setTopicalBanner(...topicalBannerData);
+    setWOYM(...wOYMData);
+    setTopResList(...topResListData);
+    setResList(...resListData);
+    setAppInstallLinks(...appInstallLinksData);
+    setCitiesFooter(...citiesFooterData);
   }
   useEffect(() => {
     getRestaurants();
-    getRestaurantsNew();
   }, []);
+  console.log(topicalBanner);
+  console.log(wOYM);
+  console.log(topResList);
+  console.log(resList);
+  console.log(appInstallLinks);
+  console.log(citiesFooter);
   return (
-    <div key="body" className="body">
-      {carousel ? (
-        <div key="bodyCarousel" className="carousel">
-          <div key="bodyCarouselContent" className="carousel-content">
-            {carousel.map((x) => {
-              return (
-                <div key={x.data.creativeId} className="carousel-card">
-                  <img src={CAROUSEL_CDN_URL + x?.data?.creativeId} />
-                </div>
-              );
-            })}
+    <div className="max-w-[80%] mx-auto min-h-screen">
+      <div className="mt-24 ml-4 pl-4"><h1 className="text-2xl leading-5 tracking-tighter font-extrabold">Best Offers for you</h1></div>
+      <div className="flex overflow-hidden">
+      {topicalBanner && topicalBanner.map((img) => {
+        return (
+          <div className="ml-6 mt-8 cursor-pointer">
+            <img src={CAROUSEL_CDN_URL+img.imageId} className="h-64 w-106"/>
           </div>
-        </div>
-      ) : (
-        <div />
-      )}
-      {resData?.length === 0 ? (
-        <div />
-      ) : (
-        <div key="resListHeader" className="Restaurant-list-header">
-          <div>
-            <h2>{resData.length} Restaurants</h2>
+        )
+      })}
+      </div>
+      <div className="mt-8 ml-4 pl-2"><h1 className="text-2xl leading-5 tracking-tighter font-extrabold">What's on your mind?</h1></div>
+      <div className="flex p-4 overflow-hidden">
+      {wOYM && wOYM.map((img) => {
+        return (
+          <div key={img.id} className="cursor-pointer flex-shrink-0 pr-6 first:pl-4">
+            <img src={WOYM_CARD_IMG_CDN_URL+img.imageId} className="h-[180px] w-[144px]"/>
           </div>
-          <div className="filter-data">
-            <ul>
-              <li>
-                <Link to="/" key="Relevance">
-                  Relevance
-                </Link>
-              </li>
-              <li>
-                <Link to="/" key="Delivery Time">
-                  Delivery Time
-                </Link>
-              </li>
-              <li>
-                <Link to="/" key="Rating">
-                  Rating
-                </Link>
-              </li>
-              <li>
-                <Link to="/" key="Cost: High to Low">
-                  Cost: Low to High
-                </Link>
-              </li>
-              <li>
-                <Link to="/" key="Cost: High to Low">
-                  Cost: High to Low
-                </Link>
-              </li>
-            </ul>
+        )
+      })}
+      </div>
+      {city && <div className="mt-8 ml-4 pl-2"><h1 className="text-2xl leading-5 tracking-tighter font-extrabold">Top restaurant chains in {city}</h1></div>}
+      <div className="flex mt-8 gap-x-8 pl-4 pb-8 overflow-hidden">
+        {topResList && topResList.map((res) => {
+        return <RestaurantCard {...res.info} key={res.info.id} />
+      })}
+      </div>
+      {city && <div className="mt-8 ml-4"><h1 className=" text-2xl leading-5 tracking-tighter font-extrabold">Restaurants with online food delivery in {city}</h1></div>}
+      <div className="grid gap-6 mx-4 my-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+      {resList && resList.map((res) => {
+        return <RestaurantCard {...res.info} key={res.info.id}/>
+      })}
+      </div>
+      <div className="flex justify-center mt-10 bg-[#f0f0f5]">
+      {appInstallLinks && 
+          <div key={appInstallLinks.id} className="flex py-6">
+            <div className="w-96 flex content-center mr-4">
+              <h1 className="text-2xl font-black text-[#02060cbf]">{appInstallLinks.title}</h1>
+            </div>
+            <div className="flex h-16">
+              <img src={IMG_CDN_URL+appInstallLinks.androidAppImage} className="h-full mx-2 cursor-pointer"/>
+              <img src={IMG_CDN_URL+appInstallLinks.iosAppImage} className="h-full mx-2 cursor-pointer"/>
+            </div>
           </div>
-        </div>
-      )}
-      {resData?.length === 0 ? (
-        <RestaurantCardShimmer />
-      ) : (
-        <div key="resCards" className="Restaurant-list">
-          {resData.map((restaurant) => {
-            return (
-              <Link
-                to={"/restaurant/" + restaurant.data.id}
-                className="card-link"
-                key={`link${restaurant.data.id}`}
-              >
-                <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
-              </Link>
-            );
-          })}
-        </div>
-      )}
+        }
+      </div>
     </div>
   );
 };

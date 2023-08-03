@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { support_data } from "../Constant.js";
+import { support_data } from "../Helpers/Constant";
 import FAQItem from "./FAQItem.js";
 
 const Help = () => {

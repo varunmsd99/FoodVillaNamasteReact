@@ -1,9 +1,9 @@
 import { faTwitter, faGithub, faDiscord, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { footer_data } from "../Constant";
+import { footer_data } from "../Helpers/Constant";
 import appstore from "../Images/icon-AppStore.webp";
 import playstore from "../Images/icon-GooglePlay.webp";
-import { footData } from "./Helper";
+import { footData } from "../Helpers/Helper";
 
 const Footer = () => {
   return (

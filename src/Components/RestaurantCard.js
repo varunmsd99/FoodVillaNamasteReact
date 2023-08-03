@@ -1,79 +1,65 @@
-import { IMG_CDN_URL, swiggy_api_URL } from "../Constant";
-import { useState } from "react";
+import { RES_CARD_IMG_CDN_URL, RES_CARD_IMG_CDN_URL_GREY } from "../Helpers/Constant";
+import { ratingColor } from "../Helpers/Helper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const RestaurantCard = ({cloudinaryImageId, id, name, cuisines, avgRating, lastMileTravelString, slaString, costForTwoString}) => {
-    function isAvgRatingContent(avgRating){
-        if(avgRating==='--')
-        return false;
-        else
-        return true;
-    }
-    function AvgRatingColor(avgRating){
-        if(avgRating>=4 && avgRating<5){
-            return ({
-                backgroundColor: "#48C479",
-                color: "#FFFFFF",
-                borderRadius: "50%"
-            });
-        }
-        else if(avgRating>=3 && avgRating<4){
-            return ({
-                backgroundColor: "#DB7C38",
-                color: "#FFFFFF",
-                borderRadius: "50%"
-            });
-        }
-        else if(avgRating>=2&&avgRating<3){
-            return ({
-                backgroundColor: "#E1B055",
-                color: "#FFFFFF",
-                borderRadius: "50%"
-            });
-        }
-        else if(avgRating>=1&&avgRating<2){
-            return ({
-                backgroundColor: "#E9250B",
-                color: "#FFFFFF",
-                borderRadius: "50%"
-            });
-        }
-        else if(avgRating === '--'){
-            return ({
-                backgroundColor: "inherit",
-                color: "inherit"
-            });
-        }
-    }
-    const [showQuickMenu, setShowQuickMenu] = useState(false);
-    const hover = () => setShowQuickMenu(true)
-    return(
-            <div key={id} className="card">
-                {cloudinaryImageId ? (<img src={IMG_CDN_URL+cloudinaryImageId}></img>):(<div className="res-card-img-shimmer" />)}
-                <h2 className="restaurantName">{name}</h2>
-                <h5 className="cuisine" title={cuisines}>{cuisines?.join(", ")}</h5>
-                <span className="rating">
-                    {isAvgRatingContent(avgRating)?
-                    <div 
-                    style={AvgRatingColor(avgRating)}
-                    className="avgRatingCard">
-                        <FontAwesomeIcon key={id} className="avgRating" icon={faStar} />
-                        <h4>&nbsp;{avgRating}&nbsp;</h4>
-                    </div>:
-                    <div 
-                    style={AvgRatingColor(avgRating)}
-                    className="avgRatingCard">
-                        <h4>&nbsp;{avgRating}&nbsp;</h4>
-                    </div>
-                    }
-                    <p>&nbsp;•&nbsp;</p>
-                    <h5 className="distance" title={lastMileTravelString}>&nbsp;{slaString}</h5>
-                    <p>&nbsp;•&nbsp;</p>
-                    <h5>{costForTwoString}</h5>
-                </span>
+const RestaurantCard = ({
+  aggregatedDiscountInfoV3,
+  areaName,
+  avgRating,
+  cloudinaryImageId,
+  id,
+  isOpen,
+  name,
+  cuisines,
+}) => {
+  const color = ratingColor(avgRating)
+  return (
+    <div key={id} className="">
+      <Link to={"/restaurant/" + id} key={id} className="grid grid-flow-row justify-stretch gap-2 h-auto w-64 transition-all ease-in delay-75 hover:scale-95 hover:transition-all hover:origin-center">
+        <div className="w-64 h-40 relative">
+          {cloudinaryImageId ? (
+            <img
+              src={isOpen===true?(RES_CARD_IMG_CDN_URL + cloudinaryImageId):(RES_CARD_IMG_CDN_URL_GREY + cloudinaryImageId)}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          ) : (
+            <div className="res-card-img-shimmer" />
+          )}
+          <div className="gradient h-16 px-3 pb-2 rounded-b-2xl inset-x-0 bottom-0 absolute">
+          {aggregatedDiscountInfoV3 && (
+            <span className="absolute flex bottom-0 text-[#FFFFFF] font-ProximaNovaCond-Black font-[900] uppercase text-xl -tracking-[0.5px] inset-x-0 -mt-7 px-3 pb-1 text-left truncate">
+                <h1 className="">
+                    {aggregatedDiscountInfoV3?.header}
+                </h1>
+                    {aggregatedDiscountInfoV3?.subHeader && 
+                <h1>
+                    &nbsp;{aggregatedDiscountInfoV3?.subHeader}
+                </h1>}
+            </span>
+            )}
+          </div>
+        </div>
+        <div className="w-64 ml-3">
+          <h2 className="truncate text-[#02060cbf] text-lg font-bold tracking-tighter" title={name}>
+            {name}
+          </h2>
+          {avgRating && (
+            <div className="text-base font-light">
+              <FontAwesomeIcon
+                icon={faStar}
+                className={`bg-green text-xs rounded-full text-[#FFFFFF] p-1`}
+              />{" "}
+              {avgRating}
             </div>
-    );
-  };
+          )}
+          <h5 className="truncate text-[#02060c99] text-sm base leading-4 pb-1 font-normal tracking-tighter">{cuisines?.join(", ")}</h5>
+          <h5 className="truncate text-[#02060c99] text-sm leading-4 pb-1 font-normal tracking-tighter">{areaName}</h5>
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 export default RestaurantCard;

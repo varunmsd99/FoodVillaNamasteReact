@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { REST_API_MENU_URL, ICON_CDN_URL_18, LICENSE_CDN_URL } from "../Constant";
-import { faIndianRupeeSign, faCircleHalfStroke, faStar, faLocationDot} from "@fortawesome/free-solid-svg-icons";
+import { useParams, Link } from "react-router-dom";
+import { REST_API_MENU_URL, ICON_CDN_URL_18, LICENSE_CDN_URL } from "../Helpers/Constant";
+import { faIndianRupeeSign, faCircleHalfStroke, faStar, faLocationDot, faSearch} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
@@ -13,6 +13,7 @@ const RestaurantMenu = () => {
   const [resMenu, setResMenu] = useState([]);
   const [resLicense, setResLicense] = useState([]);
   const [resAddress, setResAddress] = useState([]);
+  const city = "Vizag";
   useEffect(() => {
     getRestaurantMenu();
   }, []);
@@ -73,9 +74,17 @@ const RestaurantMenu = () => {
   }
   return (
     <div className="restaurant-menu-page">
+      {resDetails?.name && 
       <div className="restaurant-menu-page-header">
-        <div className=""></div>
-      </div>
+        <div className="flex justify-between items-center">
+          <div className="flex text-xs text-[#93959f] ">
+            <Link to="/"><h4 className="cursor-pointer px-1 hover:text-[#000000]">Home</h4></Link>&nbsp;/
+            <Link to="/"><h4 className="cursor-pointer px-1 hover:text-[#000000]">{city}</h4></Link>&nbsp;/
+            <h4 className="text-[#000000] px-1 font-normal">{resDetails?.name}</h4>
+          </div>
+          <div className="p-1"><Link to="/search"><FontAwesomeIcon icon={faSearch} className="text-lg text-[#93959f]"/></Link></div>
+        </div>
+      </div>}
       <div className="res-details">
         <div className="res-title">
           <h1>{resDetails?.name}</h1>
@@ -88,13 +97,14 @@ const RestaurantMenu = () => {
             <h3>{resDetails?.areaName}</h3>
           )}
         </div>
+        {resDetails?.avgRatingString && 
         <div className="res-rating">
           <h2>
             <FontAwesomeIcon icon={faStar}></FontAwesomeIcon> &nbsp;
             {resDetails?.avgRatingString}
           </h2>
           <h4>{resDetails?.totalRatingsString}</h4>
-        </div>
+        </div>}
       </div>
       {resDetails?.feeDetails?.message ? (
         <div className="extra-fee">
@@ -106,6 +116,7 @@ const RestaurantMenu = () => {
       ) : (
         <></>
       )}
+      {resDetails?.sla?.slaString && 
       <div className="res-dist-cost">
         {resDetails?.sla?.slaString ? (
           <h2>
@@ -123,15 +134,15 @@ const RestaurantMenu = () => {
         ) : (
           <></>
         )}
-      </div>
+      </div>}
       <div className="offers">
         {resOffers.map((obj) => {
-          return <OfferCard {...obj} key={{ ...obj }.offerIds} />;
+          return <OfferCard {...obj} key={{...obj}.offerIds} />;
         })}
       </div>
-      <div className="menu">
+      <div className="menu font-black text-[#3e4152]">
         {resMenu.map((obj) => {
-          return <MenuCategory {...obj} key={{ ...obj }.title} />;
+          return <MenuCategory {...obj} key={{...obj}.title} />;
         })}
       </div>
       <div className="res-license">

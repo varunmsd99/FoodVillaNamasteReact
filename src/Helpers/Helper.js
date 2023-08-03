@@ -30,6 +30,19 @@ export  function footData(dat){
     </ul>
   </div>);
 }
+export function ratingColor(avgRating) {
+  if(avgRating>=4 && avgRating<5){
+    return 'green';
+}
+else if(avgRating>=3 && avgRating<4){
+    return 'rusty-orange';
+}
+else if(avgRating>=2&&avgRating<3){
+    return 'goldenrod';
+}
+else if(avgRating>=1&&avgRating<2){
+    return 'vivid-red';
+}}
 
 
 
