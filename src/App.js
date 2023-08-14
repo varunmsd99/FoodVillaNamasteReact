@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
-import Footer from "./Components/Footer";
 import Search from "./Components/Search";
 import Contact from "./Components/Contact";
 import Help from "./Components/Help";
@@ -17,7 +16,6 @@ const AppLayout = () => {
     <React.Fragment>
       <Header />
       <Outlet />
-      <Footer />
     </React.Fragment>
   );
 };

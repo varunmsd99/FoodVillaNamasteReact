@@ -2,12 +2,7 @@ import { shimmer_display_count } from "../Constant.js";
 
 const shimmerCard = () => {
   return (
-    <div className="shimmer-card">
-      <div className="shimmer-image"></div>
-      <div className="shimmer-restaurant-name"></div>
-      <div className="shimmer-cuisine"></div>
-      <div className="shimmer-span"></div>
-    </div>
+    <div className="shimmer-card" />
   );
 };
 const shimmer = () => {

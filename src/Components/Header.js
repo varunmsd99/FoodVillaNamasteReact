@@ -36,14 +36,14 @@ const Header = () => {
     }
   };
   return (
-    <div className="header">
-      <div className="Title">
+    <div className="header flex items-center justify-around z-50 fixed bg-[#ffffffd9] px-5 w-full top-0 left-0 right-0 shadow-[0_15px_40px_-20px_rgba(40,44,63,0.15)]">
+      <div className="flex gap-2">
           <Link to="/">
-            <img className="logo" src={FoodVillaLogo} alt="Food Villa Logo" />
+            <img className="h-20 transition-transform duration-300 ease-cubic-bezier(.215,.61,.355,1) hover:scale-110" src={FoodVillaLogo} alt="Food Villa Logo" />
           </Link>
           <input
             type="text"
-            className="search-location"
+            className="h-fit my-auto focus:outline-none"
             placeholder="Enter Pincode"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -51,46 +51,46 @@ const Header = () => {
           />
       </div>
       <div className="nav-items">
-        <ul>
-          <li>
+        <ul className="flex list-none">
+          <li className="transition duration-250 ease-in-out m-3 pl-8 text-[#303031] hover:text-orange">
             <NavLink
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
+              className={({ isActive }) => (isActive ? "text-orange" : "text-inherit")}
               to="/search"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
               &nbsp; Search
             </NavLink>
           </li>
-          <li>
+          <li className="transition duration-250 ease-in-out m-3 pl-8 text-[#303031] hover:text-orange">
             <NavLink
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
+              className={({ isActive }) => (isActive ? "text-orange" : "text-inherit")}
               to="/help"
             >
               <FontAwesomeIcon icon={faFontAwesome} />
               &nbsp; Help
             </NavLink>
           </li>
-          <li>
+          <li className="transition duration-250 ease-in-out m-3 pl-8 text-[#303031] hover:text-orange">
             <NavLink
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
+              className={({ isActive }) => (isActive ? "text-orange" : "text-inherit")}
               to="/contact"
             >
               <FontAwesomeIcon icon={faPaperPlane} />
               &nbsp; Contact
             </NavLink>
           </li>
-          <li>
+          <li className="transition duration-250 ease-in-out m-3 pl-8 text-[#303031] hover:text-orange">
             <NavLink
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
+              className={({ isActive }) => (isActive ? "text-orange" : "text-inherit")}
               to="/profile"
             >
               <FontAwesomeIcon icon={faUser} />
               &nbsp; Sign In
             </NavLink>
           </li>
-          <li>
+          <li className="transition duration-250 ease-in-out m-3 pl-8 text-[#303031] hover:text-orange">
             <NavLink
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
+              className={({ isActive }) => (isActive ? "text-orange" : "text-inherit")}
               to="/cart"
             >
               <FontAwesomeIcon icon={faNoteSticky} />

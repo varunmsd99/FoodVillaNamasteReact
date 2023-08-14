@@ -10,12 +10,12 @@ const MenuCategory = ({title, itemCards}) => {
     setIsOpen(!isOpen);
   }
   return (
-    <div className="menu-category">
-        <div className={`menu-category-header ${isOpen ? 'active' : ''}`}  onClick={toggleCategory}>
-          <h3>{title} ({itemCards.length})</h3>
-          <div className={`menu-chevron-down ${isOpen ? 'active' : ''}`}>{<FontAwesomeIcon icon={faChevronDown} />}</div>
+    <div className="mb-4 cursor-pointer border-b-[16px] border-[#f1f1f6] border-solid last:border-b-0">
+        <div className="flex justify-between mr-3" onClick={toggleCategory}>
+          <h3 className="mb-2 font-black text-[#3e4152]">{title} ({itemCards.length})</h3>
+          <div>{<FontAwesomeIcon icon={faChevronDown} className={`${isOpen ? 'rotate-180' : ''}`}/>}</div>
         </div>
-        <div className="menu-item">
+        <div className="mb-5">
         {isOpen && menuData.map((obj) => {
           return <MenuItem {...obj} key={{...obj}.id} />
         })} 

@@ -2100,16 +2100,16 @@ export const support_data = [
 ];
 export const footer_data = [{
   id: "100",
-  title: "COMPANY",
-  data: ['About Us', 'Team', 'Careers', 'FoodVilla Blog', 'Bug Bounty', 'FoodVilla One', 'FoodVilla Corporate', 'FoodVilla Instamart', 'FoodVilla Genie']
+  title: "Company",
+  data: ['About', 'Careers', 'Team', 'FoodVilla One', 'FoodVilla Instamart', 'FoodVilla Genie']
 },
 {
   id: "101",
-  title: "CONTACT",
+  title: "Contact",
   data: ['Help & Support', 'Partner with Us', 'Ride with Us']
 },
 {
   id: "102",
-  title: "LEGAL",
-  data: ['Terms & Conditions','Refund & Cancellation','Privacy Policy', 'Cookie Policy', 'Offer Terms', 'Phishing & Fraud']
+  title: "Legal",
+  data: ['Terms & Conditions', 'Privacy Policy', 'Cookie Policy']
 }];

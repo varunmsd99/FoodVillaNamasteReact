@@ -2,7 +2,7 @@ import LandingPage from "./LandingPage";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <div className="min-h-screen">
       <LandingPage />
     </div>
   );
