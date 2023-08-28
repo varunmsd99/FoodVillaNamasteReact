@@ -21,19 +21,17 @@ const Help = () => {
       setActiveTitle(index);
     };
   return (
-    <div className="help">
-      <div className="help-container">
-        <div className="help-container-title">
-          <h1>Help & Support</h1>
-          <h4>Let's take a step ahead and help you better.</h4>
+    <div className="mt-20 min-h-screen min-w-[80%]">
+      <div className="text-white bg-[#37718e] pb-20 px-24">
+        <div className="flex flex-col flex-1 pt-14 px-8">
+          <h1 className="mt-5 font-extrabold text-3xl">Help & Support</h1>
+          <h4 className="pb-12 font-light text-base">Let's take a step ahead and help you better.</h4>
         </div>
-        <div className="help-quiries">
-            <div className="help-quiries-title">
-                <ul>                        
-                  {helpTitle.map((curr, index, value) => {return <li key={index} className={`help-title-card${activeTitle === index ? '-active' : ''}`} onClick={(event) => handleClick(event, index)}><a href="">{value[index]}</a></li>})} 
-                </ul>
+        <div className="flex bg-white text-[#545a79] mx-auto p-10 shadow-xl w-full">
+            <div className="py-5 pl-5 bg-[#edf1f7] top-20 sticky list-none min-w-fit h-fit">                      
+                {helpTitle.map((curr, index, value) => {return <div key={index} className={`text-[#8a8b91] ml-2 px-6 py-5 text-base font-normal cursor-pointer hover:text-black hover:font-bold ${activeTitle === index ? 'bg-white' : ''}`} onClick={(event) => handleClick(event, index)}><a href="" className={`ml-10 ${activeTitle === index ? 'font-bold text-black' : ''}`}>{value[index]}</a></div>})} 
             </div>
-            <div className="help-quiries-content">
+            <div className="w-full pl-10 pt-4">
                 {...FAQ.map((curr, index, val) => {
                   return (
                     <FAQItem {...val[index]} key={val[index].id} index={index}/>

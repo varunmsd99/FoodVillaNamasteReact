@@ -7,7 +7,7 @@ const Search = () => {
   const [searchText, setSearchText] = useState("");
   return (
     <div className="mt-32 min-h-screen">
-      <div className="flex items-center justify-start mx-auto w-[60%] border-2 border-[ text-[#686b78]] text-[#686b78]">
+      <div className="flex items-center justify-start mx-auto w-[60%] border-2 border-[text-[#686b78]] text-[#686b78]">
         <input
           type="text"
           className="flex-1 px-3 py-3 focus:outline-none"

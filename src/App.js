@@ -10,13 +10,17 @@ import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu";
+import { Provider } from "react-redux";
+import store from "./Utils/store";
 
 const AppLayout = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Outlet />
-    </React.Fragment>
+    <Provider store={store}>
+      <React.Fragment>
+        <Header />
+        <Outlet />
+      </React.Fragment>
+    </Provider>
   );
 };
 

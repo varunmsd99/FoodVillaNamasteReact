@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   font-family: "Manrope", system-ui, sans-serif;
-  letter-spacing: 0;
 }
 a {
   text-decoration: none;
@@ -16,250 +15,23 @@ a {
 }
 /*Footer CSS Start */
 /*Footer CSS End */
+
 /*Search CSS Start */
 /*Search CSS end */
+
 /*Error CSS Start*/
 /*Error CSS end*/
+
 /*Cart CSS start*/
 /*Cart CSS end*/
-.help {
-  margin-top: 80px;
-  min-height: 100vh;
-}
-.help-container {
-  color: #ffffff;
-  background-color: #37718e;
-  padding: 0px 100px 80px 80px;
-}
-.help-container-title {
-  padding-top: 53px;
-  margin: 0 auto;
-  max-width: 1200px;
-  min-width: 1200px;
-  padding-left: 30px;
-}
-.help-container-title > h1 {
-  margin-top: 20px;
-  font-size: 27px;
-  font-weight: 800;
-}
-.help-container-title > h4 {
-  font-size: 15px;
-  font-weight: 300;
-  padding-bottom: 50px;
-}
-.help-quiries {
-  background-color: #ffffff;
-  color: #545a79;
-  max-width: 1200px;
-  min-width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  display: flex;
-  height: 85vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: none;
-}
-.help-quiries::-webkit-scrollbar {
-  display: none;
-}
-.help-quiries-title > ul {
-  position: sticky;
-  top: 80px;
-  background-color: #edf1f7;
-  list-style-type: none;
-  padding: 20px 0 20px 20px;
-  width: max-content;
-}
-.help-quiries-title > ul > li {
-  color: #585963;
-  margin-left: 20px;
-  padding: 25px 20px;
-  font-size: 16px;
-  display: flex;
-  font-weight: 500;
-}
-.help-quiries-title > ul > li > a {
-  margin-left: 40px;
-}
-.help-quiries-title > ul > li:hover {
-  color: #000000;
-  font-weight: 700;
-  cursor: pointer;
-}
-.help-title-card-active {
-  background-color: #ffffff;
-}
-.help-title-card-active > a {
-  font-weight: 700;
-  color: #000000;
-}
-.help-quiries-content {
-  padding: 37px 0 0 50px;
-  width: 100%;
-}
-.faq-question {
-  padding: 22px 0 26px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-}
-.faq-card {
-  border-bottom: 1.11px solid #cfd1dd;
-}
-.faq-question > h3 {
-  color: #111113;;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: left;
-}
-.faq-question > h3:hover {
-  color: #fd7200;
-}
-.faq-chevron-down {
-  transition: transform 0.3s;
-}
-.faq-question.active > h3 {
-  color: #fc8019;
-}
-.faq-chevron-down.active {
-  transform: rotate(180deg);
-  color: #fc8019;
-}
-.faq-answer {
-  padding-right: 50px;
-  padding-bottom: 27px;
-  width: 100%;
-}
-.faq-answer > h3 {
-  color: #5a5c66;
-  font-size: 14px;
-  line-height: 1.4;
-  white-space: pre-wrap;
-  font-weight: 400;
-}
+
+/*Help CSS start*/
+/*Help CSS end*/
 /*Rest-menu CSS Start*/
-.menu-item-card {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding-bottom: 14px;
-  margin: 20px 0;
-  border-bottom: 0.5px solid #d3d3d3;
-}
-.menu-item-card:last-child {
-  border-bottom: unset;
-}
-.menu-item-details {
-  max-width: 80%;
-}
-.menu-item-name {
-  margin-top: 4px;
-  font-weight: 700;
-  color: #3e4152;
-  font-size: 15px;
-}
-.menu-item-price {
-  margin-top: 4px;
-  font-weight: 400;
-  color: #3e4152;
-  font-size: 14px;
-}
-.menu-item-description {
-  color: rgba(38, 41, 54, 0.45);
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: -0.3px;
-  margin-top: 14px;
-  line-height: 1.3;
-}
-.menu-item-img {
-  display: flex;
-  width: 15%;
-  flex-direction: column;
-  align-items: center;
-}
-.add-button {
-  position: relative;
-  width: 96px;
-  height: 36px;
-  bottom: 8px;
-  color: #60b246;
-  background-color: #ffffff;
-  height: 100%;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 5px 25px;
-  border-radius: 4px;
-  border: 1.11px solid #d4d5d9;
-  box-shadow: 0 1px 4px #d4d5d9;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-.add-button:hover {
-  box-shadow: 0 2px 8px #d4d5d9;
-}
-.menu-item-img > img {
-  width: 118px;
-  height: 96px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.res-license-card {
-  display: flex;
-  align-items: center;
-  color: #93959f;
-  background-color: #f1f1f6;
-  padding: 16px 0 16px 16px;
-  margin-top: 16px;
-}
-.res-license-card > img {
-  height: 30px;
-  width: 60px;
-  margin-right: 16px;
-}
-.res-license-card > h4 {
-  padding-top: 6px;
-  font-size: 13px;
-  font-weight: 400;
-}
-.res-address-card {
-  color: #93959f;
-  background-color: #f1f1f6;
-  padding: 0 16px 120px;
-}
-.res-address-card > h3 {
-  border-top: 1px solid #a9abb2;
-  font-weight: 800;
-  font-size: 15px;
-  padding-top: 16px;
-}
-.res-address-card > h4 {
-  font-weight: 400;
-  font-size: 14px;
-}
-.res-address-card > h5 {
-  font-weight: 300;
-  font-size: 13px;
-  margin-top: 12px;
-}
 /*Rest-menu CSS end*/
+
 /* Landing Page CSS */
 /* Landing Page CSS end */
 
 /* Restaurant Card Shimmer CSS Start */
-.shimmer-body {
-  max-width: 84%;
-  min-height: 100vh;
-  margin: 20px auto 50px;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  row-gap: 27px;
-}
 /* Restaurant Card Shimmer CSS End */

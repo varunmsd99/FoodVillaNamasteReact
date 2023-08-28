@@ -175,23 +175,23 @@ const RestaurantMenu = () => {
           return <MenuCategory {...obj} key={{ ...obj }.title} />;
         })}
       </div>
-      <div className="res-license">
+      <div>
         {resLicense.map((x) => {
           return (
-            <div key={x} className="res-license-card">
-              <img src={LICENSE_CDN_URL + x.imageId} />
-              <h4>{x.text}</h4>
+            <div key={x} className="flex items-center text-[#93959f] bg-[#f1f1f6] mt-4 py-4 pl-4">
+              <img src={LICENSE_CDN_URL + x.imageId} className="w-[60px] h-[30px] mr-4"/>
+              <h4 className="pt-[6px] text-sm font-normal">{x.text}</h4>
             </div>
           );
         })}
       </div>
-      <div className="res-address">
+      <div>
         {resAddress.map((x) => {
           return (
-            <div className="res-address-card" key={x}>
-              <h3>{x.name}</h3>
-              <h4>(Outlet : {x.area})</h4>
-              <h5>
+            <div className="text-[#93959f] bg-[#f1f1f6] px-4 pb-32" key={x}>
+              <h3 className="border-t border-gray-300 font-extrabold text-lg pt-4">{x.name}</h3>
+              <h4 className="text-sm font-normal tracking-tighter">(Outlet : {x.area})</h4>
+              <h5 className="text-sm font-light tracking-tight mt-1">
                 <FontAwesomeIcon icon={faLocationDot} />
                 &nbsp; {x.completeAddress}
               </h5>
