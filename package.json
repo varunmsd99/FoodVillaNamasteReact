@@ -17,7 +17,7 @@
     "buffer": "^5.7.1",
     "parcel": "^2.8.3",
     "path-browserify": "^1.0.1",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.31",
     "process": "^0.11.10",
     "tailwindcss": "^3.3.3"
   },
