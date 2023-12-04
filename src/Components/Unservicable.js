@@ -11,4 +11,4 @@ const Unservicable = (title, imageLink) => {
   )
 }
 
-export default Unservicable
+export default Unservicable;

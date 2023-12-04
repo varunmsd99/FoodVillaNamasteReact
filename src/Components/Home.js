@@ -11,13 +11,13 @@ import foodVillaLogoWhite from "../Images/Food Villa Logo White.png";
 import RestaurantCard from "./RestaurantCard";
 import Slider from "./Slider";
 import { useState, useEffect } from "react";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faFilter, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RestaurantCardShimmer from "./RestaurantCardShimmer";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Unservicable from "./Unservicable";
 
-const Body = () => {
+const Home = () => {
   const locDetails = useSelector((store) => store.location.locationDetails);
   [latitude, setLatitude] = useState(locDetails[0].lat);
   [city, setCity] = useState(locDetails[0].district);
@@ -25,22 +25,48 @@ const Body = () => {
   [notServicable, setNotServicable] = useState([]);
   [topicalBanner, setTopicalBanner] = useState([]);
   [wOYM, setWOYM] = useState([]);
+  [sort, setSort] = useState([]);
+  [sortActive, setSortActive] =useState(undefined);
   [topResList, setTopResList] = useState([]);
   [resList, setResList] = useState([]);
+  [filteredResList, setFilteredResList] = useState([]);
   [appInstallLinks, setAppInstallLinks] = useState([]);
   [footerCities, setFooterCities] = useState([]);
+  [bestPlaces, setBestPlaces] = useState([]);
+  [bestCuiNearMe, setBestCuiNearMe] = useState([]);
+  [expResNearMe, setExpResNearMe] = useState([]);
+  [bestPlacesOpen, setBestPlacesOpen] = useState(false);
+  [bestCuiOpen, setBestCuiOpen] = useState(false);
   [cityOpen, setCityOpen] = useState(false);
-  console.log(locDetails);
   const toggleCitites = () => {
     setCityOpen(!cityOpen);
   };
+  const toggleBestCui = () => {
+    setBestCuiOpen(true);
+  }
+  const toggleBestPlaces = () => {
+    setBestPlacesOpen(true);
+  }
+  const handleSortClick = (event, index) => {
+    event.preventDefault();
+    console.log("clicked");
+    if(sortActive === index) {
+      setSortActive(undefined);
+    }
+    else {
+    setSortActive(index);
+  }
+  }
+  const handleSortReset = (event) => {
+    event.preventDefault();
+    setSortActive("cancelled");
+  }
   async function getRestaurants(latitude, longitude) {
+    setResList([]);
     const data = await fetch(swiggyAPI(latitude, longitude));
-    console.log(swiggyAPI(latitude, longitude));
     const json = await data.json();
-    console.log(json);
     const notDeliverable = json?.data?.cards
-      .map((x) => {
+      ?.map((x) => {
         return x?.card?.card;
       })
       .filter((x) => {
@@ -76,6 +102,16 @@ const Body = () => {
       ?.map((x) => {
         return x?.gridElements?.infoWithStyle?.restaurants;
       });
+    const sortData = json?.data?.cards
+      ?.map((x) => {
+        return x?.card?.card;
+      })
+      ?.filter((x) => {
+        return x.sortConfigs;
+      })
+      ?.map((x) => {
+        return x.sortConfigs;
+      });
     const resListData = json?.data?.cards
       ?.map((x) => {
         return x?.card?.card;
@@ -83,7 +119,7 @@ const Body = () => {
       ?.filter((x) => {
         return x["id"] === "restaurant_grid_listing";
       })
-      .map((x) => {
+      ?.map((x) => {
         return x?.gridElements?.infoWithStyle?.restaurants;
       });
     const appInstallLinksData = json?.data?.cards
@@ -103,19 +139,46 @@ const Body = () => {
       ?.map((x) => {
         return x.cities;
       });
-    console.log(topicalBannerData);
-    console.log(wOYMData);
-    console.log(topResListData);
-    console.log(resListData);
-    console.log(appInstallLinksData);
-    console.log(footerCitiesData);
-    console.log(notDeliverable);
+    const bestPlacesData = json?.data?.cards
+    ?.map((x) => {
+      return x?.card?.card;
+    })
+    ?.filter((x) => {
+      return x["title"] === "Best Places to Eat Across Cities";
+    })
+    ?.map((x) => {
+      return x.brands;
+    });
+    const bestCuiNearMeData = json?.data?.cards
+    ?.map((x) => {
+      return x?.card?.card;
+    })
+    ?.filter((x) => {
+      return x["title"] === "Best Cuisines Near Me";
+    })
+    ?.map((x) => {
+      return x.brands;
+    });
+    const expResNearMeData = json?.data?.cards
+    ?.map((x) => {
+      return x?.card?.card;
+    })
+    ?.filter((x) => {
+      return x["title"] === "Explore Every Restaurants Near Me";
+    })
+    ?.map((x) => {
+      return x.brands;
+    });
     setTopicalBanner(...topicalBannerData);
     setWOYM(...wOYMData);
     setTopResList(...topResListData);
+    setSort(...sortData);
     setResList(...resListData);
     setAppInstallLinks(...appInstallLinksData);
     setFooterCities(...footerCitiesData);
+    setBestPlaces(...bestPlacesData);
+    setBestCuiNearMe(...bestCuiNearMeData);
+    setExpResNearMe(...expResNearMeData);
     setNotServicable(...notDeliverable);
   }
   useEffect(() => {
@@ -148,9 +211,9 @@ const Body = () => {
               <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                 Best Offers for you
               </h1>
-              <Slider />
+              <Slider className="topicalBanner" amount={450}/>
             </div>
-            <div className="flex overflow-hidden">
+            <div className="topicalBanner flex overflow-hidden">
               {topicalBanner.map((img) => {
                 return (
                   <div
@@ -173,9 +236,9 @@ const Body = () => {
               <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                 What's on your mind?
               </h1>
-              <Slider />
+              <Slider className="foodCategory" amount={350}/>
             </div>
-            <div className="flex p-4 overflow-hidden">
+            <div className="foodCategory flex p-4 overflow-hidden">
               {wOYM.map((img) => {
                 return (
                   <div
@@ -198,9 +261,9 @@ const Body = () => {
               <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                 Top restaurant chains in {city}
               </h1>
-              <Slider />
+              <Slider className="topResList" key="topResList" amount={450}/>
             </div>
-            <div className="flex mt-8 gap-x-8 pl-4 pb-8 overflow-hidden">
+            <div className="topResList flex mt-8 gap-x-8 pl-4 pb-8 scrollbar-none overflow-hidden">
               {topResList.map((res) => {
                 return <RestaurantCard {...res.info} key={res.info.id} />;
               })}
@@ -209,16 +272,105 @@ const Body = () => {
         )}
         {resList && (
           <>
-            <div className="mt-8 ml-4 pl-2">
+            <div className="mt-8 mb-4 ml-4 pl-2">
               <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                 Restaurants with online food delivery in {city}
               </h1>
             </div>
-            <div className="grid gap-6 mx-4 my-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+            <div className="flex mx-8 mb-4">
+              <div className={`px-3 py-2 mr-3 rounded-full shadow-sm transition-all duration-100 ease-in delay-0 ${sortActive !== undefined ? "bg-[#02060c26] border-[#36393e] border-[1px]" : "border-[1px] border-solid border-[#02060c1f]"}`}>
+                <h1 className={`text-center text-base tracking-tight font-medium whitespace-nowrap ${sortActive !== undefined ? "text-orange" : "text-[#050e1bbf]"}`}>Filter &nbsp; <FontAwesomeIcon icon={faFilter}/></h1>
+              </div>
+              {sort.map((x, index) => {
+                return(
+                  <div key={x.title} onClick={(event) => handleSortClick(event, index)} className={`flex justify-between whitespace-nowrap px-3 py-2 mr-3 cursor-pointer rounded-full shadow-sm transition-all duration-100 ease-in delay-0 ${sortActive === index ? "bg-[#02060c26] border-[#36393e] border-[1px]" : "border-[1px] border-solid border-[#02060c1f]"}`}>
+                    <h1 className="text-center text-base text-[#050e1bbf] tracking-tight font-medium">{x.title}</h1>
+                    {sortActive === index ? 
+                      <div className="pl-1" onClick={(event) => handleSortReset(event)}>
+                        <FontAwesomeIcon icon={faXmark} className="text-[#050e1bbf] text-center text-sm"/>
+                      </div> : <></>}
+                  </div>
+                )
+              })}
+            </div>
+            <div className="grid gap-x-3 gap-y-8 mx-8 my-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
               {resList &&
                 resList.map((res) => {
                   return <RestaurantCard {...res.info} key={res.info.id} />;
                 })}
+            </div>
+          </>
+        )}
+        {bestPlaces && (
+          <>
+            <div className="mt-16 ml-4 pl-2">
+              <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+              Best Places to Eat Across Cities
+              </h1>
+            </div>
+            <div className="flex flex-wrap gap-x-2 justify-between my-8">
+              {bestPlaces?.slice(0, 11).map((x) => {
+                return (
+                  <div className="w-[20%] flex-grow p-4 mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl" key={x.text}>
+                    <h2 className="truncate text-center text-base text-[#050e1bbf] tracking-tight font-medium">{x.text}</h2>
+                  </div>
+                )
+              })
+              }
+              <div onClick={toggleBestPlaces} className={bestPlacesOpen ? "hidden" : "w-[20%] flex-grow p-4 mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl truncate text-center text-base text-[#050e1bbf] tracking-tight font-bold"}>Show more &nbsp;<FontAwesomeIcon icon={faChevronDown} className={bestPlacesOpen ? "rotate-180" : ""}/></div>
+              {bestPlacesOpen && bestPlaces?.slice(11).map((x) => {
+                return (
+                  <div className="w-[20%] flex-grow p-4 mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl" key={x.text}>
+                    <h2 className="truncate text-center text-base text-[#050e1bbf] tracking-tight font-medium">{x.text}</h2>
+                  </div>
+                )
+              })}
+            </div>
+          </>
+        )}
+        {bestCuiNearMe && (
+          <>
+            <div className="mt-16 ml-4 pl-2">
+              <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+              Best Cuisines Near Me
+              </h1>
+            </div>
+            <div className="flex flex-wrap gap-x-2 justify-between my-8">
+              {bestCuiNearMe?.slice(0, 11).map((x) => {
+                return (
+                  <div className="w-[20%] flex-grow p-4  mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl" key={x.text}>
+                    <h2 className="truncate text-center text-base text-[#050e1bbf] tracking-tight font-medium">{x.text}</h2>
+                  </div>
+                )
+              })
+              }
+              <div onClick={toggleBestCui} className={bestCuiOpen ? "hidden" : "w-[20%] flex-grow p-4 mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl truncate text-center text-base text-[#050e1bbf] tracking-tight font-bold"}>Show more &nbsp;<FontAwesomeIcon icon={faChevronDown} className={bestCuiOpen ? "rotate-180" : ""}/></div>
+              {bestCuiOpen && bestCuiNearMe?.slice(11).map((x) => {
+                return (
+                  <div className="w-[20%] flex-grow p-4 mx-2 mb-4 cursor-pointer border-[1px] border-solid border-[#02060c1f] rounded-xl" key={x.text}>
+                    <h2 className="truncate text-center text-base text-[#050e1bbf] tracking-tight font-medium">{x.text}</h2>
+                  </div>
+                )
+              })}
+            </div>
+          </>
+        )}
+        {expResNearMe && (
+          <>
+            <div className="mt-16 ml-4 pl-2">
+              <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+              Explore Every Restaurants Near Me
+              </h1>
+            </div>
+            <div className="flex items-center my-8 flex-wrap">
+              {expResNearMe && 
+                expResNearMe.map((x) => {
+                  return (
+                    <div key={x.text} className="w-[20%] flex-grow p-4 mx-4 mb-4 text-center cursor-pointer border-[1.5px] border-solid border-[#02060c2f] rounded-xl">
+                      <h1 className="text-[#050e1bbf] tracking-tight font-medium truncate">{x.text}</h1>
+                    </div>
+                  )
+              })}
             </div>
           </>
         )}
@@ -336,4 +488,4 @@ const Body = () => {
     </>
   );
 };
-export default Body;
+export default Home;

@@ -15,6 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -23,10 +24,8 @@ const RestaurantMenu = () => {
   const [resMenu, setResMenu] = useState([]);
   const [resLicense, setResLicense] = useState([]);
   const [resAddress, setResAddress] = useState([]);
-  const city = "Vizag";
-  useEffect(() => {
-    getRestaurantMenu();
-  }, []);
+  const locDetails = useSelector(store => store.location.locationDetails);
+  const city = locDetails[0].district;
   async function getRestaurantMenu() {
     const data = await fetch(REST_API_MENU_URL + id);
     const json = await data.json();
@@ -81,7 +80,11 @@ const RestaurantMenu = () => {
     setResMenu(restaurantMenu);
     setResLicense(restaurantLicense);
     setResAddress(restaurantAddress);
+    window.scrollTo(0, 0);
   }
+  useEffect(() => {
+    getRestaurantMenu();
+  }, []);
   return (
     <div className="min-h-screen max-w-[60%] mx-auto mt-32">
       {resDetails?.name && (

@@ -1,4 +1,4 @@
-import { faTwitter, faGithub, faDiscord, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faDiscord, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="mt-3 justify-between">❤️ Made with Love for Food by Varun 💛</p>
         <div className="my-3 flex items-center justify-center">
           <a
-            className="ml-3 text-4xl hover:text-linkedIn"
+            className="ml-3 text-4xl transition-all hover:text-linkedIn"
             href="https://linkedin.com/in/varunpelluru"
             target="_blank"
             title="Varun Pelluru's Linkedin Profile"
@@ -15,7 +15,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faLinkedin}/>
           </a>
           <a
-            className="ml-3 text-4xl hover:text-github"
+            className="ml-3 text-4xl transition-all hover:text-github"
             href="https://github.com/varunmsd99"
             target="_blank"
             title="Varun Pelluru's GitHub repo"
@@ -23,15 +23,15 @@ const Footer = () => {
             <FontAwesomeIcon icon={faGithub}/>
           </a>
           <a
-            className="ml-3 text-4xl hover:text-twitter"
+            className="ml-3 text-3xl transition-all hover:text-twitter"
             href="https://twitter.com/varun_vsgvk"
             target="_blank"
             title="Varun Pelluru's Twitter Profile"
           >
-            <FontAwesomeIcon icon={faTwitter}/>
+            <FontAwesomeIcon icon={faXTwitter}/>
           </a>
           <a
-            className="ml-3 text-3xl hover:text-discord"
+            className="ml-3 text-3xl transition-all hover:text-discord"
             href="https://discordapp.com/users/535798915518169094"
             target="_blank"
             title="Varun Pelluru's Discord Profile"

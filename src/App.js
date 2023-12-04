@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
-import Body from "./Components/Body";
+import Home from "./Components/Home";
 import Search from "./Components/Search";
 import Contact from "./Components/Contact";
 import Help from "./Components/Help";
@@ -32,7 +32,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Home />,
       },
       {
         path: "search",

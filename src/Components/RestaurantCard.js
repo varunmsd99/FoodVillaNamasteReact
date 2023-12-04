@@ -29,7 +29,7 @@ const RestaurantCard = ({
           )}
           <div className="bg-gradient-to-t from-[#000000] to-transparent h-24 px-3 pb-1 rounded-b-2xl inset-x-0 bottom-0 absolute">
           {aggregatedDiscountInfoV3 && (
-            <span className="absolute flex bottom-0 text-[#FFFFFF] font-black shadow-md uppercase text-[22px] inset-x-0 -mt-7 px-3 pb-1 text-left truncate rounded-b-2xl  ">
+            <span className="absolute flex bottom-0 text-[#FFFFFF] font-black shadow-md uppercase text-[22px] inset-x-0 -mt-7 px-3 pb-1 text-left truncate rounded-b-2xl">
                 <h1 className="-tracking-[1.75px] leading-[22px]">
                     {aggregatedDiscountInfoV3?.header}
                 </h1>

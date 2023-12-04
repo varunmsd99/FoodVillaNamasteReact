@@ -5,6 +5,7 @@ import * as Img from "../Images/popularCuisines/*.webp";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
+  window.scrollTo(0, 0);
   return (
     <div className="mt-32 min-h-screen">
       <div className="flex items-center justify-start mx-auto w-[60%] border-2 border-[text-[#686b78]] text-[#686b78]">
