@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
-  REST_API_MENU_URL,
   ICON_CDN_URL_18,
   LICENSE_CDN_URL,
 } from "../Helpers/Constant";
@@ -16,75 +14,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import useRestaurantMenu from "../Hooks/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [resDetails, setResDetails] = useState();
-  const [resOffers, setResOffers] = useState([]);
-  const [resMenu, setResMenu] = useState([]);
-  const [resLicense, setResLicense] = useState([]);
-  const [resAddress, setResAddress] = useState([]);
+  const [resDetails, resOffers, resMenu, resLicense, resAddress] = useRestaurantMenu(id);
   const locDetails = useSelector(store => store.location.locationDetails);
   const city = locDetails[0].district;
-  async function getRestaurantMenu() {
-    const data = await fetch(REST_API_MENU_URL + id);
-    const json = await data.json();
-    const restaurantData =
-      json?.data?.cards
-        ?.map((x) => x.card)
-        ?.find(
-          (x) =>
-            x &&
-            x.card["@type"] ===
-              "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
-        )?.card?.info || null;
-    const restaurantOffers =
-      json?.data?.cards
-        ?.map((x) => x.card)
-        ?.find(
-          (x) =>
-            x &&
-            x.card["@type"] ===
-              "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget"
-        )
-        ?.card?.gridElements?.infoWithStyle?.offers.map((x) => x?.info) || [];
-    const restaurantMenu =
-      json?.data?.cards
-        ?.find((x) => x.groupedCard)
-        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
-        .filter(
-          (x) =>
-            x["@type"] ===
-            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-        ) || [];
-    const restaurantLicense =
-      json?.data?.cards
-        ?.find((x) => x.groupedCard)
-        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
-        .filter(
-          (x) =>
-            x["@type"] ===
-            "type.googleapis.com/swiggy.presentation.food.v2.RestaurantLicenseInfo"
-        ) || [];
-    const restaurantAddress =
-      json?.data?.cards
-        ?.find((x) => x.groupedCard)
-        ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x?.card?.card)
-        .filter(
-          (x) =>
-            x["@type"] ===
-            "type.googleapis.com/swiggy.presentation.food.v2.RestaurantAddress"
-        ) || [];
-    setResDetails(restaurantData);
-    setResOffers(restaurantOffers);
-    setResMenu(restaurantMenu);
-    setResLicense(restaurantLicense);
-    setResAddress(restaurantAddress);
-    window.scrollTo(0, 0);
-  }
-  useEffect(() => {
-    getRestaurantMenu();
-  }, []);
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
   return (
     <div className="min-h-screen max-w-[60%] mx-auto mt-32">
       {resDetails?.name && (

@@ -1,40 +1,26 @@
 import {
   CAROUSEL_CDN_URL,
-  shimmer_display_count,
   WOYM_CARD_IMG_CDN_URL,
   IMG_CDN_URL,
   footer_data,
-  swiggyAPI,
 } from "../Helpers/Constant";
 import Footer from "./Footer";
 import foodVillaLogoWhite from "../Images/Food Villa Logo White.png";
 import RestaurantCard from "./RestaurantCard";
 import Slider from "./Slider";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { faChevronDown, faFilter, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import RestaurantCardShimmer from "./RestaurantCardShimmer";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Unservicable from "./Unservicable";
+import useRestaurantsData from "../Hooks/UseRestaurantsData";
 
 const Home = () => {
+  const [ topicalBanner, wOYM, topResList, sort, resList, appInstallLinks, footerCities, bestPlaces, bestCuiNearMe, expResNearMe, notServicable ] = useRestaurantsData();
   const locDetails = useSelector((store) => store.location.locationDetails);
-  [latitude, setLatitude] = useState(locDetails[0].lat);
   [city, setCity] = useState(locDetails[0].district);
-  [longitude, setLongitude] = useState(locDetails[0].lng);
-  [notServicable, setNotServicable] = useState([]);
-  [topicalBanner, setTopicalBanner] = useState([]);
-  [wOYM, setWOYM] = useState([]);
-  [sort, setSort] = useState([]);
   [sortActive, setSortActive] =useState(undefined);
-  [topResList, setTopResList] = useState([]);
-  [resList, setResList] = useState([]);
   [filteredResList, setFilteredResList] = useState([]);
-  [appInstallLinks, setAppInstallLinks] = useState([]);
-  [footerCities, setFooterCities] = useState([]);
-  [bestPlaces, setBestPlaces] = useState([]);
-  [bestCuiNearMe, setBestCuiNearMe] = useState([]);
-  [expResNearMe, setExpResNearMe] = useState([]);
   [bestPlacesOpen, setBestPlacesOpen] = useState(false);
   [bestCuiOpen, setBestCuiOpen] = useState(false);
   [cityOpen, setCityOpen] = useState(false);
@@ -55,143 +41,12 @@ const Home = () => {
     }
     else {
     setSortActive(index);
-  }
+    }
   }
   const handleSortReset = (event) => {
     event.preventDefault();
     setSortActive("cancelled");
   }
-  async function getRestaurants(latitude, longitude) {
-    setResList([]);
-    const data = await fetch(swiggyAPI(latitude, longitude));
-    const json = await data.json();
-    const notDeliverable = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      .filter((x) => {
-        return x["id"] === "swiggy_not_present";
-      });
-    const topicalBannerData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "topical_banner";
-      })
-      ?.map((x) => {
-        return x?.imageGridCards?.info;
-      });
-    const wOYMData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "whats_on_your_mind";
-      })
-      ?.map((x) => {
-        return x?.imageGridCards?.info;
-      });
-    const topResListData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "top_brands_for_you";
-      })
-      ?.map((x) => {
-        return x?.gridElements?.infoWithStyle?.restaurants;
-      });
-    const sortData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x.sortConfigs;
-      })
-      ?.map((x) => {
-        return x.sortConfigs;
-      });
-    const resListData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "restaurant_grid_listing";
-      })
-      ?.map((x) => {
-        return x?.gridElements?.infoWithStyle?.restaurants;
-      });
-    const appInstallLinksData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "app_install_links";
-      });
-    const footerCitiesData = json?.data?.cards
-      ?.map((x) => {
-        return x?.card?.card;
-      })
-      ?.filter((x) => {
-        return x["id"] === "footer_content";
-      })
-      ?.map((x) => {
-        return x.cities;
-      });
-    const bestPlacesData = json?.data?.cards
-    ?.map((x) => {
-      return x?.card?.card;
-    })
-    ?.filter((x) => {
-      return x["title"] === "Best Places to Eat Across Cities";
-    })
-    ?.map((x) => {
-      return x.brands;
-    });
-    const bestCuiNearMeData = json?.data?.cards
-    ?.map((x) => {
-      return x?.card?.card;
-    })
-    ?.filter((x) => {
-      return x["title"] === "Best Cuisines Near Me";
-    })
-    ?.map((x) => {
-      return x.brands;
-    });
-    const expResNearMeData = json?.data?.cards
-    ?.map((x) => {
-      return x?.card?.card;
-    })
-    ?.filter((x) => {
-      return x["title"] === "Explore Every Restaurants Near Me";
-    })
-    ?.map((x) => {
-      return x.brands;
-    });
-    setTopicalBanner(...topicalBannerData);
-    setWOYM(...wOYMData);
-    setTopResList(...topResListData);
-    setSort(...sortData);
-    setResList(...resListData);
-    setAppInstallLinks(...appInstallLinksData);
-    setFooterCities(...footerCitiesData);
-    setBestPlaces(...bestPlacesData);
-    setBestCuiNearMe(...bestCuiNearMeData);
-    setExpResNearMe(...expResNearMeData);
-    setNotServicable(...notDeliverable);
-  }
-  useEffect(() => {
-    if (locDetails && locDetails[0]) {
-      const newLatitude = locDetails[0].lat;
-      const newCity = locDetails[0].district;
-      const newLongitude = locDetails[0].lng;
-      setLatitude(newLatitude);
-      setCity(newCity);
-      setLongitude(newLongitude);
-      getRestaurants(newLatitude, newLongitude);
-    }
-  }, [locDetails]);
   if (appInstallLinks.title && typeof appInstallLinks.title === "string") {
     appInstallLinks.title = appInstallLinks.title.replace("Swiggy ", "");
   }

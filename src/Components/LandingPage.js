@@ -2,8 +2,8 @@ import FoodVillaTempImg from "../Images/FoodVillaTempLandingPage.png";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
-      <img src={FoodVillaTempImg} className="w-auto mt-32 h-[40vh] mb-3"/>
+    <div className="flex flex-col items-center justify-start min-h-screen mt-32">
+      <img src={FoodVillaTempImg} className="w-auto mt-2 h-[40vh] mb-3"/>
       <h1 className="text-[#282c3f] font-extrabold text-2xl tracking-tighter leading-7">We're Cooking Something Delicious!</h1>
       <p className="text-base pt-3 text-[#60606e] tracking-tighter leading-5">Our website is currently under construction. Come back soon to experience the taste of perfection.</p>
       <div className="flex items-center justify-center p-4">

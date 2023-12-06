@@ -14,10 +14,10 @@ const RestaurantCard = ({
   name,
   cuisines,
 }) => {
-  const color = ratingColor(avgRating)
+  const color = ratingColor(avgRating);
   return (
     <div key={id} className="">
-      <Link to={"/restaurant/" + id} key={id} className="grid grid-flow-row justify-stretch gap-2 h-auto w-64 transition-all ease-in delay-75 hover:scale-95 hover:transition-all hover:origin-center">
+      <Link to={(isOpen) ? "/restaurant/" + id:''} key={id} className={`grid grid-flow-row justify-stretch gap-2 h-auto w-64 transition-all ease-in delay-75 hover:scale-95 hover:transition-all hover:origin-center ${isOpen ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
         <div className="w-64 h-40 relative">
           {cloudinaryImageId ? (
             <img

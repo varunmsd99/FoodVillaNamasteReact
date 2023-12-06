@@ -1,14 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FoodVillaLogo from "../Images/Food Villa Logo.png";
-import {
-  faChevronDown,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faUser,
-  faPaperPlane,
-  faFontAwesome,
-} from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LocationSearch from "./LocationSearch";
@@ -110,7 +102,7 @@ const Header = () => {
                 to="/contact"
               >
                 <span className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className={`w-[18px] h-[18px] stroke-2 ${isActive('/contact') ? 'stroke-orange' : 'stroke-[#686b78]'}`} fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className={`w-[18px] h-[18px] stroke-2 ${isActive('/contact') ? 'stroke-orange' : 'stroke-[#686b78]'}`} fill="none" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                   &nbsp; Contact
                 </span>
               </NavLink>
