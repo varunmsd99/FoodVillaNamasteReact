@@ -14,7 +14,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <Provider store={store}>
       <React.Fragment>
