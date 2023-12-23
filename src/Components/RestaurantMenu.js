@@ -15,19 +15,27 @@ import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import useRestaurantMenu from "../Hooks/useRestaurantMenu";
+import { useState, useEffect } from "react";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resDetails, resOffers, resMenu, resLicense, resAddress] = useRestaurantMenu(id);
   const locDetails = useSelector(store => store.location.locationDetails);
   const city = locDetails[0].district;
+  const [showElement, setShowElement] = useState(false);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowElement(true);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
   window.scrollTo({
     top: 0,
     left: 0,
     behavior: 'smooth'
   });
   return (
-    <div className="min-h-screen max-w-[60%] mx-auto mt-32">
+    <div className="min-h-screen mx-auto mt-32 max-w-[80%]">
       {resDetails?.name && (
         <div className="flex justify-between items-center">
           <div className="flex text-xs text-[#93959f] ">
@@ -143,6 +151,11 @@ const RestaurantMenu = () => {
           );
         })}
       </div>
+      {(resMenu.length !==0 && showElement) && 
+      <div className={`bottom-8 left-[50%] -translate-x-1/2 flex z-40 text-center pb-3 pt-3 px-4 text-white rounded-full bg-[#5d8ed5] w-fit whitespace-nowrap sticky shadow-[0px_8px_12px_0px_#0000004d]`}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4"/></svg>
+        <button className="leading-3 pl-2 tracking-tight text-sm font-black self-end">BROWSE MENU</button>
+    </div>}
     </div>
   );
 };

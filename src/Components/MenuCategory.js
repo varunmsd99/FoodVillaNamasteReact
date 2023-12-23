@@ -3,7 +3,7 @@ import { useState } from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MenuCategory = ({title, itemCards}) => {
+const MenuCategory = ({title, itemCards, resName, resArea, resImg}) => {
   const menuData = itemCards.map((x) => {return x.card.info});
   const [isOpen, setIsOpen] = useState(true);
   const toggleCategory = () => {
@@ -17,7 +17,7 @@ const MenuCategory = ({title, itemCards}) => {
         </div>
         <div className="mb-5">
         {isOpen && menuData.map((obj) => {
-          return <MenuItem {...obj} key={{...obj}.id} />
+          return <MenuItem {...obj} key={{...obj}.id}/>
         })} 
         </div>
     </div>

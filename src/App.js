@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -8,6 +8,7 @@ import Help from "./Components/Help";
 import Profile from "./Components/Profile";
 import Cart from "./Components/Cart";
 import Error from "./Components/Error";
+import Orientation from "./Components/Orientation";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
@@ -48,7 +49,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: <Orientation />,
       },
       {
         path: "cart",

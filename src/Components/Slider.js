@@ -11,11 +11,9 @@ const Slider = (props) => {
     if(scrollItemRef.current){
       if (direction === 'left') {
         smoothScroll(scrollItemRef.current, -props.amount);
-        console.log("clickL");
       } 
       else if (direction === 'right') {
         smoothScroll(scrollItemRef.current, props.amount);
-        console.log("clickR");
       }
     }
 }

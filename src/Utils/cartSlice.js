@@ -3,6 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
+        resDetails: {
+            resName: '',
+            resArea: '',
+            resImg: '',
+            resSla: {}
+        },
         cartItems: []
     },
     reducers: {

@@ -13,7 +13,7 @@ const OfferCard = ({ couponCode, description, descriptionTextColor, header, offe
                 <img src={offerHeaderIcon} className="w-5 h-5 mr-1"/>
                 <h2 className="text-sm font-black text-[#686b78] leading-3 tracking-tighter truncate" title={header}>{header}</h2>
             </div>
-            <div className="text-[12px] font-bold text-[#93959f] -tracking-[0.75px] truncate">{couponCode}&nbsp; | &nbsp;{description}</div>
+            <div className="w-[100%]"><h2 className=" overflow-hidden text-ellipsis text-[12px] font-bold text-[#93959f] -tracking-[0.75px]">{couponCode}&nbsp; | &nbsp;{description}</h2></div>
         </div>
     </div>
   )

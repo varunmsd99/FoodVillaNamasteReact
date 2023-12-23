@@ -13,6 +13,7 @@ const useRestaurantsData = () => {
   [sort, setSort] = useState([]);
   [topResList, setTopResList] = useState([]);
   [resList, setResList] = useState([]);
+  [filteredResList, setFilteredResList ] = useState([]);
   [appInstallLinks, setAppInstallLinks] = useState([]);
   [footerCities, setFooterCities] = useState([]);
   [bestPlaces, setBestPlaces] = useState([]);
@@ -132,6 +133,7 @@ const useRestaurantsData = () => {
       setTopResList(...topResListData);
       setSort(...sortData);
       setResList(...resListData);
+      setFilteredResList(...resListData);
       setAppInstallLinks(...appInstallLinksData);
       setFooterCities(...footerCitiesData);
       setBestPlaces(...bestPlacesData);
@@ -160,6 +162,8 @@ const useRestaurantsData = () => {
     topResList,
     sort,
     resList,
+    filteredResList,
+    setFilteredResList,
     appInstallLinks,
     footerCities,
     bestPlaces,

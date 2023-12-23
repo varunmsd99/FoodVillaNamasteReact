@@ -8,12 +8,13 @@ import RestaurantSearchCard from "./RestaurantSearchCard";
 
 const Search = () => { 
   const Data = useRestaurantsData();
-  const restData = Data[Data.indexOf(resList)];
+  const restData = [...Data[Data.indexOf(resList)]];
+  console.log(restData);
   const [popularCuisines] = usePopularCuisinesData();
   const [searchText, setSearchText] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
   const [filteredResList, setFilteredResList] = useState([]);
-  popularCuisines.map((x) => {x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')});
+  popularCuisines?.map((x) => {x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')});
   window.scrollTo(0, 0);
   const handleCuisineClick = (text) => {
     setSearchText(text);
@@ -24,7 +25,6 @@ const Search = () => {
     }
   }
   const handleSearch = () => {
-    console.log(searchText);
     const filteredData = restData.filter((res) => res?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
     setFilteredResList(filteredData);
     setErrorMessage("");
@@ -34,8 +34,8 @@ const Search = () => {
   }
   useEffect(() => {handleSearch()}, [searchText]);
   return (
-    <div className="mt-32 min-h-screen">
-      <div className="flex items-center justify-start mx-auto w-[60%] border-2 border-[text-[#686b78]] text-[#686b78]">
+    <div className="mt-32 min-h-screen mx-auto w-[60%]">
+      <div className="px-2 flex items-center justify-start mx-auto w-full border-2 border-[text-[#686b78]] text-[#686b78]">
         <input
           type="text"
           className="flex-1 px-3 py-3 focus:outline-none"
@@ -44,14 +44,14 @@ const Search = () => {
           onChange={(e) => setSearchText(e.target.value)}
           onKeyUp={handleSearch}
         ></input>
-        <FontAwesomeIcon icon={searchText === '' ? faSearch : faXmark} className="text-[#7e818d] py-2 pr-4" onClick={() => {handleXClick()}}/>
+        <FontAwesomeIcon icon={searchText === '' ? faSearch : faXmark} className="text-[#7e818d] py-2 pr-4 cursor-pointer" onClick={() => {handleXClick()}}/>
       </div>
-      <div className="mx-auto mt-10 w-[60%]">
+      <div className="mx-auto mt-10 w-full">
         {searchText === '' ? (
           <>
             <h2 className="text-left font-black text-[#3d4152] pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
             <div className="flex overflow-hidden h-36 flex-start">
-              {popularCuisines.map((img) => {
+              {popularCuisines?.map((img) => {
                 return (
                   <div className="ml-1 mt-2 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
                     <img src={IMG_CDN_URL + img.imageId} className="h-full w-auto"/>
