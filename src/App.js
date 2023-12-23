@@ -14,7 +14,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
 
-export const AppLayout = () => {
+export const App = () => {
   return (
     <Provider store={store}>
       <React.Fragment>
@@ -28,7 +28,7 @@ export const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <App />,
     errorElement: <Error />,
     children: [
       {
