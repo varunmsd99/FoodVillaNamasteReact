@@ -14,7 +14,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
 
-export const App = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <React.Fragment>
@@ -64,3 +64,5 @@ const appRouter = createBrowserRouter([
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
+
+export default App
