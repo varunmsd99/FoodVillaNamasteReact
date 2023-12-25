@@ -6,6 +6,7 @@ import useRestaurantsData from "../Hooks/UseRestaurantsData";
 import usePopularCuisinesData from "../Hooks/usePopularCuisinesData";
 import { IMG_CDN_URL } from "../Helpers/Constant";
 import RestaurantSearchCard from "./RestaurantSearchCard";
+import Home from ".Home"
 
 const Search = () => { 
   const Data = useRestaurantsData();
