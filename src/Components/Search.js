@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
 import { useState, useEffect } from "react";
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
