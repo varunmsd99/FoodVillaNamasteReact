@@ -1,9 +1,10 @@
+import React from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const FAQItem = ({ title, description }) => {
-  [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const toggleFAQ = () => {
     setIsOpen(!isOpen);
