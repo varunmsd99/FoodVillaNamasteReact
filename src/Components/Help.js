@@ -33,7 +33,7 @@ const Help = () => {
                 {helpTitle.map((curr, index, value) => {return <div key={index} className={`text-[#8a8b91] ml-2 px-4 py-5 text-[13px] font-normal cursor-pointer hover:text-black hover:font-bold ${activeTitle === index ? 'bg-white' : ''}`} onClick={(event) => handleClick(event, index)}><a href="" className={`ml-10 ${activeTitle === index ? 'font-bold text-black' : ''}`}>{value[index]}</a></div>})} 
             </div>
             <div className="w-full pl-10 pt-4">
-                {...FAQ.map((curr, index, val) => {
+                {FAQ.map((curr, index, val) => {
                   return (
                     <FAQItem {...val[index]} key={val[index].id} index={index}/>
                   );
