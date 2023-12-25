@@ -1,3 +1,4 @@
+import React from "react";
 import {
   CAROUSEL_CDN_URL,
   WOYM_CARD_IMG_CDN_URL,
@@ -36,11 +37,11 @@ const Home = () => {
     notServicable,
   ] = useRestaurantsData();
   const locDetails = useSelector((store) => store.location.locationDetails);
-  [city, setCity] = useState(locDetails[0].district);
-  [sortActive, setSortActive] = useState(undefined);
-  [bestPlacesOpen, setBestPlacesOpen] = useState(false);
-  [bestCuiOpen, setBestCuiOpen] = useState(false);
-  [cityOpen, setCityOpen] = useState(false);
+  const[city, setCity] = useState(locDetails[0].district);
+  const[sortActive, setSortActive] = useState(undefined);
+  const[bestPlacesOpen, setBestPlacesOpen] = useState(false);
+  const[bestCuiOpen, setBestCuiOpen] = useState(false);
+  const[cityOpen, setCityOpen] = useState(false);
   const toggleCitites = () => {
     setCityOpen(!cityOpen);
   };
