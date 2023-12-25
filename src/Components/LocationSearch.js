@@ -1,3 +1,4 @@
+import React from "react";
 import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -5,8 +6,8 @@ import { updateLocation } from "../Utils/locationSlice";
 import locationUnservicable from "../Images/empty_location_unserviceable.webp"
 
 const LocationSearch = ({ childState, setChildState }) => {
-  [searchText, setSearchText] = useState("");
-  [locData, setLocData] = useState([]);
+const [searchText, setSearchText] = useState("");
+const [locData, setLocData] = useState([]);
   const dispatch = useDispatch();
   async function getLocation() {
     const data = await fetch(GET_LOCATION_API_URL + searchText, {
