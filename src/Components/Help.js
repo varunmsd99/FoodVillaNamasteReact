@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { support_data } from "../Helpers/Constant";
 import FAQItem from "./FAQItem.js";
