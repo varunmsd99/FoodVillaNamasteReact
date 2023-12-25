@@ -1,3 +1,4 @@
+import React from "react";
 import FoodVillaTempImg from "../Images/FoodVillaTempLandingPage.png";
 
 const LandingPage = () => {
