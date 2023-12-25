@@ -16,7 +16,7 @@ const Search = () => {
   const [searchText, setSearchText] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
   const [filteredResList, setFilteredResList] = useState([]);
-  popularCuisines?.map((x) => {return (x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' '))});
+  popularCuisines?.map((x) => (x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')));
   window.scrollTo(0, 0);
   const handleCuisineClick = (text) => {
     setSearchText(text);
