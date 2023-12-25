@@ -4,21 +4,21 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const useRestaurantsData = () => {
   const locDetails = useSelector((store) => store.location.locationDetails);
-  [latitude, setLatitude] = useState(locDetails[0].lat);
-  [city, setCity] = useState(locDetails[0].district);
-  [longitude, setLongitude] = useState(locDetails[0].lng);
-  [notServicable, setNotServicable] = useState([]);
-  [topicalBanner, setTopicalBanner] = useState([]);
-  [wOYM, setWOYM] = useState([]);
-  [sort, setSort] = useState([]);
-  [topResList, setTopResList] = useState([]);
-  [resList, setResList] = useState([]);
-  [filteredResList, setFilteredResList ] = useState([]);
-  [appInstallLinks, setAppInstallLinks] = useState([]);
-  [footerCities, setFooterCities] = useState([]);
-  [bestPlaces, setBestPlaces] = useState([]);
-  [bestCuiNearMe, setBestCuiNearMe] = useState([]);
-  [expResNearMe, setExpResNearMe] = useState([]);
+  const [latitude, setLatitude] = useState(locDetails[0].lat);
+  const [city, setCity] = useState(locDetails[0].district);
+  const [longitude, setLongitude] = useState(locDetails[0].lng);
+  const [notServicable, setNotServicable] = useState([]);
+  const [topicalBanner, setTopicalBanner] = useState([]);
+  const [wOYM, setWOYM] = useState([]);
+  const [sort, setSort] = useState([]);
+  const [topResList, setTopResList] = useState([]);
+  const [resList, setResList] = useState([]);
+  const [filteredResList, setFilteredResList ] = useState([]);
+  const [appInstallLinks, setAppInstallLinks] = useState([]);
+  const [footerCities, setFooterCities] = useState([]);
+  const [bestPlaces, setBestPlaces] = useState([]);
+  const [bestCuiNearMe, setBestCuiNearMe] = useState([]);
+  const [expResNearMe, setExpResNearMe] = useState([]);
   async function getRestaurants(latitude, longitude) {
     try {
       setResList([]);
