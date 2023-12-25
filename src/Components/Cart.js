@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import emptyCart from "../Images/emptyCart.webp";
 import { useState, useEffect } from "react";
@@ -9,13 +10,13 @@ const Cart = () => {
   const time = 32;
   const price = 390;
   const distance = 6.2;
-  [area, setArea] = useState("");
-  [cityName, setCityName] = useState("");
-  [state, setState] = useState("");
-  [suggestionText, setSuggestionText] = useState("");
-  [isChecked, setIsChecked] = useState("");
-  [confirmAddress, setConfirmAddress] = useState(false);
-  [confirmPayment, setConfirmPayment] = useState(false);
+  const [area, setArea] = useState("");
+  const [cityName, setCityName] = useState("");
+  const [state, setState] = useState("");
+  const [suggestionText, setSuggestionText] = useState("");
+  const [isChecked, setIsChecked] = useState("");
+  const [confirmAddress, setConfirmAddress] = useState(false);
+  const [confirmPayment, setConfirmPayment] = useState(false);
   const handleConfirmAddress = () => {
     setConfirmAddress(!confirmAddress);
     setConfirmPayment(!confirmPayment);
