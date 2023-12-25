@@ -9,7 +9,7 @@ import RestaurantSearchCard from "./RestaurantSearchCard";
 
 const Search = () => { 
   const Data = useRestaurantsData();
-  // const restData = [...Data[Data.indexOf(resList)]];
+  const restData = [...Data[Data.indexOf(resList)]];
   // console.log(restData);
   const [popularCuisines] = usePopularCuisinesData();
   const [searchText, setSearchText] = useState("");
