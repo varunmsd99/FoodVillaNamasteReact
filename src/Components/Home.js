@@ -1,10 +1,10 @@
-import React from "react";
 import {
   CAROUSEL_CDN_URL,
   WOYM_CARD_IMG_CDN_URL,
   IMG_CDN_URL,
   footer_data,
 } from "../Helpers/Constant";
+import React from "react";
 import Footer from "./Footer";
 import foodVillaLogoWhite from "../Images/Food Villa Logo White.png";
 import RestaurantCard from "./RestaurantCard";
@@ -37,11 +37,11 @@ const Home = () => {
     notServicable,
   ] = useRestaurantsData();
   const locDetails = useSelector((store) => store.location.locationDetails);
-  const[city, setCity] = useState(locDetails[0].district);
-  const[sortActive, setSortActive] = useState(undefined);
-  const[bestPlacesOpen, setBestPlacesOpen] = useState(false);
-  const[bestCuiOpen, setBestCuiOpen] = useState(false);
-  const[cityOpen, setCityOpen] = useState(false);
+  const [city, setCity] = useState(locDetails[0].district);
+  const [sortActive, setSortActive] = useState(undefined);
+  const [bestPlacesOpen, setBestPlacesOpen] = useState(false);
+  const [bestCuiOpen, setBestCuiOpen] = useState(false);
+  const [cityOpen, setCityOpen] = useState(false);
   const toggleCitites = () => {
     setCityOpen(!cityOpen);
   };
