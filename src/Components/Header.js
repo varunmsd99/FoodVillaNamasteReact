@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FoodVillaLogo from "../Images/Food Villa Logo.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -10,11 +11,11 @@ const Header = () => {
   const { linkPath } = useParams();
   const locDetails = useSelector((store) => store.location.locationDetails);
   const cartItemCount = useSelector((store) => store.cart.cartItems);
-  [area, setArea] = useState("");
-  [cityName, setCityName] = useState("");
-  [state, setState] = useState("");
-  [activeLink, setActiveLink] = useState(null);
-  [locationSearchisVisisble, setLocationSearchisVisisble] = useState(false);
+  const [area, setArea] = useState("");
+  const [cityName, setCityName] = useState("");
+  const [state, setState] = useState("");
+  const [activeLink, setActiveLink] = useState(null);
+  const [locationSearchisVisisble, setLocationSearchisVisisble] = useState(false);
   const handleLocationClick = () => {
     setLocationSearchisVisisble(!locationSearchisVisisble);
   };
