@@ -1,3 +1,4 @@
+import React from "react";
 import landscape from "../Images/Landscape.webp"
 
 const Orientation = () => {
