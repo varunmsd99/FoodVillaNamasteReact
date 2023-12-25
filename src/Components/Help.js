@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { support_data } from "../Helpers/Constant";
 import FAQItem from "./FAQItem.js";
@@ -5,9 +6,9 @@ import FAQItem from "./FAQItem.js";
 const Help = () => {
     const init = support_data.filter((x) => {return x.title === "General issues"}).map((x) => {return x.data});
     const titles = support_data.map((data) => {return data.title});
-    [helpTitle, setHelpTitle] = useState([]);
-    [FAQ, setFAQ] = useState([]);
-    [activeTitle, setActiveTitle] = useState(false);
+    const [helpTitle, setHelpTitle] = useState([]);
+    const [FAQ, setFAQ] = useState([]);
+    const [activeTitle, setActiveTitle] = useState(false);
     useEffect(() => {
       setHelpTitle(titles);
       setActiveTitle(0);
