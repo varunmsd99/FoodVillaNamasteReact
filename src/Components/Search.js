@@ -34,7 +34,6 @@ const Search = () => {
   }
   useEffect(() => {handleSearch()}, [searchText]);
   return (
-    <>
     <div className="mt-32 min-h-screen mx-auto w-[60%]">
       <div className="px-2 flex items-center justify-start mx-auto w-full border-2 border-[text-[#686b78]] text-[#686b78]">
         <input
@@ -73,7 +72,6 @@ const Search = () => {
         </div>)}
       </div>
     </div>
-            </>
   );
 };
 export default Search;
