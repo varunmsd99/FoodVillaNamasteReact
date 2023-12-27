@@ -6,7 +6,7 @@ export const RES_CARD_IMG_CDN_URL_GREY = "https://res.cloudinary.com/swiggy/imag
 export const REST_API_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=";
 export const CAROUSEL_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/";
 export const GET_LOCATION_API_URL = "https://india-pincode-with-latitude-and-longitude.p.rapidapi.com/api/v1/pincode/";
-export const apiKey = "c6c733f609msh01235ed89d81dc2p18e61bjsnb1d42693b34a";
+export const apiKey = process.env.LOCATION_API_KEY;
 export const ICON_CDN_URL_18 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/";
 export const ICON_CDN_URL_28 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/";
 export const MENU_ITEM_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React from "react";
 import { useState, useEffect } from "react";
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -7,16 +6,27 @@ import useRestaurantsData from "../Hooks/UseRestaurantsData";
 import usePopularCuisinesData from "../Hooks/usePopularCuisinesData";
 import { IMG_CDN_URL } from "../Helpers/Constant";
 import RestaurantSearchCard from "./RestaurantSearchCard";
-import Home from ".Home";
 
 const Search = () => { 
-  const Data = useRestaurantsData();
-  const restData = [...Data[Data.indexOf(Data.resList)]];
-  // console.log(restData);
+  const [
+    topicalBanner,
+    wOYM,
+    topResList,
+    sort,
+    resList,
+    filteredResList,
+    setFilteredResList,
+    appInstallLinks,
+    footerCities,
+    bestPlaces,
+    bestCuiNearMe,
+    expResNearMe,
+    notServicable,
+  ] = useRestaurantsData();
   const [popularCuisines] = usePopularCuisinesData();
   const [searchText, setSearchText] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
-  const [filteredResList, setFilteredResList] = useState([]);
+  const [filteredSearchResList, setFilteredSearchResList] = useState([]);
   popularCuisines?.map((x) => (x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')));
   window.scrollTo(0, 0);
   const handleCuisineClick = (text) => {
@@ -28,8 +38,8 @@ const Search = () => {
     }
   }
   const handleSearch = () => {
-    const filteredData = restData.filter((res) => res?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
-    setFilteredResList(filteredData);
+    const filteredData = resList.filter((res) => res?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
+    setFilteredSearchResList(filteredData);
     setErrorMessage("");
     if (filteredData?.length === 0) {
       setErrorMessage(`Sorry, we couldn't find any results for "${searchText}"`)
@@ -66,8 +76,8 @@ const Search = () => {
         <div>
           <div className="my-2 text-lg font-medium">Search Results for <strong>"{searchText}"</strong></div>
           <div>
-          {filteredResList &&
-              filteredResList?.map((res) => {
+          {filteredSearchResList &&
+              filteredSearchResList?.map((res) => {
                 return <RestaurantSearchCard {...res.info} key={res.info.id} />;
             })}
           </div>
