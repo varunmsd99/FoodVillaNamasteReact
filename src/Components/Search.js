@@ -27,7 +27,7 @@ const Search = () => {
   const [searchText, setSearchText] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
   const [filteredSearchResList, setFilteredSearchResList] = useState([]);
-  popularCuisines?.map((x) => (x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')));
+  const popCuisines = popularCuisines?.map((x) => (x.action.link = x.action.link.replace("swiggy://explore?query=", "").replace("%20", ' ')));
   window.scrollTo(0, 0);
   const handleCuisineClick = (text) => {
     setSearchText(text);
@@ -64,7 +64,7 @@ const Search = () => {
           <>
             <h2 className="text-left font-black text-[#3d4152] pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
             <div className="flex overflow-hidden h-36 flex-start">
-              {popularCuisines?.map((img) => {
+              {popCuisines?.map((img) => {
                 return (
                   <div className="ml-1 mt-2 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
                     <img src={IMG_CDN_URL + img.imageId} className="h-full w-auto"/>
