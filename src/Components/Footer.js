@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="my-3 flex items-center justify-center">
           <a
             className="ml-3 text-4xl transition-all hover:text-linkedIn"
-            href="https://linkedin.com/in/varunpelluru"
+            href="https://www.linkedin.com/in/varunpelluru"
             target="_blank"
             title="Varun Pelluru's Linkedin Profile"
           >

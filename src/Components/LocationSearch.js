@@ -8,7 +8,8 @@ import locationUnservicable from "../Images/empty_location_unserviceable.webp"
 const LocationSearch = ({ childState, setChildState }) => {
 const [searchText, setSearchText] = useState("");
 const [locData, setLocData] = useState([]);
-  const dispatch = useDispatch();
+const dispatch = useDispatch();
+console.log(`API KEY : ${apiKey}`);
   async function getLocation() {
     const data = await fetch(GET_LOCATION_API_URL + searchText, {
       method: "GET",
