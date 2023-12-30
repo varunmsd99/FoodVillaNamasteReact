@@ -3,13 +3,12 @@ import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateLocation } from "../Utils/locationSlice";
-import locationUnservicable from "../Images/empty_location_unserviceable.webp"
+import locationUnservicable from "../Images/empty_location_unserviceable.webp";
 
 const LocationSearch = ({ childState, setChildState }) => {
-const [searchText, setSearchText] = useState("");
-const [locData, setLocData] = useState([]);
-const dispatch = useDispatch();
-console.log(`API KEY : ${apiKey}`);
+  const [searchText, setSearchText] = useState("");
+  const [locData, setLocData] = useState([]);
+  const dispatch = useDispatch();
   async function getLocation() {
     const data = await fetch(GET_LOCATION_API_URL + searchText, {
       method: "GET",
@@ -34,13 +33,21 @@ console.log(`API KEY : ${apiKey}`);
     setChildState(!childState);
   };
   const handleKeyPress = (event) => {
-    if ((typeof(Number(searchText)) === "number" && searchText.length === 6) || event.key === "Enter") {
+    if (
+      (typeof Number(searchText) === "number" && searchText.length === 6) ||
+      event.key === "Enter"
+    ) {
       getLocation();
     }
   };
   return (
     <div className="z-30 min-h-[100vh-80px] flex">
-      <div className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 ease-in-out duration-1000 transition-all" onClick={() => {setChildState(!childState);}}></div>
+      <div
+        className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 ease-in-out duration-1000 transition-all"
+        onClick={() => {
+          setChildState(!childState);
+        }}
+      ></div>
       <div className="left-0 top-0 h-full bg-white z-50 absolute shadow-xl ease-in-out duration-1000 transition-all w-[33%]">
         <div className="flex-col items-center ml-auto mr-8 w-[67%]">
           <svg
@@ -57,21 +64,36 @@ console.log(`API KEY : ${apiKey}`);
             <path d="m6 6 12 12" />
           </svg>
           <div className="flex my-auto border-2 w-full shadow-[0px_1px_12px_1px_#d4d5d9]">
-          <input
-            type="text"
-            className="focus:outline-none py-2 px-3 flex-1"
-            placeholder="Enter Pincode"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          {searchText === '' ? <></> : <div className="text-orange font-medium text-sm pr-2 tracking-tight cursor-pointer self-center" onClick={() => {setSearchText('')}}>Cancel</div>}
+            <input
+              type="text"
+              className="focus:outline-none py-2 px-3 flex-1"
+              placeholder="Enter Pincode"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+            {searchText === "" ? (
+              <></>
+            ) : (
+              <div
+                className="text-orange font-medium text-sm pr-2 tracking-tight cursor-pointer self-center"
+                onClick={() => {
+                  setSearchText("");
+                }}
+              >
+                Cancel
+              </div>
+            )}
           </div>
           <div className="max-h-[calc(100vh-100px)] overflow-y-auto">
             {locData && locData[0] !== "noresults" ? (
               locData?.map((x, index) => {
                 return (
-                  <div className="flex p-6 mx-auto cursor-pointer border-b border-dashed" key={index} onClick={() => handleSubmit(index)}>
+                  <div
+                    className="flex p-6 mx-auto cursor-pointer border-b border-dashed"
+                    key={index}
+                    onClick={() => handleSubmit(index)}
+                  >
                     <svg
                       viewBox="0 0 24 24"
                       fill="#535665"
@@ -84,17 +106,29 @@ console.log(`API KEY : ${apiKey}`);
                       />
                     </svg>
                     <div className="flex-1 pl-2 flex-col w-full">
-                      <h1 className="text-[#282c3f] font-medium leading-3 text-base truncate">{x.area}</h1>
-                      <h2 className="text-[#93959f] font-thin text-sm pt-2 truncate">{x.district}, {x.state}</h2>
+                      <h1 className="text-[#282c3f] font-medium leading-3 text-base truncate">
+                        {x.area}
+                      </h1>
+                      <h2 className="text-[#93959f] font-thin text-sm pt-2 truncate">
+                        {x.district}, {x.state}
+                      </h2>
                     </div>
                   </div>
                 );
               })
             ) : (
               <div className="text-center">
-                <img src={locationUnservicable} alt="locationUnservicable" className="h-48 mx-auto my-10"/>
-                <h2 className="text-xl font-bold tracking-tight text-[#282c3f]">No results</h2>
-                <h3 className="text-[#93959f] text-sm font-light tracking-tight leading-3 pt-3">Are you sure you entered the right pincode?</h3>
+                <img
+                  src={locationUnservicable}
+                  alt="locationUnservicable"
+                  className="h-48 mx-auto my-10"
+                />
+                <h2 className="text-xl font-bold tracking-tight text-[#282c3f]">
+                  No results
+                </h2>
+                <h3 className="text-[#93959f] text-sm font-light tracking-tight leading-3 pt-3">
+                  Are you sure you entered the right pincode?
+                </h3>
               </div>
             )}
           </div>
