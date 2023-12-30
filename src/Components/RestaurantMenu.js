@@ -21,6 +21,7 @@ import { useState, useEffect } from "react";
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resDetails, resOffers, resMenu, resLicense, resAddress] = useRestaurantMenu(id);
+  console.log(resMenu);
   const locDetails = useSelector(store => store.location.locationDetails);
   const city = locDetails[0].district;
   const [showElement, setShowElement] = useState(false);
@@ -35,7 +36,9 @@ const RestaurantMenu = () => {
     left: 0,
     behavior: 'smooth'
   });
-  return (
+  return resMenu?.length === 0 ? (
+    <div>Shimmer</div>
+  ) : (
     <div className="min-h-screen mx-auto mt-32 max-w-[80%]">
       {resDetails?.name && (
         <div className="flex justify-between items-center">
@@ -158,7 +161,7 @@ const RestaurantMenu = () => {
         <button className="leading-3 pl-2 tracking-tight text-sm font-black self-end">BROWSE MENU</button>
     </div>}
     </div>
-  );
+  )
 };
 
 export default RestaurantMenu;
