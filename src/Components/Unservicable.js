@@ -1,3 +1,4 @@
+import React from "react";
 import unservicable from "../Images/location_unserviceable.webp"
 const Unservicable = (title, imageLink) => {
   return (

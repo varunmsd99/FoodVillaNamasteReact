@@ -1,3 +1,4 @@
+import React from "react";
 import { swiggy_api_URL } from "../Constant";
 
 export default async function getRestaurantList() {

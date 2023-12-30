@@ -1,3 +1,4 @@
+import React from "react";
 import MenuItem from "./MenuItem";
 import { useState } from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";

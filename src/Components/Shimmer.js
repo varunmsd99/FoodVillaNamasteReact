@@ -1,3 +1,4 @@
+import React from "react";
 import { shimmer_display_count } from "../Constant.js";
 
 const shimmerCard = () => {

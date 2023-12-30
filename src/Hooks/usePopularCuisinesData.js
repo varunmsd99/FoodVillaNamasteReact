@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { swiggySearchAPI } from "../Helpers/Constant";
 import { useSelector } from "react-redux/es/hooks/useSelector";

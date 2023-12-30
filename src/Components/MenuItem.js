@@ -1,3 +1,4 @@
+import React from "react";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MENU_ITEM_CDN_URL } from "../Helpers/Constant";

@@ -1,3 +1,4 @@
+import React from "react";
 import { ICON_CDN_URL_18, ICON_CDN_URL_28 } from "../Helpers/Constant";
 
 const OfferCard = ({ couponCode, description, descriptionTextColor, header, offerLogo, offerTag, offerTagColor}) => {
