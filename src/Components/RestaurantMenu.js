@@ -36,7 +36,7 @@ const RestaurantMenu = () => {
     left: 0,
     behavior: 'smooth'
   });
-  return resMenu?.length === 0 ? (
+  return resMenu.length === 0 ? (
     <div>Shimmer</div>
   ) : (
     <div className="min-h-screen mx-auto mt-32 max-w-[80%]">
