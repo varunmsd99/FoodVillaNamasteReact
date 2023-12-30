@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
     <div>Shimmer</div>
   ) : (
     <div className="min-h-screen mx-auto mt-32 max-w-[80%]">
-      {resDetails?.name && (
+      {resDetails.name && (
         <div className="flex justify-between items-center">
           <div className="flex text-xs text-[#93959f] ">
             <Link to="/">
@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
             </Link>
             &nbsp;/
             <h4 className="text-[#000000] px-1 font-normal">
-              {resDetails?.name}
+              {resDetails.name}
             </h4>
           </div>
           <div className="p-1">
@@ -69,52 +69,52 @@ const RestaurantMenu = () => {
       )}
       <div className="flex justify-between my-5">
         <div>
-          <h1 className="font-black text-xl text-[#282c3f] pb-2">{resDetails?.name}</h1>
-          <h3 className="font-light text-sm text-[#7e808c] pb-1">{resDetails?.cuisines.join(" ,")}</h3>
-          {resDetails?.sla?.lastMileTravelString ? (
+          <h1 className="font-black text-xl text-[#282c3f] pb-2">{resDetails.name}</h1>
+          <h3 className="font-light text-sm text-[#7e808c] pb-1">{resDetails.cuisines.join(" ,")}</h3>
+          {resDetails.sla.lastMileTravelString ? (
             <h3 className="font-light text-sm text-[#7e808c] pb-1">
-              {resDetails?.areaName}, {resDetails?.sla?.lastMileTravelString}
+              {resDetails.areaName}, {resDetails.sla.lastMileTravelString}
             </h3>
           ) : (
-            <h3 className="font-light text-sm text-[#7e808c] pb-1">{resDetails?.areaName}</h3>
+            <h3 className="font-light text-sm text-[#7e808c] pb-1">{resDetails.areaName}</h3>
           )}
         </div>
-        {resDetails?.avgRatingString && (
+        {resDetails.avgRatingString && (
           <div className="flex flex-col p-2 h-fit border border-gray-300 shadow-sm rounded-md">
             <h2 className="flex justify-center text-sm items-baseline text-[#3d9b6d] pb-2 mb-2 border-b border-gray-300 font-semibold leading-tight">
               <FontAwesomeIcon icon={faStar}></FontAwesomeIcon> &nbsp;
-              {resDetails?.avgRatingString}
+              {resDetails.avgRatingString}
             </h2>
-            <h4 className="text-[10px] text-[#8b8d97] font-bold tracking-tighter text-shadow-xs">{resDetails?.totalRatingsString}</h4>
+            <h4 className="text-[10px] text-[#8b8d97] font-bold tracking-tighter text-shadow-xs">{resDetails.totalRatingsString}</h4>
           </div>
         )}
       </div>
-      {resDetails?.feeDetails?.message ? (
+      {resDetails.feeDetails.message ? (
         <div className="flex pb-3">
           <h4 className="flex items-center justify-center text-base text-[#7e808c] font-light ">
-            <img src={ICON_CDN_URL_18 + resDetails?.feeDetails?.icon} className="pr-2"/>{" "}
-            {resDetails?.feeDetails?.message}
+            <img src={ICON_CDN_URL_18 + resDetails.feeDetails.icon} className="pr-2"/>{" "}
+            {resDetails.feeDetails.message}
           </h4>
         </div>
       ) : (
         <></>
       )}
-      {resDetails?.sla?.slaString && (
+      {resDetails.sla.slaString && (
         <div className="flex mt-3 py-3 pl-3 justify-baseline items-baseline border-t border-dashed border-gray-300">
-          {resDetails?.sla?.slaString ? (
+          {resDetails.sla.slaString ? (
             <h2 className="text-base text-[#282c3f] font-extrabold text-shadow-md pr-3">
               <FontAwesomeIcon icon={faCircleHalfStroke}></FontAwesomeIcon>{" "}
               &nbsp;
-              {resDetails?.sla?.slaString}
+              {resDetails.sla.slaString}
             </h2>
           ) : (
             <></>
           )}
-          {resDetails?.costForTwoMessage ? (
+          {resDetails.costForTwoMessage ? (
             <h2 className="text-base text-[#282c3f] font-extrabold text-shadow-md">
               <FontAwesomeIcon icon={faIndianRupeeSign} className="px-[5px] py-[1.5px] text-sm rounded-full border-[1px] border-solid border-[#282c3f] text-[#282c3f]"/>{" "}
               &nbsp;
-              {resDetails?.costForTwoMessage}
+              {resDetails.costForTwoMessage}
             </h2>
           ) : (
             <></>
