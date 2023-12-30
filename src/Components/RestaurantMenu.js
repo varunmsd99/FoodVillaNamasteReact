@@ -36,10 +36,10 @@ const RestaurantMenu = () => {
     left: 0,
     behavior: 'smooth'
   });
-  return resMenu.length === 0 ? (
+  return resOffers.length === 0 ? (
     <div>Shimmer</div>
   ) : (
-    <div className="min-h-screen mx-auto mt-32 max-w-[80%]">
+    <div className="min-h-screen mx-auto mt-32 max-w-[75%]">
       {resDetails.name && (
         <div className="flex justify-between items-center">
           <div className="flex text-xs text-[#93959f] ">

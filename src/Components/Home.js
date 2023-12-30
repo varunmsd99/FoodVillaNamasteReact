@@ -106,7 +106,7 @@ const Home = () => {
           <Unservicable />
         </div>
       ) : (
-        <div className="max-w-[90%] mx-auto min-h-screen pt-24">
+        <div className="max-w-[80%] mx-auto min-h-screen pt-24">
           {topicalBanner && (
             <>
               <div className="flex justify-between mt-6 ml-4 pl-2 items-center">
@@ -385,7 +385,7 @@ const Home = () => {
           </div>
         )}
         <div className="flex bg-[#02060C] text-[#ffffff99] flex-col items-center justify-center p-10">
-          <div className="grid grid-cols-4 gap-x-[5%] w-[80%] mx-auto">
+          <div className="grid grid-cols-4 gap-x-[5%] w-[85%] mx-auto">
             <div>
               <div className="flex items-center" key="footer-details">
                 <img
