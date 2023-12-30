@@ -87,7 +87,7 @@ const LocationSearch = ({ childState, setChildState }) => {
           </div>
           <div className="max-h-[calc(100vh-100px)] overflow-y-auto">
             {locData && locData[0] !== "noresults" ? (
-              locData?.map((x, index) => {
+              locData.map((x, index) => {
                 return (
                   <div
                     className="flex p-6 mx-auto cursor-pointer border-b border-dashed"
