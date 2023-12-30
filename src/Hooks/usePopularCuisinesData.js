@@ -5,9 +5,9 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const usePopularCuisinesData = () => {
     const locDetails = useSelector((store) => store.location.locationDetails);
-    [latitude, setLatitude] = useState(locDetails[0].lat);
-    [longitude, setLongitude] = useState(locDetails[0].lng);
-    [popularCuisines, setPopularCuisines] = useState([]);
+    const [latitude, setLatitude] = useState(locDetails[0].lat);
+    const [longitude, setLongitude] = useState(locDetails[0].lng);
+    const [popularCuisines, setPopularCuisines] = useState([]);
     async function getPopularCuisines() {
       const data = await fetch(swiggySearchAPI(latitude, longitude));
       const json = await data.json();

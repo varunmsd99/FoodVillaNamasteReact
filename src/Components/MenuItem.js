@@ -21,7 +21,7 @@ const MenuItem = ({
   resSla,
 }) => {
   const dispatch = useDispatch();
-  [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
     dispatch(addItems({ name, isVeg, defaultPrice }));
   };
