@@ -3,7 +3,7 @@ export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lo
 export const WOYM_CARD_IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
 export const RES_CARD_IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const RES_CARD_IMG_CDN_URL_GREY = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660,e_grayscale/";
-export const REST_API_MENU_URL = "https://erin-glamorous-earthworm.cyclic.app/api/proxy/swiggy/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=";
+export const REST_API_MENU_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.771791643019924&lng=83.23994915932417&restaurantId=";
 export const CAROUSEL_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/";
 export const GET_LOCATION_API_URL = "https://india-pincode-with-latitude-and-longitude.p.rapidapi.com/api/v1/pincode/";
 export const apiKey = process.env.LOCATION_API_KEY;
@@ -11,8 +11,8 @@ export const ICON_CDN_URL_18 = "https://res.cloudinary.com/swiggy/image/upload/f
 export const ICON_CDN_URL_28 = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/";
 export const MENU_ITEM_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 export const LICENSE_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_120,h_60/";
-export const swiggyAPI = (lat, lng) => { return `https://erin-glamorous-earthworm.cyclic.app/api/proxy/swiggy/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&page_type=DESKTOP_WEB_LISTING`};
-export const swiggySearchAPI = (lat, lng) => { return `https://erin-glamorous-earthworm.cyclic.app/api/proxy/swiggy/dapi/landing/PRE_SEARCH?lat=${lat}&lng=${lng}`};
+export const swiggyAPI = (lat, lng) => { return `https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&page_type=DESKTOP_WEB_LISTING`};
+export const swiggySearchAPI = (lat, lng) => { return `https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/landing/PRE_SEARCH?lat=${lat}&lng=${lng}`};
 export const support_data = [
   {
     "type": "general",
