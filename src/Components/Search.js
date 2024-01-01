@@ -46,7 +46,6 @@ const Search = () => {
     }
   }
   useEffect(() => {handleSearch()}, [searchText]);
-  console.log(popularCuisines)
   return (
     <div className="mt-32 min-h-screen mx-auto w-[60%]">
       <div className="px-2 flex items-center justify-start mx-auto w-full border-2 border-[text-[#686b78]] text-[#686b78]">
@@ -64,14 +63,16 @@ const Search = () => {
         {searchText === '' ? (
           <>
             <h2 className="text-left font-black text-[#3d4152] pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
+            {popularCuisines.length === 0 ? 
+            <div>Shimmer</div> : 
             <div className="flex overflow-hidden h-36 flex-start">
-              {popularCuisines?.map((img) => {
-                return (
-                  <div className="ml-1 mt-2 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
-                    <img src={IMG_CDN_URL + img.imageId} className="h-full w-auto"/>
-                  </div>);
-              })}
-            </div>
+            {popularCuisines?.map((img) => {
+              return (
+                <div className="ml-1 mt-2 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
+                  <img src={IMG_CDN_URL + img.imageId} className="h-full w-auto"/>
+                </div>);
+            })}
+          </div>}
           </>
         ) : (
         <div>

@@ -179,7 +179,7 @@ const Home = () => {
                   Restaurants with online food delivery in {city}
                 </h1>
               </div>
-              <div className="flex mx-8 mb-4">
+              <div className="flex mx-4 mb-4">
                 <div
                   className={`px-3 py-2 mr-3 min-w-fit rounded-full shadow-[0px_2px_12px_#02060c26] overflow-hidden transition-all duration-100 ease-in delay-0 ${
                     sortActive !== undefined
@@ -225,7 +225,7 @@ const Home = () => {
                   );
                 })}
                 </div>
-              <div className="grid place-items-center gap-y-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+              <div className="grid place-items-center gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {filteredResList &&
                   filteredResList?.map((res) => {
                     return <RestaurantCard {...res.info} key={res.info.id} />;
