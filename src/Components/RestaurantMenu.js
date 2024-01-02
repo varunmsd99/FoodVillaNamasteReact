@@ -17,6 +17,7 @@ import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import useRestaurantMenu from "../Hooks/useRestaurantMenu";
 import { useState, useEffect } from "react";
+import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -37,7 +38,7 @@ const RestaurantMenu = () => {
     behavior: 'smooth'
   });
   return resOffers.length === 0 ? (
-    <div>Shimmer</div>
+    <RestaurantMenuShimmer />
   ) : (
     <div className="min-h-screen mx-auto mt-32 max-w-[75%]">
       {resDetails.name && (

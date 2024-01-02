@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import foodVillaLogoWhite from "../Images/Food Villa Logo White.png";
 import RestaurantCard from "./RestaurantCard";
 import Slider from "./Slider";
+import HomeShimmer from "./HomeShimmer";
 import { useState, useEffect } from "react";
 import {
   faChevronDown,
@@ -98,7 +99,7 @@ const Home = () => {
     appInstallLinks.title = appInstallLinks.title.replace("Swiggy ", "");
   }
   return resList?.length === 0 ? (
-    <div>Shimmer</div>
+    <HomeShimmer />
   ) : (
     <>
       {notServicable !== undefined ? (

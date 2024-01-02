@@ -1,4 +1,6 @@
 import React from "react";
+import { shimmer_display_count } from "../Helpers/Constant";
+import SearchShimmer from "./searchShimmer";
 import { useState, useEffect } from "react";
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,6 +47,7 @@ const Search = () => {
       setErrorMessage(`Sorry, we couldn't find any results for "${searchText}"`)
     }
   }
+  const shimArr = Array(shimmer_display_count).fill("");
   useEffect(() => {handleSearch()}, [searchText]);
   return (
     <div className="mt-32 min-h-screen mx-auto w-[60%]">
@@ -62,13 +65,13 @@ const Search = () => {
       <div className="mx-auto mt-10 w-full">
         {searchText === '' ? (
           <>
-            <h2 className="text-left font-black text-[#3d4152] pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
+            <h2 className="text-left font-black text-[#3d4152] mb-2 pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
             {popularCuisines.length === 0 ? 
-            <div>Shimmer</div> : 
+            (<div className='flex overflow-hidden flex-start'>{shimArr?.map((e, index) => { return <SearchShimmer key={index}/>})}</div>) : 
             <div className="flex overflow-hidden h-36 flex-start">
             {popularCuisines?.map((img) => {
               return (
-                <div className="ml-1 mt-2 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
+                <div className="ml-1 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>
                   <img src={IMG_CDN_URL + img.imageId} className="h-full w-auto"/>
                 </div>);
             })}

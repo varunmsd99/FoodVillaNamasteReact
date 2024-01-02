@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import emptyCart from "../Images/emptyCart.webp";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import { clearCart } from "../Utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cartDetails = useSelector((store) => store.cart.cartItems);
   const locDetails = useSelector((store) => store.location.locationDetails);
   const time = 32;
@@ -21,6 +24,9 @@ const Cart = () => {
     setConfirmAddress(!confirmAddress);
     setConfirmPayment(!confirmPayment);
   };
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  }
   useEffect(() => {
     if (locDetails[0]) {
       setArea(locDetails[0].area);
@@ -184,7 +190,7 @@ const Cart = () => {
                   <h3 className="text-sm text-[#7f828f]">
                     Credit & Debit cards, UPI or Cash on Delivery
                   </h3>
-                  <div className="my-4 bg-[#60b246] py-3 text-white font-bold text-center tracking-tight cursor-pointer hover:shadow-[0px_2PX_8PX_#d4d5d9]">
+                  <div className="my-4 bg-[#60b246] py-3 text-white font-bold text-center tracking-tight cursor-pointer hover:shadow-[0px_2PX_8PX_#d4d5d9]" onClick={() => {handleClearCart()}}>
                     PLACE ORDER
                   </div>
                 </>

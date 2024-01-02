@@ -15,6 +15,10 @@ import { Provider } from "react-redux";
 import store from "./Utils/store";
 
 const App = () => {
+  const getOrientation = () => {
+    window.screen.orientation.type;
+  }
+  const [orientation, setOrientation] =useState(getOrientation());
   return (
     <Provider store={store}>
       <React.Fragment>
