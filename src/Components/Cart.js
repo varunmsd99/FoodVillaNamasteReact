@@ -10,9 +10,11 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartDetails = useSelector((store) => store.cart.cartItems);
   const locDetails = useSelector((store) => store.location.locationDetails);
-  const time = 32;
-  const price = 390;
-  const distance = 6.2;
+  const time = cartDetails[0]?.resDetailsData?.slaString;
+  const deliveryFee = ((cartDetails[0]?.resDetailsData?.deliveryFee)/100).toFixed(0);
+  const itemTotal = ((cartDetails[0]?.resDetailsData?.deliveryFee)/100).toFixed(0);
+  const distance = cartDetails[0]?.resDetailsData?.lastMileTravelString;
+  console.log(cartDetails);
   const [area, setArea] = useState("");
   const [cityName, setCityName] = useState("");
   const [state, setState] = useState("");
@@ -25,6 +27,7 @@ const Cart = () => {
     setConfirmPayment(!confirmPayment);
   };
   const handleClearCart = () => {
+    alert("order placed");
     dispatch(clearCart());
   }
   useEffect(() => {
@@ -104,7 +107,7 @@ const Cart = () => {
                       {area}, {cityName}, {state}
                     </h3>
                     <h3 className="text-sm text-[#282c3f] font-semibold tracking-tight leading-3 mt-6">
-                      {time} MINS
+                      {time}
                     </h3>
                   </div>
                 </>
@@ -272,13 +275,13 @@ const Cart = () => {
             </div>
             <div className="flex justify-between text-[#686b78] text-xs font-normal pt-4">
               <h3>Item Total</h3>
-              <h3>₹ {price}</h3>
+              <h3>₹ {itemTotal}</h3>
             </div>
             <div className="flex justify-between border-b border-solid text-[#686b78] text-xs font-normal pb-4 pt-1">
-              <div className="flex items-end">Delivery Fee | {distance} kms 
+              <div className="flex items-end">Delivery Fee | {distance} 
                 <div className="ml-2 rounded-full border-[#686b78] border px-[4px] text-[10px] leading-3 text-[#686b78] font-bold flex self-baseline">i</div>
               </div>
-              <h3>₹ {price}</h3>
+              <h3>₹ {deliveryFee}</h3>
             </div>
             </div>
             <div className="mx-4 p-2">
@@ -290,18 +293,18 @@ const Cart = () => {
               <div className="flex items-end">Platform Fee 
                 <div className="ml-2 rounded-full border-[#686b78] border px-[4px] text-[10px] leading-3 text-[#686b78] font-bold flex self-baseline">i</div>
               </div>
-              <h3>₹ {price}</h3>
+              <span className="flex"><h3 className="text-[#d3d3d3] line-through pr-1">₹ 5.00</h3><h3>3</h3></span>
             </div>
             <div className="flex justify-between border-b border-solid border-[#282c3f] text-[#686b78] pb-3 text-xs font-normal pt-1">
               <div className="flex items-end">GST and Restaurant Charges 
                 <div className="ml-2 rounded-full border-[#686b78] border px-[4px] text-[10px] leading-3 text-[#686b78] font-bold flex self-baseline">i</div>
               </div>
-              <h3>₹ {price}</h3>
+              <h3>₹ {(itemTotal * 0.18).toFixed(2)}</h3>
             </div>
             </div>
             <div className="flex justify-between text-[#282c3f] text-sm font-extrabold mx-4 px-2 tracking-tight">
               <h3>TO PAY</h3>
-              <h3>₹ {price}</h3>
+              <h3>₹ {(Number(itemTotal)+Number(deliveryFee) + 3 + Number(0.18*itemTotal)).toFixed(2)}</h3>
             </div>
           </div>
           <div className="p-6 w-full h-fit bg-white mt-6">

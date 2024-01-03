@@ -6,13 +6,13 @@ const RestaurantMenuShimmer = () => {
   return (
     <div className='mx-auto mt-32 max-w-[75%]'>
       <div className='max-w-[35%] bg-[#eef0f5] h-3 mb-12 rounded' />
-      <div className='flex justify-between items-center my-5 rounded'>
+      <div className='flex justify-between items-center my-5 rounded h-fit'>
         <div className='flex-1'>
           <div className='mb-4 w-[30%] bg-[#eef0f5] h-6 rounded-sm' />
           <div className='mb-4 w-[15%] bg-[#eef0f5] h-3 rounded-sm' />
           <div className='mb-4 w-[10%] bg-[#eef0f5] h-3 rounded-sm' />
         </div>
-        <div className='pb-4 max-w-[10%] bg-[#eef0f5] h-16 w-16 rounded-xl'></div>
+        <div className='pb-4 bg-[#eef0f5] h-[76px] w-[70px] rounded-xl'></div>
       </div>
       <div className='mb-4 max-w-[30%] bg-[#eef0f5] h-5 rounded-sm' />
       <div className='mb-4 max-w-[30%] bg-[#eef0f5] h-7 rounded-sm' />

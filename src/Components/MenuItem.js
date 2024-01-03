@@ -13,23 +13,22 @@ const MenuItem = ({
   defaultPrice,
   price,
   isVeg,
-  variants,
-  variantsV2,
-  resName,
-  resArea,
-  resImg,
-  resSla,
+  resDetailsData
 }) => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
-    dispatch(addItems({ name, isVeg, defaultPrice }));
+    console.log("click");
+    setQuantity(1);
+    dispatch(addItems({ name, isVeg, price, quantity, resDetailsData }));
   };
   const handleIncreaseQuantity = () => {
+    setQuantity(quantity+1);
     console.log("increased");
   };
   const handleDecreaseQuantity = () => {
     if (quantity > 0) {
+      setQuantity(quantity-1);
       console.log("decreased");
     }
   };

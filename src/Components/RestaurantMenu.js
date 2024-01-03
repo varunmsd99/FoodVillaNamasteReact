@@ -22,7 +22,15 @@ import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resDetails, resOffers, resMenu, resLicense, resAddress] = useRestaurantMenu(id);
-  console.log(resMenu);
+  const resDetailsData = {
+    "id": resDetails?.id,
+    "name": resDetails?.name,
+    "areaName": resDetails?.areaName,
+    "cloudinaryImageId": resDetails?.cloudinaryImageId,
+    "slaString": resDetails?.sla?.slaString,
+    "lastMileTravelString": resDetails?.sla?.lastMileTravelString,
+    "deliveryFee": resDetails?.feeDetails?.totalFee
+  };
   const locDetails = useSelector(store => store.location.locationDetails);
   const city = locDetails[0].district;
   const [showElement, setShowElement] = useState(false);
@@ -129,7 +137,7 @@ const RestaurantMenu = () => {
       </div>
       <div className="menu font-black text-[#3e4152]">
         {resMenu.map((obj) => {
-          return <MenuCategory {...obj} key={{ ...obj }.title} />;
+          return <MenuCategory {...obj} key={{ ...obj }.title} resDetailsData={resDetailsData}/>;
         })}
       </div>
       <div>

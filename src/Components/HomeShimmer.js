@@ -3,7 +3,6 @@ import { shimmer_display_count } from '../Helpers/Constant'
 
 const HomeShimmer = () => {
     const shimArr = Array(shimmer_display_count).fill("");
-    console.log(shimArr);
     return (
     <div className='max-w-[80%] mx-auto min-h-screen pt-24'>
         <div className='mt-8 ml-4 pl-2 max-w-[40%] bg-[#eef0f5] h-5' />

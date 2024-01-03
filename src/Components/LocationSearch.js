@@ -43,19 +43,19 @@ const LocationSearch = ({ childState, setChildState }) => {
   return (
     <div className="z-30 min-h-[100vh-80px] flex">
       <div
-        className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 ease-in-out duration-1000 transition-all"
+        className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 transform transition-transform duration-300"
         onClick={() => {
           setChildState(!childState);
         }}
       ></div>
-      <div className="left-0 top-0 h-full bg-white z-50 absolute shadow-xl ease-in-out duration-1000 transition-all w-[33%]">
+      <div className=" w-[33%] left-0 top-0 h-full bg-white z-50 absolute shadow-xl transform transition-transform duration-300">
         <div className="flex-col items-center ml-auto mr-8 w-[67%]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 my-4 cursor-pointer"
+            className="w-6 h-6 my-7 cursor-pointer"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#686b78"
+            stroke="#3d4152"
             onClick={() => {
               handleChildState();
             }}
