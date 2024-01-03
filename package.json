@@ -12,10 +12,10 @@
   "author": "Varun VK",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.23.7",
     "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@parcel/babel-preset-env": "^2.10.3",
+    "@babel/preset-env": "^7.23.7",
     "@parcel/resolver-glob": "^2.8.3",
     "buffer": "^5.7.1",
     "parcel": "^2.8.3",
