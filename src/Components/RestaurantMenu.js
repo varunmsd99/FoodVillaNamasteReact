@@ -15,13 +15,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import useRestaurantMenu from "../Hooks/useRestaurantMenu";
+import UseRestaurantMenu from "../Hooks/UseRestaurantMenu";
 import { useState, useEffect } from "react";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [resDetails, resOffers, resMenu, resLicense, resAddress] = useRestaurantMenu(id);
+  const [resDetails, resOffers, resMenu, resLicense, resAddress] = UseRestaurantMenu(id);
   const resDetailsData = {
     "id": resDetails?.id,
     "name": resDetails?.name,

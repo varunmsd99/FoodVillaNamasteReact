@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { swiggySearchAPI } from "../Helpers/Constant";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
-const usePopularCuisinesData = () => {
+const UsePopularCuisinesData = () => {
     const locDetails = useSelector((store) => store.location.locationDetails);
     const [latitude, setLatitude] = useState(locDetails[0].lat);
     const [longitude, setLongitude] = useState(locDetails[0].lng);
@@ -35,4 +35,4 @@ const usePopularCuisinesData = () => {
     return [popularCuisines];
 }
 
-export default usePopularCuisinesData;
+export default UsePopularCuisinesData;

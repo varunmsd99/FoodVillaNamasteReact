@@ -3,7 +3,7 @@ import { swiggyAPI } from "../Helpers/Constant";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
-const useRestaurantsData = () => {
+const UseRestaurantsData = () => {
   const locDetails = useSelector((store) => store.location.locationDetails);
   const [latitude, setLatitude] = useState(locDetails[0].lat);
   const [city, setCity] = useState(locDetails[0].district);
@@ -174,4 +174,4 @@ const useRestaurantsData = () => {
   ];
 };
 
-export default useRestaurantsData;
+export default UseRestaurantsData;
