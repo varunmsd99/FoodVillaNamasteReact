@@ -18,7 +18,7 @@ const HomeShimmer = () => {
         })}
         </div>
         <div className='mt-8 ml-4 pl-2 max-w-[40%] bg-[#eef0f5] h-5' />
-        <div className='flex flex-wrap mt-8 ml-4 gap-y-8 pl-2 overflow-hidden min-h-[240px]'>
+        <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-8 ml-4 gap-y-8 pl-2 overflow-hidden min-h-[240px]'>
         {shimArr.map((e, i) => {
             return <div className='h-[160px] min-w-[256px] rounded-3xl bg-[#eef0f5] mr-8' key={i} />
         })}
