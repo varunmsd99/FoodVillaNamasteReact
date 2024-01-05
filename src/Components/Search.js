@@ -4,8 +4,8 @@ import SearchCuisineShimmer from "./SearchCuisineShimmer";
 import { useState, useEffect } from "react";
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import UseRestaurantsData from "../Hooks/UseRestaurantsData";
-import UsePopularCuisinesData from "../Hooks/UsePopularCuisinesData";
+import useRestaurantsData from "../Hooks/useRestaurantsData";
+import usePopularCuisinesData from "../Hooks/usePopularCuisinesData";
 import { IMG_CDN_URL } from "../Helpers/Constant";
 import RestaurantSearchCard from "./RestaurantSearchCard";
 
@@ -24,8 +24,8 @@ const Search = () => {
     bestCuiNearMe,
     expResNearMe,
     notServicable,
-  ] = UseRestaurantsData();
-  const [popularCuisines] = UsePopularCuisinesData();
+  ] = useRestaurantsData();
+  const [popularCuisines] = usePopularCuisinesData();
   const [searchText, setSearchText] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
   const [filteredSearchResList, setFilteredSearchResList] = useState([]);

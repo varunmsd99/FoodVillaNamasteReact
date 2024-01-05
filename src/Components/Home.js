@@ -19,7 +19,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import Unservicable from "./Unservicable";
-import UseRestaurantsData from "../Hooks/UseRestaurantsData";
+import useRestaurantsData from "../Hooks/useRestaurantsData";
 
 const Home = () => {
   const [
@@ -36,7 +36,7 @@ const Home = () => {
     bestCuiNearMe,
     expResNearMe,
     notServicable,
-  ] = UseRestaurantsData();
+  ] = useRestaurantsData();
   const locDetails = useSelector((store) => store.location.locationDetails);
   const [city, setCity] = useState(locDetails[0].district);
   const [sortActive, setSortActive] = useState(undefined);
