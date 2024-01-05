@@ -14,7 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OfferCard from "./OfferCard";
 import MenuCategory from "./MenuCategory";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 import UseRestaurantMenu from "../Hooks/UseRestaurantMenu";
 import { useState, useEffect } from "react";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";

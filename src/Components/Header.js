@@ -5,7 +5,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LocationSearch from "./LocationSearch";
-import { useDispatch, useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const { linkPath } = useParams();

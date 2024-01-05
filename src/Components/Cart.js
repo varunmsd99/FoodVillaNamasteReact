@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import emptyCart from "../Images/emptyCart.webp";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 import { clearCart } from "../Utils/cartSlice";
 import { useDispatch } from "react-redux";
 

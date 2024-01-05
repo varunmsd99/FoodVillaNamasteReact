@@ -17,7 +17,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 import Unservicable from "./Unservicable";
 import UseRestaurantsData from "../Hooks/UseRestaurantsData";
 
