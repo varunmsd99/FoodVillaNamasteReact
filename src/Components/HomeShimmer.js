@@ -5,7 +5,7 @@ const HomeShimmer = () => {
     const shimArr = Array(shimmer_display_count).fill("");
     return (
     <div className='max-w-[80%] mx-auto min-h-screen pt-24'>
-        <div className='mt-8 ml-4 pl-2 max-w-[40%] bg-[#eef0f5] h-5' />
+        <div className='mt-8 mb-4 ml-4 pl-2 max-w-[40%] bg-[#eef0f5] h-5' />
         <div className='flex p-4 overflow-hidden'>
         {shimArr.map((e, i) => {
             return <div className='h-[180px] min-w-[144px] bg-[#eef0f5] mr-8' key={i} />

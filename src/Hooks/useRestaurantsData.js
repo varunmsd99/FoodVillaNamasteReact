@@ -143,7 +143,7 @@ const useRestaurantsData = () => {
       setNotServicable(...notDeliverable);
     } 
     catch (err) {
-      console.log(err);
+      console.log('Error:', err);
     }
   }
   useEffect(() => {
