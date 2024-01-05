@@ -48,8 +48,8 @@ const LocationSearch = ({ childState, setChildState }) => {
           setChildState(!childState);
         }}
       ></div>
-      <div className=" w-[33%] left-0 top-0 h-full bg-white z-50 absolute shadow-xl transform transition-transform duration-300">
-        <div className="flex-col items-center ml-auto mr-8 w-[72%]">
+      <div className="xl:min-w-[33%] lg:min-w-[33%] md:min-w-[37%] min-w-[100%] left-0 top-0 h-full bg-white z-50 absolute shadow-xl transform transition-transform duration-300">
+        <div className="flex-col items-center xl:ml-auto xl:mr-8 xl:max-w-[67%] lg:ml-auto lg:mr-8 lg:max-w-[72%] md:mx-auto md:max-w-[95%] max-w-[80%] mx-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 my-7 cursor-pointer"
