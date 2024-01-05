@@ -27,10 +27,12 @@ const LocationSearch = ({ childState, setChildState }) => {
   }
   const handleChildState = () => {
     setChildState(!childState);
+    document.body.style.overflow = 'unset';
   };
   const handleSubmit = (index) => {
     dispatch(updateLocation([locData[index]]));
     setChildState(!childState);
+    document.body.style.overflow = 'unset';
   };
   const handleKeyPress = (event) => {
     if (
@@ -46,6 +48,7 @@ const LocationSearch = ({ childState, setChildState }) => {
         className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 transform transition-transform duration-300"
         onClick={() => {
           setChildState(!childState);
+          document.body.style.overflow = 'unset';
         }}
       ></div>
       <div className="xl:min-w-[33%] lg:min-w-[33%] md:min-w-[37%] min-w-[100%] left-0 top-0 h-full bg-white z-50 absolute shadow-xl transform transition-transform duration-300">

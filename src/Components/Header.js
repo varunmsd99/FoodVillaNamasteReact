@@ -18,6 +18,9 @@ const Header = () => {
   const [locationSearchisVisisble, setLocationSearchisVisisble] = useState(false);
   const handleLocationClick = () => {
     setLocationSearchisVisisble(!locationSearchisVisisble);
+    if (typeof window != 'undefined' && window.document) {
+      document.body.style.overflow = 'hidden';
+  }
   };
   const handleNavClick = (path) => {
     setActiveLink(path);
