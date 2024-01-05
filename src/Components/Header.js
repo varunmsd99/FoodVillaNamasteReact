@@ -47,7 +47,7 @@ const Header = () => {
         }`}
         onClick={() => {if(locationSearchisVisisble === true) setLocationSearchisVisisble(false)}}
       >
-        <div className="max-w-[20%] flex items-center gap-2 ">
+        <div className="max-w-[25%] flex items-center gap-2 ">
           <Link to="/" className="flex-shrink-0">
             <img
               className="h-20 transition-transform duration-300 ease-cubic-bezier(.215,.61,.355,1) hover:scale-110"
