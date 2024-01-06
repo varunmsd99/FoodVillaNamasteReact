@@ -1,15 +1,19 @@
 import React from "react";
 import { REST_API_MENU_URL } from "../Helpers/Constant";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const useRestaurantMenu = (id) => {
+  const locDetails = useSelector((store) => store.location.locationDetails);
+  const [latitude, setLatitude] = useState(locDetails[0].lat);
+  const [longitude, setLongitude] = useState(locDetails[0].lng);
   const [resDetails, setResDetails] = useState();
   const [resOffers, setResOffers] = useState([]);
   const [resMenu, setResMenu] = useState([]);
   const [resLicense, setResLicense] = useState([]);
   const [resAddress, setResAddress] = useState([]);
   async function getRestaurantMenu() {
-    const data = await fetch(REST_API_MENU_URL + id);
+    const data = await fetch(REST_API_MENU_URL(latitude, longitude) + id);
     const json = await data.json();
     const restaurantData =
       json?.data?.cards
