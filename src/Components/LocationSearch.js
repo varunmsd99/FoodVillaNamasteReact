@@ -33,6 +33,11 @@ const LocationSearch = ({ childState, setChildState }) => {
     dispatch(updateLocation([locData[index]]));
     setChildState(!childState);
     document.body.style.overflow = 'unset';
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
   const handleKeyPress = (event) => {
     if (
@@ -45,13 +50,13 @@ const LocationSearch = ({ childState, setChildState }) => {
   return (
     <div className="z-30 min-h-[100vh-80px] flex">
       <div
-        className="w-full top-0 left-0 h-full bg-gray-400 absolute opacity-50 transform transition-transform duration-300"
+        className="w-full left-0 h-full bg-gray-400 fixed opacity-50"
         onClick={() => {
           setChildState(!childState);
           document.body.style.overflow = 'unset';
         }}
       ></div>
-      <div className="xl:min-w-[33%] lg:min-w-[33%] md:min-w-[37%] min-w-[100%] left-0 top-0 h-full bg-white z-50 absolute shadow-xl transform transition-transform duration-300">
+      <div className="xl:min-w-[33%] lg:min-w-[33%] md:min-w-[37%] min-w-[100%] left-0 h-full bg-white z-50 fixed shadow-xl">
         <div className="flex-col items-center xl:ml-auto xl:mr-8 xl:max-w-[67%] lg:ml-auto lg:mr-8 lg:max-w-[72%] md:mx-auto md:max-w-[95%] max-w-[80%] mx-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"
