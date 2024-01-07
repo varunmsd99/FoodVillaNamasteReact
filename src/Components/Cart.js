@@ -56,8 +56,8 @@ const Cart = () => {
     </div>
   ) : (
     <div className="flex flex-col mt-20 bg-[#e9ecee] min-h-screen">
-      <div className="flex w-[85%] mx-auto mt-4">
-        <div className="flex-col flex-1 my-4 ml-8">
+      <div className="flex mx-auto mt-4 xl:w-[85%] lg:w-[85%] md:w-[95%] sm:w-[95%]">
+        <div className="flex-col xl:flex-1 lg:flex-1 md:flex-[0] sm:flex-[0] my-4 ml-8">
           <div className="p-8 mb-8 bg-white w-full flex">
             <div className="relative right-16 bg-[#282c3f] h-fit text-white p-2 shadow-[0px_3px_5px_0px_#282c3f66]">
               <svg
@@ -201,7 +201,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <div className="flex-col mx-6 my-4 w-[30%]">
+        <div className="flex-col mx-6 my-4 xl:w-[30%] lg:w-[30%] md:w-[45%] sm:w-[50%]">
           <div className="flex-col pb-6 bg-white w-full h-fit">
             {cartDetails.map((x) => {
               return (
@@ -275,19 +275,19 @@ const Cart = () => {
             </div>
             <div className="flex justify-between text-[#686b78] text-xs font-normal pt-4">
               <h3>Item Total</h3>
-              <h3>₹ {itemTotal}</h3>
+              <h3 className='text-nowrap'>₹ {itemTotal}</h3>
             </div>
             <div className="flex justify-between border-b border-solid text-[#686b78] text-xs font-normal pb-4 pt-1">
               <div className="flex items-end">Delivery Fee | {distance} 
                 <div className="ml-2 rounded-full border-[#686b78] border px-[4px] text-[10px] leading-3 text-[#686b78] font-bold flex self-baseline">i</div>
               </div>
-              <h3>₹ {deliveryFee}</h3>
+              <h3 className='text-nowrap'>₹ {deliveryFee}</h3>
             </div>
             </div>
             <div className="mx-4 p-2">
             <div className="flex justify-between text-[#686b78] text-xs font-normal">
               <h3>Delivery Tip</h3>
-              <h3 className="text-red-500">Add Tip</h3>
+              <h3 className="text-red-500 text-nowrap">Add Tip</h3>
             </div>
             <div className="flex justify-between text-[#686b78] text-xs font-normal pt-1">
               <div className="flex items-end">Platform Fee 
@@ -299,12 +299,12 @@ const Cart = () => {
               <div className="flex items-end">GST and Restaurant Charges 
                 <div className="ml-2 rounded-full border-[#686b78] border px-[4px] text-[10px] leading-3 text-[#686b78] font-bold flex self-baseline">i</div>
               </div>
-              <h3>₹ {(itemTotal * 0.18).toFixed(2)}</h3>
+              <h3 className='text-nowrap'>₹ {(itemTotal * 0.18).toFixed(2)}</h3>
             </div>
             </div>
             <div className="flex justify-between text-[#282c3f] text-sm font-extrabold mx-4 px-2 tracking-tight">
               <h3>TO PAY</h3>
-              <h3>₹ {(Number(itemTotal)+Number(deliveryFee) + 3 + Number(0.18*itemTotal)).toFixed(2)}</h3>
+              <h3 className='text-nowrap'>₹ {(Number(itemTotal)+Number(deliveryFee) + 3 + Number(0.18*itemTotal)).toFixed(2)}</h3>
             </div>
           </div>
           <div className="p-6 w-full h-fit bg-white mt-6">
