@@ -15,7 +15,20 @@ import { Provider } from "react-redux";
 import store from "./Utils/store";
 
 const App = () => {
-  return (
+  const [isPortrait, setIsPortrait] = useState(
+    window.matchMedia('(orientation: portrait)').matches
+  );
+  useEffect(() => {
+    const handleOrientationChange = (event) => {
+      setIsPortrait(event.matches);
+    };
+    const mediaQuery = window.matchMedia('(orientation: portrait)');
+    mediaQuery.addEventListener('change', handleOrientationChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleOrientationChange);
+    };
+  }, []);
+  return isPortrait ? (<Orientation />) : (
     <Provider store={store}>
       <React.Fragment>
         <Header />
