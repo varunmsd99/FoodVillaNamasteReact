@@ -180,7 +180,7 @@ const Home = () => {
                   Restaurants with online food delivery in {city}
                 </h1>
               </div>
-              <div className="flex mx-4 mb-4">
+              <div className="container-snap flex mx-4 mb-4 w-full overflow-auto">
                 <div
                   className={`px-3 py-2 mr-3 min-w-fit rounded-full shadow-[0px_2px_12px_#02060c26] overflow-hidden transition-all duration-100 ease-in delay-0 ${
                     sortActive !== undefined
@@ -203,7 +203,7 @@ const Home = () => {
                     <div
                       key={x.title}
                       onClick={() => handleSortClick(x.title)}
-                      className={`container-snap flex justify-between min-w-fit overflow-x-auto truncate px-3 py-2 mr-3 cursor-pointer rounded-full shadow-[0px_2px_12px_#02060c26] transition-all duration-100 ease-in delay-0 ${
+                      className={`container-snap flex justify-between min-w-fit truncate px-3 py-2 mr-3 cursor-pointer rounded-full shadow-[0px_2px_12px_#02060c26] transition-all duration-100 ease-in delay-0 ${
                         sortActive === x.title
                           ? "bg-[#02060c26] border-[#36393e] border-[1px]"
                           : "border-[1px] border-solid border-[#02060c1f]"
