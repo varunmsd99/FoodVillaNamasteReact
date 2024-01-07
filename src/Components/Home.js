@@ -203,7 +203,7 @@ const Home = () => {
                     <div
                       key={x.title}
                       onClick={() => handleSortClick(x.title)}
-                      className={`container-snap flex justify-between w-full overflow-x-auto truncate px-3 py-2 mr-3 cursor-pointer rounded-full shadow-[0px_2px_12px_#02060c26] transition-all duration-100 ease-in delay-0 ${
+                      className={`container-snap flex justify-between min-w-fit overflow-x-auto truncate px-3 py-2 mr-3 cursor-pointer rounded-full shadow-[0px_2px_12px_#02060c26] transition-all duration-100 ease-in delay-0 ${
                         sortActive === x.title
                           ? "bg-[#02060c26] border-[#36393e] border-[1px]"
                           : "border-[1px] border-solid border-[#02060c1f]"
