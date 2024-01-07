@@ -56,9 +56,9 @@ const Cart = () => {
     </div>
   ) : (
     <div className="flex flex-col mt-20 bg-[#e9ecee] min-h-screen">
-      <div className="flex mx-auto mt-4 xl:w-[85%] lg:w-[85%] md:w-[95%] sm:w-[95%]">
-        <div className="flex-col xl:flex-1 lg:flex-1 md:flex-[0] sm:flex-[0] my-4 ml-8">
-          <div className="p-8 mb-8 bg-white w-full flex">
+      <div className="flex mx-auto mt-4 xl:w-[85%] lg:w-[85%] md:w-[96%] sm:w-[96%]">
+        <div className="flex-col flex-1 my-4 ml-8">
+          <div className="p-8 mb-5 bg-white w-full flex">
             <div className="relative right-16 bg-[#282c3f] h-fit text-white p-2 shadow-[0px_3px_5px_0px_#282c3f66]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +201,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <div className="flex-col mx-6 my-4 xl:w-[30%] lg:w-[30%] md:w-[45%] sm:w-[50%]">
+        <div className="flex-col ml-5 my-4 max-w-[35%]">
           <div className="flex-col pb-6 bg-white w-full h-fit">
             {cartDetails.map((x) => {
               return (
@@ -307,8 +307,8 @@ const Cart = () => {
               <h3 className='text-nowrap'>₹ {(Number(itemTotal)+Number(deliveryFee) + 3 + Number(0.18*itemTotal)).toFixed(2)}</h3>
             </div>
           </div>
-          <div className="p-6 w-full h-fit bg-white mt-6">
-            <div className="flex-col border p-4">
+          <div className="p-3 w-full h-fit bg-white mt-5">
+            <div className="flex-col border p-3">
               <div className="text-[13px] font-black tracking-tighter leading-4 mb-3 text-[#3e4152]">
                 Review your order and address details to avoid cancellations
               </div>
