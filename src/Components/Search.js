@@ -68,7 +68,7 @@ const Search = () => {
             <h2 className="text-left font-black text-[#3d4152] mb-2 pl-2 pb-15 pt-5 text-2xl tracking-tighter leading-tight">Popular Cuisines</h2>
             {popularCuisines.length === 0 ? 
             (<div className='flex overflow-hidden flex-start'>{shimArr?.map((e, index) => { return <SearchCuisineShimmer key={index}/>})}</div>) : 
-            <div className="flex overflow-hidden h-36 flex-start">
+            <div className="container-snap flex overflow-x-auto h-36 flex-start">
             {popularCuisines?.map((img) => {
               return (
                 <div className="ml-1 cursor-pointer flex-shrink-0" key={img.imageId} onClick={() => {handleCuisineClick(img.action.link)}}>

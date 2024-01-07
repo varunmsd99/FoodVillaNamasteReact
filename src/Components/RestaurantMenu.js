@@ -130,7 +130,7 @@ const RestaurantMenu = () => {
           )}
         </div>
       )}
-      <div className="flex p-3 mb-3 gap-x-3 overflow-hidden w-full">
+      <div className="container-snap flex p-3 mb-3 gap-x-3 overflow-x-auto w-full">
         {resOffers.map((obj) => {
           return <OfferCard {...obj} key={{ ...obj }.offerIds} />;
         })}

@@ -91,7 +91,7 @@ const LocationSearch = ({ childState, setChildState }) => {
               </div>
             )}
           </div>
-          <div className="max-h-[calc(100vh-100px)] overflow-y-auto">
+          <div className="container-snap max-h-[calc(100vh-100px)] overflow-y-auto">
             {locData && locData[0] !== "noresults" ? (
               locData.map((x, index) => {
                 return (
