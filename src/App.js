@@ -62,7 +62,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Orientation />,
+        element: <Profile />,
       },
       {
         path: "cart",

@@ -98,7 +98,7 @@ const Header = () => {
                 </span>
               </NavLink>
             </li>
-            <li className=" transition duration-250 ease-in-out m-3 pl-8 flex items-center justify-center text-[#303031] hover:text-orange" onMouseOver={(e) => {e.currentTarget.querySelector('svg').style.stroke = '#f3730a';}} onMouseOut={(e) => {e.currentTarget.querySelector('svg').style.stroke = '';}}>
+            <li className="hidden transition duration-250 ease-in-out m-3 pl-8 items-center justify-center text-[#303031] hover:text-orange" onMouseOver={(e) => {e.currentTarget.querySelector('svg').style.stroke = '#f3730a';}} onMouseOut={(e) => {e.currentTarget.querySelector('svg').style.stroke = '';}}>
               <NavLink
                 onClick={() => handleNavClick('/contact')}
                 className={`${isActive('/contact') ? 'text-orange' : 'text-inherit'}`}
