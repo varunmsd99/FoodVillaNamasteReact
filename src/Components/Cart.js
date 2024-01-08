@@ -232,7 +232,7 @@ const Cart = () => {
                 </h3>
               </div>
             </div>
-            <div className="max-h-[60vh] overflow-y-auto">
+            <div className="max-h-[67vh] overflow-y-auto">
               <div className="flex flex-col mx-6 pt-6">
                 {cartDetails.map((x) => {
                   return (
