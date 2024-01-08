@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Search from "./Components/Search";
-import Contact from "./Components/Contact";
 import Help from "./Components/Help";
 import Profile from "./Components/Profile";
 import Cart from "./Components/Cart";
@@ -55,10 +54,6 @@ const appRouter = createBrowserRouter([
       {
         path: "help",
         element: <Help />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
       },
       {
         path: "profile",

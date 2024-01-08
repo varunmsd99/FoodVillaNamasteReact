@@ -134,7 +134,7 @@ const Home = () => {
             </>
           )}
           {wOYM && (
-            <>
+            <div>
               <div className="flex justify-between mt-8 ml-4 pl-2 items-center">
                 <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                   What's on your mind?
@@ -156,10 +156,10 @@ const Home = () => {
                   );
                 })}
               </div>
-            </>
+            </div>
           )}
           {topResList && (
-            <>
+            <div>
               <div className="flex justify-between mt-8 ml-4 pl-2 items-center">
                 <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
                   Top restaurant chains in {city}
@@ -171,18 +171,18 @@ const Home = () => {
                   return <RestaurantCard {...res.info} key={res.info.id} />;
                 })}
               </div>
-            </>
+            </div>
           )}
           {filteredResList && (
             <>
               <div className="mt-8 mb-4 ml-4 pl-2">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold truncate">
                   Restaurants with online food delivery in {city}
                 </h1>
               </div>
               <div className="container-snap flex mx-4 mb-4 w-full overflow-auto">
                 <div
-                  className={`px-3 py-2 mr-3 min-w-fit rounded-full shadow-[0px_2px_12px_#02060c26] overflow-hidden transition-all duration-100 ease-in delay-0 ${
+                  className={`px-3 py-2 mr-3 min-w-fit rounded-full shadow-[0px_2px_12px_#02060c26] transition-all duration-100 ease-in delay-0 ${
                     sortActive !== undefined
                       ? "bg-[#02060c26] border-[#36393e] border-[1px]"
                       : "border-[1px] border-solid border-[#02060c1f]"
