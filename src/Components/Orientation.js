@@ -7,8 +7,8 @@ const Orientation = () => {
         <img src={landscape} className="rotate-90 h-fit p-10 object-cover mx-auto"/>
         <div className="text-[#60606e] mt-10 text-center mx-10">
             <h2 className="text-lg font-bold">Rotate your device</h2>
-            <h3 className="text-sm">We do not support landscape mode yet. <span className='text-red-500'>Please switch to portrait mode</span></h3>
-            <h2 className="text-sm text-red-500 font-bold">For best experience, enable Desktop mode</h2>
+            <h3 className="text-sm">We do not support landscape mode yet.</h3>
+            <h2 className="text-sm text-red-500 font-bold">For best experience, Please switch to portrait mode and enable Desktop mode</h2>
         </div>
     </div>
   )
