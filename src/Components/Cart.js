@@ -236,7 +236,7 @@ const Cart = () => {
               <div className="flex flex-col mx-6 pt-6">
                 {cartDetails.map((x) => {
                   return (
-                    <div className="flex max-w-[50%] mb-3" key={x.name}>
+                    <div className="flex max-w-[50%] mb-3 last:mb-0" key={x.name}>
                       <div className="flex items-center">
                         {!x?.isVeg ? (
                           <h5 className="menu-item-veg-icon self-start">
