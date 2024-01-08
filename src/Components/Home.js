@@ -116,7 +116,7 @@ const Home = () => {
                 </h1>
                 <Slider className="topicalBanner" amount={450} />
               </div>
-              <div className="topicalBanner flex overflow-x-auto">
+              <div className="topicalBanner container-snap flex overflow-x-auto">
                 {topicalBanner.map((img) => {
                   return (
                     <div
@@ -141,7 +141,7 @@ const Home = () => {
                 </h1>
                 <Slider className="foodCategory" amount={350} />
               </div>
-              <div className="foodCategory flex p-4 overflow-x-auto">
+              <div className="foodCategory container-snap flex p-4 overflow-x-auto">
                 {wOYM.map((img) => {
                   return (
                     <div
@@ -166,7 +166,7 @@ const Home = () => {
                 </h1>
                 <Slider className="topResList" key="topResList" amount={450} />
               </div>
-              <div className="topResList flex mt-8 gap-x-8 pl-4 pb-8 scrollbar-none overflow-x-auto">
+              <div className="topResList container-snap flex mt-8 gap-x-8 pl-4 pb-8 overflow-x-auto">
                 {topResList.map((res) => {
                   return <RestaurantCard {...res.info} key={res.info.id} />;
                 })}
