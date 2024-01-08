@@ -111,7 +111,7 @@ const Home = () => {
           {topicalBanner && (
             <>
               <div className="flex justify-between mt-6 ml-4 pl-2 items-center">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   Best Offers for you
                 </h1>
                 <Slider className="topicalBanner" amount={450} />
@@ -134,9 +134,9 @@ const Home = () => {
             </>
           )}
           {wOYM && (
-            <div>
+            <>
               <div className="flex justify-between mt-8 ml-4 pl-2 items-center">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   What's on your mind?
                 </h1>
                 <Slider className="foodCategory" amount={350} />
@@ -156,12 +156,12 @@ const Home = () => {
                   );
                 })}
               </div>
-            </div>
+            </>
           )}
           {topResList && (
-            <div>
+            <>
               <div className="flex justify-between mt-8 ml-4 pl-2 items-center">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   Top restaurant chains in {city}
                 </h1>
                 <Slider className="topResList" key="topResList" amount={450} />
@@ -171,12 +171,12 @@ const Home = () => {
                   return <RestaurantCard {...res.info} key={res.info.id} />;
                 })}
               </div>
-            </div>
+            </>
           )}
           {filteredResList && (
             <>
               <div className="mt-8 mb-4 ml-4 pl-2">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold truncate">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold truncate">
                   Restaurants with online food delivery in {city}
                 </h1>
               </div>
@@ -237,7 +237,7 @@ const Home = () => {
           {bestPlaces && (
             <>
               <div className="mt-16 ml-4 pl-2">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   Best Places to Eat Across Cities
                 </h1>
               </div>
@@ -287,7 +287,7 @@ const Home = () => {
           {bestCuiNearMe && (
             <>
               <div className="mt-16 ml-4 pl-2">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   Best Cuisines Near Me
                 </h1>
               </div>
@@ -337,7 +337,7 @@ const Home = () => {
           {expResNearMe && (
             <>
               <div className="mt-16 ml-4 pl-2">
-                <h1 className="text-2xl leading-5 tracking-tighter font-extrabold">
+                <h1 className="text-2xl h-fit leading-5 tracking-tighter font-extrabold">
                   Explore Every Restaurants Near Me
                 </h1>
               </div>
