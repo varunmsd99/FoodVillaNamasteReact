@@ -8,8 +8,10 @@ import locationUnservicable from "../Images/empty_location_unserviceable.webp";
 const LocationSearch = ({ childState, setChildState }) => {
   const [searchText, setSearchText] = useState("");
   const [locData, setLocData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   async function getLocation() {
+    setIsLoading(true);
     const data = await fetch(GET_LOCATION_API_URL + searchText, {
       method: "GET",
       headers: {
@@ -19,6 +21,7 @@ const LocationSearch = ({ childState, setChildState }) => {
       },
     });
     const json = await data.json();
+    setIsLoading(false);
     if (json.length === 0) {
       setLocData(["noresults"]);
     } else {
@@ -49,7 +52,7 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   };
   return (
-    <div className={`${childState ? 'block' : 'hidden'} z-30 min-h-[100vh-80px] flex`}>
+    <div className={`z-30 min-h-[100vh-80px] flex`}>
       <div
         className="w-full left-0 h-full bg-gray-400 fixed opacity-50"
         onClick={() => {handleChildState()}}
@@ -92,8 +95,10 @@ const LocationSearch = ({ childState, setChildState }) => {
             )}
           </div>
           <div className="container-snap max-h-[calc(100vh-100px)] overflow-y-auto">
-            {locData && locData[0] !== "noresults" ? (
-              locData.map((x, index) => {
+            {isLoading ? (
+            <div className='flex flex-col p-6  items-center justify-center'><div className='loading-spinner' /><h2>Loading</h2></div>
+            ) : (locData && locData[0] !== "noresults" ? (
+              locData?.map((x, index) => {
                 return (
                   <div
                     className="flex p-6 mx-auto cursor-pointer border-b border-dashed"
@@ -112,10 +117,10 @@ const LocationSearch = ({ childState, setChildState }) => {
                       />
                     </svg>
                     <div className="flex-1 pl-2 flex-col w-full">
-                      <h1 className="text-[#282c3f] font-medium leading-3 text-base truncate">
+                      <h1 className="text-[#282c3f] font-medium leading-3 text-base truncate py-2">
                         {x.area}
                       </h1>
-                      <h2 className="text-[#93959f] font-thin text-sm pt-2 truncate">
+                      <h2 className="text-[#93959f] font-thin text-sm truncate">
                         {x.district}, {x.state}
                       </h2>
                     </div>
@@ -136,7 +141,7 @@ const LocationSearch = ({ childState, setChildState }) => {
                   Are you sure you entered the right pincode?
                 </h3>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </div>
