@@ -52,7 +52,7 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   };
   return (
-    <div className={`z-30 min-h-[100vh-80px] flex`}>
+    <div className='slide-in z-30 min-h-[100vh-80px] flex'>
       <div
         className="w-full left-0 h-full bg-gray-400 fixed opacity-50"
         onClick={() => {handleChildState()}}
