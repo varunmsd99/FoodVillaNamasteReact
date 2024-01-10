@@ -225,7 +225,7 @@ const Cart = () => {
         </div>
         <div className="flex-col ml-5 my-4 max-w-[35%]">
           <div className="flex-col pb-6 bg-white w-full h-fit">
-            <div className="flex mx-6 pt-6">
+            <div className="flex mx-6 pt-6 pb-2">
               <img
                 className="w-14 h-14 mr-3 object-cover"
                 src={
@@ -246,8 +246,8 @@ const Cart = () => {
               <div className="flex flex-col mx-6 pt-6">
                 {cartDetails.map((x) => {
                   return (
-                    <div className="flex max-w-[50%] mb-3 last:mb-0" key={x.name}>
-                      <div className="flex items-center">
+                    <div className="flex w-full justify-between mb-3 last:mb-0" key={x.name}>
+                      <div className="flex items-center min-w-[50%] max-w-[50%]">
                         {!x?.isVeg ? (
                           <h5 className="menu-item-veg-icon self-start">
                             {
@@ -324,7 +324,7 @@ const Cart = () => {
                   )}
                 </div>
               </div>
-              <div className="border-dashed border border-[#7e808c] flex justify-center items-center mx-8 mt-6 py-3 cursor-pointer hover:shadow-[0px_3px_8px_#e9e9eb]">
+              <div className="border-dashed border border-[#7e808c] flex justify-center items-center mx-8 mt-6 py-2 cursor-pointer hover:shadow-[0px_3px_8px_#e9e9eb]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
