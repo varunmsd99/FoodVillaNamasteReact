@@ -226,7 +226,7 @@ const Home = () => {
                   );
                 })}
                 </div>
-              <div className="grid place-items-center gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+              <div className="grid place-items-start gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {filteredResList &&
                   filteredResList?.map((res) => {
                     return <RestaurantCard {...res.info} key={res.info.id} />;

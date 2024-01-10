@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { RES_CARD_IMG_CDN_URL } from "../Helpers/Constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
+import Success from "./Success";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -29,12 +30,13 @@ const Cart = () => {
   const [isChecked, setIsChecked] = useState("");
   const [confirmAddress, setConfirmAddress] = useState(false);
   const [confirmPayment, setConfirmPayment] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
   const handleConfirmAddress = () => {
     setConfirmAddress(!confirmAddress);
     setConfirmPayment(!confirmPayment);
   };
   const handleClearCart = () => {
-    alert("order placed");
+    setOrderSuccess(false);
     dispatch(clearCart());
   };
   useEffect(() => {
@@ -44,6 +46,14 @@ const Cart = () => {
       setState(locDetails[0].state);
     }
   }, [locDetails]);
+  useEffect(() => {
+    if(orderSuccess) {
+      const timeoutId = setTimeout(() => {
+        handleClearCart();
+      }, 4000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [orderSuccess]);
   console.log(cartDetails);
   return cartDetails.length === 0 ? (
     <div className="flex flex-col items-center justify-start min-h-screen">
@@ -62,7 +72,7 @@ const Cart = () => {
       </Link>
     </div>
   ) : (
-    <div className="flex flex-col mt-20 bg-[#e9ecee] min-h-screen">
+    orderSuccess ? <Success /> : <div className="flex flex-col mt-20 bg-[#e9ecee] min-h-screen">
       <div className="flex mx-auto mt-4 xl:w-[85%] lg:w-[85%] md:w-[96%] sm:w-[96%]">
         <div className="flex-col flex-1 my-4 ml-8">
           <div className="p-8 mb-5 bg-white w-full flex">
@@ -203,7 +213,7 @@ const Cart = () => {
                   <div
                     className="my-4 bg-[#60b246] py-3 text-white font-bold text-center tracking-tight cursor-pointer hover:shadow-[0px_2PX_8PX_#d4d5d9]"
                     onClick={() => {
-                      handleClearCart();
+                      setOrderSuccess(true);
                     }}
                   >
                     PLACE ORDER
@@ -260,6 +270,9 @@ const Cart = () => {
                         <h1 className="ml-2 flex-1 text-left text-sm leading-4 overflow-clip">
                           {x.name}
                         </h1>
+                      </div>
+                      <div>
+                        <h3>₹{(x.price || x.defaultPrice)/100}</h3>
                       </div>
                     </div>
                   );

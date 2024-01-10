@@ -18,18 +18,16 @@ const MenuItem = ({
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
-    console.log("click");
-    setQuantity(1);
-    dispatch(addItems({ name, isVeg, price, quantity, resDetailsData }));
+    setQuantity(quantity+1);
+    console.log(quantity)
+    dispatch(addItems({ name, isVeg, price, defaultPrice, quantity, resDetailsData }));
   };
   const handleIncreaseQuantity = () => {
     setQuantity(quantity+1);
-    console.log("increased");
   };
   const handleDecreaseQuantity = () => {
     if (quantity > 0) {
       setQuantity(quantity-1);
-      console.log("decreased");
     }
   };
   return (
@@ -78,11 +76,9 @@ const MenuItem = ({
           />
         )}
         <button
-          className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]"
-          onClick={handleAddItem}
-        >
+          className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]">
           {quantity === 0 ? (
-            <div className="text-[#60b246]">ADD</div>
+            <div className="text-[#60b246]" onClick={handleAddItem}>ADD</div>
           ) : (
             <div className="flex justify-between align-center text-lg items-center">
               <div
