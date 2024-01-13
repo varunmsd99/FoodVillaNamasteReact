@@ -2,7 +2,7 @@ import React from "react";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MENU_ITEM_CDN_URL } from "../Helpers/Constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItems } from "../Utils/cartSlice";
 import { useState } from "react";
 
@@ -16,6 +16,8 @@ const MenuItem = ({
   resDetailsData
 }) => {
   const dispatch = useDispatch();
+  const cartDetails = useSelector((store) => store.cart.cartItems);
+  const [isAdded, setIsAdded] = useState(false);
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
     setQuantity(quantity+1);

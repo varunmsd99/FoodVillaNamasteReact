@@ -2,7 +2,7 @@ import React from "react";
 
 const Success = () => {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-[#eee]">
+    <div className="mt-32 flex flex-col min-h-screen items-center justify-center bg-[#eee]">
       {" "}
       <svg
         className="checkmark"

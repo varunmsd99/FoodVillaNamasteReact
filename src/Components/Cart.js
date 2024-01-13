@@ -2,27 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import emptyCart from "../Images/emptyCart.webp";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../Utils/cartSlice";
-import { useDispatch } from "react-redux";
 import { RES_CARD_IMG_CDN_URL } from "../Helpers/Constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Success from "./Success";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartDetails = useSelector((store) => store.cart.cartItems);
   const locDetails = useSelector((store) => store.location.locationDetails);
   const time = cartDetails[0]?.resDetailsData?.slaString;
-  const deliveryFee = (
-    cartDetails[0]?.resDetailsData?.deliveryFee / 100
-  ).toFixed(0);
-  const itemTotal = (cartDetails[0]?.resDetailsData?.deliveryFee / 100).toFixed(
-    0
-  );
+  const deliveryFee = (cartDetails[0]?.resDetailsData?.deliveryFee / 100).toFixed(0);
+  const itemTotal = 100;
   const distance = cartDetails[0]?.resDetailsData?.lastMileTravelString;
-  console.log(cartDetails);
   const [area, setArea] = useState("");
   const [cityName, setCityName] = useState("");
   const [state, setState] = useState("");
@@ -54,7 +49,6 @@ const Cart = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [orderSuccess]);
-  console.log(cartDetails);
   return cartDetails.length === 0 ? (
     <div className="flex flex-col items-center justify-start min-h-screen">
       <img src={emptyCart} className="w-auto mt-32 h-[40vh]"></img>
@@ -225,7 +219,7 @@ const Cart = () => {
         </div>
         <div className="flex-col ml-5 my-4 max-w-[35%]">
           <div className="flex-col pb-6 bg-white w-full h-fit">
-            <div className="flex mx-6 pt-6 pb-2">
+            <Link to={`/restaurant/${cartDetails[0]?.resDetailsData?.id}`} className="flex mx-6 pt-6 pb-2">
               <img
                 className="w-14 h-14 mr-3 object-cover"
                 src={
@@ -233,20 +227,23 @@ const Cart = () => {
                   cartDetails[0]?.resDetailsData?.cloudinaryImageId
                 }
               />
-              <div className="flex flex-col text-start">
-                <h2 className="text-[15px] font-bold truncate text-[#282c3f]">
+              <div className="flex flex-col text-start justify-between w-full truncate">
+                <div>
+                <h2 className="text-[15px] font-bold text-[#282c3f]">
                   {cartDetails[0]?.resDetailsData?.name}
                 </h2>
                 <h3 className="text-[13px] min-h-fit truncate text-[#686b78]">
                   {cartDetails[0]?.resDetailsData?.areaName}
                 </h3>
+                </div>
+                <div className="h-[2px] w-10 bg-black"></div>
               </div>
-            </div>
+            </Link>
             <div className="max-h-[67vh] overflow-y-auto">
               <div className="flex flex-col mx-6 pt-6">
                 {cartDetails.map((x) => {
                   return (
-                    <div className="flex w-full justify-between mb-3 last:mb-0" key={x.name}>
+                    <div className="flex w-full justify-between px-2 mb-3 last:mb-0 items-center" key={x.name}>
                       <div className="flex items-center min-w-[50%] max-w-[50%]">
                         {!x?.isVeg ? (
                           <h5 className="menu-item-veg-icon self-start">
@@ -271,8 +268,13 @@ const Cart = () => {
                           {x.name}
                         </h1>
                       </div>
+                      <div className="flex border-[1.11px] border-solid border-gray-300 p-1 text-sm items-center">
+                        <div className="px-2 font-bold flex-1 text-[#3e4152] cursor-pointer">-</div>
+                        <div className="px-2 font-bold flex-1 text-[#60b246] text-xs">1</div>
+                        <div className="px-2 font-bold flex-1 text-[#60b246] cursor-pointer">+</div>
+                      </div>
                       <div>
-                        <h3>₹{(x.price || x.defaultPrice)/100}</h3>
+                        <h3 className="text-[#686b78] text-xs">₹{(x.price || x.defaultPrice)/100}</h3>
                       </div>
                     </div>
                   );
@@ -295,7 +297,7 @@ const Cart = () => {
                   }}
                 />
               </div>
-              <div className="flex mx-6 mt-6 border-[#a9abb2] border-[1px] border-solid px-4 py-2 cursor-pointer hover:shadow-[0px_3px_8px_#e9e9eb]">
+              <div className="flex mx-8 mt-6 border-[#a9abb2] border-[1px] border-solid px-4 py-2 cursor-pointer hover:shadow-[0px_3px_8px_#e9e9eb]">
                 <div className="self-start w-6 h-6">
                   <input
                     className={`self-start mt-1 w-4 h-4 border border-[#7e808c] border-solid cursor-pointer ${
@@ -343,7 +345,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between text-[#686b78] text-xs font-normal pt-4">
                   <h3>Item Total</h3>
-                  <h3 className="text-nowrap">₹ {itemTotal}</h3>
+                  <h3 className="text-nowrap">₹ {Number(itemTotal)}</h3>
                 </div>
                 <div className="flex justify-between border-b border-solid text-[#686b78] text-xs font-normal pb-4 pt-1">
                   <div className="flex items-end">
@@ -352,7 +354,7 @@ const Cart = () => {
                       i
                     </div>
                   </div>
-                  <h3 className="text-nowrap">₹ {deliveryFee}</h3>
+                  <h3 className="text-nowrap">₹ {Number(deliveryFee) || (Number(distance.split(' ')[0])*6.8).toFixed(2)}</h3>
                 </div>
               </div>
             <div className="mx-4 p-2">
@@ -385,13 +387,13 @@ const Cart = () => {
               </div>
             </div>
             </div>
-            <div className="flex justify-between text-[#282c3f] text-sm font-extrabold mx-4 px-2 tracking-tight">
+            <div className="flex justify-between text-[#282c3f] text-sm font-extrabold mx-4 px-2 my-2 tracking-tight">
               <h3>TO PAY</h3>
               <h3 className="text-nowrap">
                 ₹{" "}
                 {(
                   Number(itemTotal) +
-                  Number(deliveryFee) +
+                  Number(Number(deliveryFee) || (Number(distance.split(' ')[0])*6.8).toFixed(2)) +
                   3 +
                   Number(0.18 * itemTotal)
                 ).toFixed(2)}
