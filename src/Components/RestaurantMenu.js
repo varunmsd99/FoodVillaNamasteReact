@@ -18,6 +18,8 @@ import { useSelector } from "react-redux";
 import useRestaurantMenu from "../Hooks/useRestaurantMenu";
 import { useState, useEffect } from "react";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
+import ResetCart from "./ResetCart";
+import MyContext from "../Utils/MyContext";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -34,20 +36,28 @@ const RestaurantMenu = () => {
   const locDetails = useSelector(store => store.location.locationDetails);
   const city = locDetails[0].district;
   const [showElement, setShowElement] = useState(false);
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowElement(true);
-    }, 2000);
-    return () => clearTimeout(timeoutId);
-  }, []);
+  const [resCartAlert, setResCartAlert] = useState(false);
+  const contextValue = {
+    resCartAlert,
+    showResCartAlert: () => {setResCartAlert(true), setShowElement(false)},
+    hideResCartAlert: () => {setResCartAlert(false), setShowElement(true)}
+  };
+  useEffect(() => {  
   window.scrollTo({
     top: 0,
     left: 0,
     behavior: 'smooth'
   });
+    const timeoutId = setTimeout(() => {
+      setShowElement(true);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+  console.log(resCartAlert)
   return resOffers.length === 0 ? (
     <RestaurantMenuShimmer />
   ) : (
+    <MyContext.Provider value={contextValue}>
     <div className="min-h-screen mx-auto mt-32 max-w-[75%]">
       {resDetails.name && (
         <div className="flex justify-between items-center">
@@ -169,7 +179,9 @@ const RestaurantMenu = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4"/></svg>
         <button className="leading-3 pl-2 tracking-tight text-sm font-black self-end">BROWSE MENU</button>
     </div>}
+    {resCartAlert ? <ResetCart /> : ''}
     </div>
+    </MyContext.Provider>
   )
 };
 

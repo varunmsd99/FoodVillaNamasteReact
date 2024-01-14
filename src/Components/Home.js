@@ -107,7 +107,7 @@ const Home = () => {
           <Unservicable />
         </div>
       ) : (
-        <div className="max-w-[80%] mx-auto min-h-screen pt-24">
+        <div className="xl:max-w-[80%] lg:max-w-[80%] md:max-w-[90%] sm:max-w-[90%] mx-auto min-h-screen pt-24">
           {topicalBanner && (
             <>
               <div className="flex justify-between mt-6 ml-4 pl-2 items-center">
@@ -226,7 +226,7 @@ const Home = () => {
                   );
                 })}
                 </div>
-              <div className="grid place-items-start gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+              <div className="grid place-items-center gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {filteredResList &&
                   filteredResList?.map((res) => {
                     return <RestaurantCard {...res.info} key={res.info.id} />;

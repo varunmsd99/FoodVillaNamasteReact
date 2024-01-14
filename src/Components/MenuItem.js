@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MENU_ITEM_CDN_URL } from "../Helpers/Constant";
 import { useDispatch, useSelector } from "react-redux";
 import { addItems } from "../Utils/cartSlice";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import MyContext from "../Utils/MyContext";
 
 const MenuItem = ({
   name,
@@ -17,11 +18,11 @@ const MenuItem = ({
 }) => {
   const dispatch = useDispatch();
   const cartDetails = useSelector((store) => store.cart.cartItems);
+  const context = useContext(MyContext);
   const [isAdded, setIsAdded] = useState(false);
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
     setQuantity(quantity+1);
-    console.log(quantity)
     dispatch(addItems({ name, isVeg, price, defaultPrice, quantity, resDetailsData }));
   };
   const handleIncreaseQuantity = () => {
@@ -32,6 +33,9 @@ const MenuItem = ({
       setQuantity(quantity-1);
     }
   };
+  const handleResCartChange = () => {
+    context.showResCartAlert();
+  }
   return (
     <div className="flex justify-between items-center border-b-solid border-b-[0.5px] border-b-[#d3d3d3] my-5 pb-3 w-full last:border-b-0">
       <div className="max-w-[80%]">
@@ -77,25 +81,23 @@ const MenuItem = ({
             className="object-cover rounded-md w-[120px] h-24"
           />
         )}
-        <button
-          className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]">
+        <div className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]">
           {quantity === 0 ? (
-            <div className="text-[#60b246]" onClick={handleAddItem}>ADD</div>
+            <div className="text-[#60b246] flex justify-center items-center h-full text-center" onClick={handleAddItem}>ADD</div>
           ) : (
             <div className="flex justify-between align-center text-lg items-center">
-              <div
-                className="font-bold flex-1 text-[#3e4152] cursor-pointer"
+              <div className="font-bold flex-1 text-[#3e4152] cursor-pointer text-center"
                 onClick={() => {
                   handleDecreaseQuantity();
                 }}
               >
                 -
               </div>
-              <div className="font-bold flex-1 text-[#60b246] text-sm">
+              <div className="font-bold flex-1 text-[#60b246] text-sm text-center" onClick={handleResCartChange}>
                 {quantity}
               </div>
               <div
-                className="font-bold flex-1 text-[#60b246] cursor-pointer"
+                className="font-bold flex-1 text-[#60b246] cursor-pointer text-center"
                 onClick={() => {
                   handleIncreaseQuantity();
                 }}
@@ -104,7 +106,7 @@ const MenuItem = ({
               </div>
             </div>
           )}
-        </button>
+        </div>
       </div>
     </div>
   );

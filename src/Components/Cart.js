@@ -45,7 +45,7 @@ const Cart = () => {
     if(orderSuccess) {
       const timeoutId = setTimeout(() => {
         handleClearCart();
-      }, 4000);
+      }, 2500);
       return () => clearTimeout(timeoutId);
     }
   }, [orderSuccess]);
