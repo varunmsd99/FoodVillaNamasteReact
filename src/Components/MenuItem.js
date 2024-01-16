@@ -10,6 +10,7 @@ import MyContext from "../Utils/MyContext";
 const MenuItem = ({
   name,
   description,
+  id,
   imageId,
   defaultPrice,
   price,
@@ -23,7 +24,7 @@ const MenuItem = ({
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
     setQuantity(quantity+1);
-    dispatch(addItems({ name, isVeg, price, defaultPrice, quantity, resDetailsData }));
+    dispatch(addItems({ id, name, isVeg, price, defaultPrice, quantity, resDetailsData }));
   };
   const handleIncreaseQuantity = () => {
     setQuantity(quantity+1);
@@ -36,6 +37,10 @@ const MenuItem = ({
   const handleResCartChange = () => {
     context.showResCartAlert();
   }
+  if(cartDetails.length === 0)
+    console.log('added')
+  else if(cartDetails[0]?.resDetailsData?.id !== resDetailsData?.id)
+    console.log('diff res')
   return (
     <div className="flex justify-between items-center border-b-solid border-b-[0.5px] border-b-[#d3d3d3] my-5 pb-3 w-full last:border-b-0">
       <div className="max-w-[80%]">
@@ -83,7 +88,7 @@ const MenuItem = ({
         )}
         <div className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]">
           {quantity === 0 ? (
-            <div className="text-[#60b246] flex justify-center items-center h-full text-center" onClick={handleAddItem}>ADD</div>
+            <div className="text-[#60b246] flex justify-center items-center h-full text-center" onClick={() => {if(cartDetails.length === 0) {handleAddItem()} else if(cartDetails[0]?.resDetailsData?.id !== resDetailsData?.id) {handleResCartChange()} else{handleAddItem()}}}>ADD</div>
           ) : (
             <div className="flex justify-between align-center text-lg items-center">
               <div className="font-bold flex-1 text-[#3e4152] cursor-pointer text-center"
@@ -93,7 +98,7 @@ const MenuItem = ({
               >
                 -
               </div>
-              <div className="font-bold flex-1 text-[#60b246] text-sm text-center" onClick={handleResCartChange}>
+              <div className="font-bold flex-1 text-[#60b246] text-sm text-center">
                 {quantity}
               </div>
               <div

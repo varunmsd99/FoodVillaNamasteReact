@@ -49,6 +49,7 @@ const Cart = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [orderSuccess]);
+  console.log(cartDetails)
   return cartDetails.length === 0 ? (
     <div className="flex flex-col items-center justify-start min-h-screen">
       <img src={emptyCart} className="w-auto mt-32 h-[40vh]"></img>
