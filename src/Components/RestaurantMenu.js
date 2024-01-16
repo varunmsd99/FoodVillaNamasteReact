@@ -53,7 +53,6 @@ const RestaurantMenu = () => {
     }, 2000);
     return () => clearTimeout(timeoutId);
   }, []);
-  console.log(resCartAlert)
   return resOffers.length === 0 ? (
     <RestaurantMenuShimmer />
   ) : (

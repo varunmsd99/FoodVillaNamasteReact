@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import emptyCart from "../Images/emptyCart.webp";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from "../Utils/cartSlice";
+import { addItems, removeItems, clearCart } from "../Utils/cartSlice";
 import { RES_CARD_IMG_CDN_URL } from "../Helpers/Constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,6 @@ const Cart = () => {
   const locDetails = useSelector((store) => store.location.locationDetails);
   const time = cartDetails[0]?.resDetailsData?.slaString;
   const deliveryFee = (cartDetails[0]?.resDetailsData?.deliveryFee / 100).toFixed(0);
-  const itemTotal = 100;
   const distance = cartDetails[0]?.resDetailsData?.lastMileTravelString;
   const [area, setArea] = useState("");
   const [cityName, setCityName] = useState("");
@@ -34,6 +33,12 @@ const Cart = () => {
     setOrderSuccess(false);
     dispatch(clearCart());
   };
+  const handleIncreaseQuantity = (x) => {
+    dispatch(addItems(x))
+  }
+  const handleDecreaseQuantity = (x) => {
+    dispatch(removeItems(x))
+  }
   useEffect(() => {
     if (locDetails[0]) {
       setArea(locDetails[0].area);
@@ -49,7 +54,10 @@ const Cart = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [orderSuccess]);
-  console.log(cartDetails)
+  const itemTotal = cartDetails.reduce((accumulator, currentItem) => {
+    const itemPrice = (currentItem.price || currentItem.defaultPrice)/100 * currentItem.quantity;
+    return accumulator + itemPrice;
+  }, 0);
   return cartDetails.length === 0 ? (
     <div className="flex flex-col items-center justify-start min-h-screen">
       <img src={emptyCart} className="w-auto mt-32 h-[40vh]"></img>
@@ -242,11 +250,11 @@ const Cart = () => {
             </Link>
             <div className="max-h-[67vh] overflow-y-auto">
               <div className="flex flex-col mx-6 pt-6">
-                {cartDetails.map((x) => {
+                {cartDetails.map((item) => {
                   return (
-                    <div className="flex w-full justify-between px-2 mb-3 last:mb-0 items-center" key={x.name}>
+                    <div className="flex w-full justify-between px-2 mb-3 last:mb-0 items-center" key={item.id}>
                       <div className="flex items-center min-w-[50%] max-w-[50%]">
-                        {!x?.isVeg ? (
+                        {!item?.isVeg ? (
                           <h5 className="menu-item-veg-icon self-start">
                             {
                               <FontAwesomeIcon
@@ -266,16 +274,16 @@ const Cart = () => {
                           </h5>
                         )}
                         <h1 className="ml-2 flex-1 text-left text-sm leading-4 overflow-clip">
-                          {x.name}
+                          {item.name}
                         </h1>
                       </div>
                       <div className="flex border-[1.11px] border-solid border-gray-300 p-1 text-sm items-center">
-                        <div className="px-2 font-bold flex-1 text-[#3e4152] cursor-pointer">-</div>
-                        <div className="px-2 font-bold flex-1 text-[#60b246] text-xs">1</div>
-                        <div className="px-2 font-bold flex-1 text-[#60b246] cursor-pointer">+</div>
+                        <div className="px-2 font-bold flex-1 text-[#3e4152] cursor-pointer" onClick={() => {handleDecreaseQuantity(item)}}>-</div>
+                        <div className="px-2 font-bold flex-1 text-[#60b246] text-xs">{item.quantity}</div>
+                        <div className="px-2 font-bold flex-1 text-[#60b246] cursor-pointer" onClick={() => {handleIncreaseQuantity(item)}}>+</div>
                       </div>
                       <div>
-                        <h3 className="text-[#686b78] text-xs">₹{(x.price || x.defaultPrice)/100}</h3>
+                        <h3 className="text-[#686b78] text-xs">₹{item.quantity * (item.price || item.defaultPrice)/100}</h3>
                       </div>
                     </div>
                   );
@@ -383,7 +391,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <h3 className="text-nowrap">
-                  ₹ {(itemTotal * 0.18).toFixed(2)}
+                  ₹ {(Number(itemTotal) * 0.18).toFixed(2)}
                 </h3>
               </div>
             </div>

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MENU_ITEM_CDN_URL } from "../Helpers/Constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addItems } from "../Utils/cartSlice";
+import { addItems, removeItems } from "../Utils/cartSlice";
 import { useState, useContext } from "react";
 import MyContext from "../Utils/MyContext";
 
@@ -20,27 +20,25 @@ const MenuItem = ({
   const dispatch = useDispatch();
   const cartDetails = useSelector((store) => store.cart.cartItems);
   const context = useContext(MyContext);
-  const [isAdded, setIsAdded] = useState(false);
+  const [isPresent, setIsPresent] = useState(-1);
   const [quantity, setQuantity] = useState(0);
   const handleAddItem = () => {
-    setQuantity(quantity+1);
-    dispatch(addItems({ id, name, isVeg, price, defaultPrice, quantity, resDetailsData }));
+    dispatch(addItems({ id, name, isVeg, price, defaultPrice, resDetailsData }));
   };
-  const handleIncreaseQuantity = () => {
-    setQuantity(quantity+1);
-  };
-  const handleDecreaseQuantity = () => {
-    if (quantity > 0) {
-      setQuantity(quantity-1);
-    }
-  };
+  const handleremoveItem = () => {
+    dispatch(removeItems({ id, name, isVeg, price, defaultPrice, resDetailsData}));
+  }
   const handleResCartChange = () => {
     context.showResCartAlert();
   }
-  if(cartDetails.length === 0)
-    console.log('added')
-  else if(cartDetails[0]?.resDetailsData?.id !== resDetailsData?.id)
-    console.log('diff res')
+  const handleExistingItem = () => {
+    const existingItemIndex = cartDetails.findIndex((item) => { return item.id === id });
+    setIsPresent(existingItemIndex >= 0);
+    setQuantity(cartDetails[existingItemIndex]?.quantity);
+  }
+  useEffect(() => {
+    handleExistingItem();
+  },[cartDetails])
   return (
     <div className="flex justify-between items-center border-b-solid border-b-[0.5px] border-b-[#d3d3d3] my-5 pb-3 w-full last:border-b-0">
       <div className="max-w-[80%]">
@@ -87,28 +85,19 @@ const MenuItem = ({
           />
         )}
         <div className="relative w-24 h-9 bottom-2 bg-white cursor-pointer rounded text-sm font-bold border-[1.11px] border-solid border-gray-300 shadow-sm transform -translate-y-1/2 z-1 hover:shadow-[0px_2px_8px_#d4d5d9]">
-          {quantity === 0 ? (
-            <div className="text-[#60b246] flex justify-center items-center h-full text-center" onClick={() => {if(cartDetails.length === 0) {handleAddItem()} else if(cartDetails[0]?.resDetailsData?.id !== resDetailsData?.id) {handleResCartChange()} else{handleAddItem()}}}>ADD</div>
+          {!isPresent || quantity <= 0 ? (
+            <div className="text-[#60b246] flex justify-center items-center h-full text-center" 
+              onClick={() => {if(cartDetails.length === 0) {handleAddItem()} else if(cartDetails[0]?.resDetailsData?.id !== resDetailsData?.id) {handleResCartChange()} else{handleAddItem()}}}>ADD</div>
           ) : (
             <div className="flex justify-between align-center text-lg items-center">
               <div className="font-bold flex-1 text-[#3e4152] cursor-pointer text-center"
-                onClick={() => {
-                  handleDecreaseQuantity();
-                }}
-              >
-                -
-              </div>
+                onClick={() => {handleremoveItem()}}>-</div>
               <div className="font-bold flex-1 text-[#60b246] text-sm text-center">
                 {quantity}
               </div>
               <div
                 className="font-bold flex-1 text-[#60b246] cursor-pointer text-center"
-                onClick={() => {
-                  handleIncreaseQuantity();
-                }}
-              >
-                +
-              </div>
+                onClick={() => {handleAddItem()}}>+</div>
             </div>
           )}
         </div>
