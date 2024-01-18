@@ -1,5 +1,5 @@
 <div align="center" id="#readme-top">
-  <h1><b>Food Villa - A Swiggy look alike food ordering platform</b></h3>
+  <h1><b>Food Villa - A Swiggy inspired food ordering platform</b></h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
