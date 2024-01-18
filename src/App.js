@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Search from "./Components/Search";
-import Help from "./Components/Help";
 import Profile from "./Components/Profile";
 import Cart from "./Components/Cart";
 import Error from "./Components/Error";
@@ -13,6 +12,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
 
+const Help = lazy(() => import('./Components/Help'));
 const App = () => {
   const [isPortrait, setIsPortrait] = useState(
     window.matchMedia('(orientation: portrait)').matches
@@ -53,7 +53,10 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "help",
-        element: <Help />,
+        element: 
+        <Suspense>
+          <Help />
+        </Suspense>
       },
       {
         path: "profile",

@@ -3,6 +3,7 @@ import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateLocation } from "../Utils/locationSlice";
+import { openLocSearch, closeLocSearch } from "../Utils/locationSearchVisibilitySlice";
 import locationUnservicable from "../Images/empty_location_unserviceable.webp";
 
 const LocationSearch = ({ childState, setChildState }) => {
@@ -29,7 +30,13 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   }
   const handleChildState = () => {
-    setChildState(!childState);
+    if (childState) {
+      setChildState(false);
+      dispatch(openLocSearch());
+    } else {
+      setChildState(true);
+      dispatch(closeLocSearch());
+    }
     setSearchText('');
     document.body.style.overflow = 'unset';
   };
@@ -52,7 +59,7 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   };
   return (
-    <div className='slide-in z-30 min-h-[100vh-80px] flex'>
+    <div className='slide-in z-50 min-h-[100vh-80px] flex'>
       <div
         className="w-full left-0 h-full bg-gray-400 fixed opacity-50"
         onClick={() => {handleChildState()}}

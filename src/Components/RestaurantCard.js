@@ -19,10 +19,12 @@ const RestaurantCard = ({
   cuisines,
   sla,
   aggregatedDiscountInfoV2,
+  locSearchVisibility
 }) => {
   const color = ratingColor(avgRating);
+  console.log(locSearchVisibility);
   return (
-    <div key={id} className="">
+    <div key={id} className={`${locSearchVisibility ? '-z-10' : ''}`}>
       <Link
         to={isOpen ? "/restaurant/" + id : ""}
         key={id}

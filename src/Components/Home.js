@@ -10,7 +10,7 @@ import foodVillaLogoWhite from "../Images/Food Villa Logo White.png";
 import RestaurantCard from "./RestaurantCard";
 import Slider from "./Slider";
 import HomeShimmer from "./HomeShimmer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   faChevronDown,
   faFilter,
@@ -38,6 +38,7 @@ const Home = () => {
     notServicable,
   ] = useRestaurantsData();
   const locDetails = useSelector((store) => store.location.locationDetails);
+  const locSearchVisibility = useSelector((store) => store.locSearch.visible);
   const [city, setCity] = useState(locDetails[0].district);
   const [sortActive, setSortActive] = useState(undefined);
   const [bestPlacesOpen, setBestPlacesOpen] = useState(false);
@@ -168,7 +169,7 @@ const Home = () => {
               </div>
               <div className="topResList container-snap flex mt-8 gap-x-8 pl-4 pb-8 overflow-x-auto">
                 {topResList.map((res) => {
-                  return <RestaurantCard {...res.info} key={res.info.id} />;
+                  return <RestaurantCard {...res.info} locSearchVisibility={locSearchVisibility} key={res.info.id} />;
                 })}
               </div>
             </>
@@ -229,7 +230,7 @@ const Home = () => {
               <div className="grid place-items-center gap-8 mx-auto my-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {filteredResList &&
                   filteredResList?.map((res) => {
-                    return <RestaurantCard {...res.info} key={res.info.id} />;
+                    return <RestaurantCard {...res.info} locSearchVisibility={locSearchVisibility} key={res.info.id} />;
                   })}
               </div>
             </>
