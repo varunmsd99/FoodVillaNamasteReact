@@ -3,7 +3,7 @@ import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateLocation } from "../Utils/locationSlice";
-import { openLocSearch, closeLocSearch } from "../Utils/locationSearchVisibilitySlice";
+import { locSearch } from "../Utils/locationSearchVisibilitySlice";
 import locationUnservicable from "../Images/empty_location_unserviceable.webp";
 
 const LocationSearch = ({ childState, setChildState }) => {
@@ -30,13 +30,8 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   }
   const handleChildState = () => {
-    if (childState) {
-      setChildState(false);
-      dispatch(openLocSearch());
-    } else {
-      setChildState(true);
-      dispatch(closeLocSearch());
-    }
+    setChildState(!childState);
+    dispatch(locSearch());
     setSearchText('');
     document.body.style.overflow = 'unset';
   };

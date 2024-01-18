@@ -6,7 +6,7 @@ import { Link, NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LocationSearch from "./LocationSearch";
 import { useSelector,useDispatch } from "react-redux";
-import { openLocSearch, closeLocSearch } from "../Utils/locationSearchVisibilitySlice";
+import { locSearch } from "../Utils/locationSearchVisibilitySlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,13 +18,8 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [locationSearchisVisisble, setLocationSearchisVisisble] = useState(false);
   const handleLocationClick = () => {
-    if (locationSearchisVisisble) {
-      setLocationSearchisVisisble(false);
-      dispatch(openLocSearch());
-    } else {
-      setLocationSearchisVisisble(true);
-      dispatch(closeLocSearch());
-    }
+    setLocationSearchisVisisble(!locationSearchisVisisble);
+    dispatch(locSearch());
     if (typeof window != 'undefined' && window.document) {
       document.body.style.overflow = 'hidden';
   }
@@ -55,7 +50,7 @@ const Header = () => {
         className={`header flex items-center justify-around z-10 fixed bg-[#ffffffd9] px-5 w-screen top-0 left-0 right-0 shadow-[0_15px_40px_-20px_rgba(40,44,63,0.15)] ${
           locationSearchisVisisble ? "opacity-50 bg-transparent" : ""
         }`}
-        onClick={() => {if(locationSearchisVisisble === true) {setLocationSearchisVisisble(false);document.body.style.overflow = 'unset';dispatch(openLocSearch());}}}
+        onClick={() => {if(locationSearchisVisisble === true) {setLocationSearchisVisisble(false);document.body.style.overflow = 'unset';dispatch(locSearch());}}}
       >
         <div className="max-w-[25%] flex items-center gap-2 ">
           <Link to="/" className="flex-shrink-0">
@@ -68,7 +63,7 @@ const Header = () => {
           </Link>
           <div
             className="flex truncate cursor-pointer self-center"
-            onClick={handleLocationClick}
+            onClick={() => handleLocationClick()}
           >
             <h2
               title={area + ", " + cityName + ", " + state}

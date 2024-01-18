@@ -6,14 +6,11 @@ const locationSearchVisiblilitySlice = createSlice({
         visible: false
     },
     reducers: {
-        openLocSearch: (state, action) => {
-            state.visible = false
-        },
-        closeLocSearch: (state, action) => {
-            state.visible = true
+        locSearch: (state, action) => {
+            state.visible = !state.visible
         }
     }
 })
 
-export const {openLocSearch, closeLocSearch}  = locationSearchVisiblilitySlice.actions;
+export const {locSearch}  = locationSearchVisiblilitySlice.actions;
 export default locationSearchVisiblilitySlice.reducer;

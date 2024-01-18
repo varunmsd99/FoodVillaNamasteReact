@@ -22,7 +22,6 @@ const RestaurantCard = ({
   locSearchVisibility
 }) => {
   const color = ratingColor(avgRating);
-  console.log(locSearchVisibility);
   return (
     <div key={id} className={`${locSearchVisibility ? '-z-10' : ''}`}>
       <Link
