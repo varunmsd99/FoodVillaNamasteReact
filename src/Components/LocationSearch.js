@@ -1,6 +1,6 @@
 import React from "react";
 import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateLocation } from "../Utils/locationSlice";
 import { locSearch } from "../Utils/locationSearchVisibilitySlice";
@@ -38,6 +38,7 @@ const LocationSearch = ({ childState, setChildState }) => {
   const handleSubmit = (index) => {
     dispatch(updateLocation([locData[index]]));
     setChildState(!childState);
+    dispatch(locSearch());
     document.body.style.overflow = 'unset';
     window.scrollTo({
       top: 0,
@@ -46,10 +47,7 @@ const LocationSearch = ({ childState, setChildState }) => {
     });
   };
   const handleKeyPress = (event) => {
-    if (
-      (typeof Number(searchText) === "number" && searchText.length === 6) ||
-      event.key === "Enter"
-    ) {
+    if ( (typeof Number(searchText) === "number" && searchText.length === 6) || event.key === "Enter") {
       getLocation();
     }
   };
@@ -81,7 +79,7 @@ const LocationSearch = ({ childState, setChildState }) => {
               placeholder="Enter Pincode"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
-              onKeyDown={handleKeyPress}
+              onKeyDown={(e) => handleKeyPress(e)}
             />
             {searchText === "" ? (
               <></>
