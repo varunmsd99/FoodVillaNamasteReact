@@ -7,7 +7,7 @@ const locationSearchVisiblilitySlice = createSlice({
     },
     reducers: {
         locSearch: (state, action) => {
-            state.visible = !state.visible
+            state.visible = action.payload
         }
     }
 })

@@ -1,6 +1,6 @@
 import React from "react";
 import { GET_LOCATION_API_URL, apiKey } from "../Helpers/Constant";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateLocation } from "../Utils/locationSlice";
 import { locSearch } from "../Utils/locationSearchVisibilitySlice";
@@ -30,15 +30,15 @@ const LocationSearch = ({ childState, setChildState }) => {
     }
   }
   const handleChildState = () => {
-    setChildState(!childState);
-    dispatch(locSearch());
+    setChildState(false);
+    dispatch(locSearch(false));
     setSearchText('');
     document.body.style.overflow = 'unset';
   };
   const handleSubmit = (index) => {
     dispatch(updateLocation([locData[index]]));
-    setChildState(!childState);
-    dispatch(locSearch());
+    setChildState(false);
+    dispatch(locSearch(false));
     document.body.style.overflow = 'unset';
     window.scrollTo({
       top: 0,
