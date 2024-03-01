@@ -8,19 +8,15 @@
   margin: 0;
   padding: 0;
   font-family: "Manrope", "ProximaNova", system-ui, sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 a {
   text-decoration: none;
   color: inherit;
-}
-/* Hide scrollbar for Chrome, Safari, and Opera */
-body::-webkit-scrollbar {
-  display: none;
-}
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .container-snap::-webkit-scrollbar {
